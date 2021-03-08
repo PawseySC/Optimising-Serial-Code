@@ -13,6 +13,6 @@ OPTFLAG=O3
 export PAT_RT_PERFCTR=1
 export PAT_RT_SAMPLING_INTERVAL=1000
 
-srun --export=all -n 1 game_of_life.${OPTFLAG}.cray+pat
-#srun --export=all -n 1 game_of_life.${OPTFLAG}.cray+apa
+srun -n 1 game_of_life.${OPTFLAG}.cray+pat
+#srun -n 1 game_of_life.${OPTFLAG}.cray+apa
 

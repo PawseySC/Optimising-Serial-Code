@@ -1,0 +1,3290 @@
+Intel(R) Advisor can now assist with vectorization and show optimization
+  report messages with your source code.
+See "https://software.intel.com/en-us/intel-advisor-xe" for details.
+
+Intel(R) Fortran Intel(R) 64 Compiler for applications running on Intel(R) 64, Version 17.0.4.196 Build 20170411
+
+Compiler options: -I/opt/cray/pe/perftools/7.0.0/include -I/opt/cray/pe/mpt/7.7.0/gni/mpich-intel/16.0/include -I/opt/cray/rca/2.2.18-6.0.7.1_5.61__g2aa4f39.ari/include -I/opt/cray/alps/6.6.43-6.0.7.1_5.61__ga796da32.ari/include -I/opt/cray/xpmem/2.2.15-6.0.7.1_5.20__g7549d06.ari/include -I/opt/cray/gni-headers/5.0.12.0-6.0.7.1_3.20__g3b1768f.ari/include -I/opt/cray/pe/pmi/5.0.13/include -I/opt/cray/ugni/6.0.14.0-6.0.7.1_3.22__gea11d3d.ari/include -I/opt/cray/udreg/2.3.2-6.0.7.1_5.22__g5196236.ari/include -I/opt/cray/wlm_detect/1.3.3-6.0.7.1_5.10__g7109084.ari/include -I/opt/cray/krca/2.2.4-6.0.7.1_5.56__g8505b97.ari/include -I/opt/cray-hss-devel/8.0.0/include -xCORE-AVX2 -static -D__CRAYXC -D__CRAY_HASWELL -D__CRAYXT_COMPUTE_LINUX_TARGET -DCRAYPAT -debug pubnames -g -O2 -Qlocation,ld,/opt/cray/pe/perftools/7.0.0/libexec64 -L/opt/cray/pe/perftools/7.0.0/lib64 -O3 -qopt-report=3 -mkl=sequential -o matrix.O3 -L/opt/cray/dmapp/default/lib64 -L/opt/cray/pe/mpt/7.7.0/gni/mpich-intel/16.0/lib -L/opt/cray/dmapp/default/lib64 -L/opt/cray/pe/mpt/7.7.0/gni/mpich-intel/16.0/lib -L/opt/cray/rca/2.2.18-6.0.7.1_5.61__g2aa4f39.ari/lib64 -L/opt/cray/alps/6.6.43-6.0.7.1_5.61__ga796da32.ari/lib64 -L/opt/cray/xpmem/2.2.15-6.0.7.1_5.20__g7549d06.ari/lib64 -L/opt/cray/pe/pmi/5.0.13/lib64 -L/opt/cray/ugni/6.0.14.0-6.0.7.1_3.22__gea11d3d.ari/lib64 -L/opt/cray/udreg/2.3.2-6.0.7.1_5.22__g5196236.ari/lib64 -L/opt/cray/pe/atp/2.1.1/libApp -L/opt/cray/wlm_detect/1.3.3-6.0.7.1_5.10__g7109084.ari/lib64 -Wl,--no-as-needed,-lAtpSigHandler,-lAtpSigHCommData -Wl,--undefined=_ATP_Data_Globals -Wl,--undefined=__atpHandlerInstall -lpthread -lmpichf90_intel -lrt -lugni -lpmi -lm -lpthread -ldl -lmpich_intel -lrt -lugni -lpthread -lpmi -lm -ldl -lpmi -lpthread -lalpslli -lpthread -lwlm_detect -lalpsutil -lpthread -lrca -lugni -lpthread -lxpmem -ludreg -fno-omit-frame-pointer -Wl,--as-needed,-limf,--no-as-needed -Wl,--as-needed,-lm,--no-as-needed -Wl,--as-needed,-lpthread,--no-as-needed
+
+    Report from: Interprocedural optimizations [ipo]
+
+INLINING OPTION VALUES:
+  -inline-factor: 100
+  -inline-min-size: 30
+  -inline-max-size: 230
+  -inline-max-total-size: 2000
+  -inline-max-per-routine: 10000
+  -inline-max-per-compile: 500000
+
+
+Begin optimization report for: MATRIX
+
+    Report from: Interprocedural optimizations [ipo]
+
+INLINE REPORT: (MATRIX) [1] matrix.f90(380,9)
+  -> EXTERN: (380,9) for_set_reentrancy
+  -> (390,6) TIME_ALL
+  -> (393,6) TIME_ALL
+  -> (396,6) TIME_ALL
+
+
+    Report from: Code generation optimizations [cg]
+
+matrix.f90(380,9):remark #34051: REGISTER ALLOCATION : [MAIN__] matrix.f90:380
+
+    Hardware registers
+        Reserved     :    2[ rsp rip]
+        Available    :   39[ rax rdx rcx rbx rbp rsi rdi r8-r15 mm0-mm7 zmm0-zmm15]
+        Callee-save  :    6[ rbx rbp r12-r15]
+        Assigned     :    3[ rax rsi rdi]
+        
+    Routine temporaries
+        Total         :      19
+            Global    :       8
+            Local     :      11
+        Regenerable   :      13
+        Spilled       :       0
+        
+    Routine stack
+        Variables     :       4 bytes*
+            Reads     :       2 [2.00e+00 ~ 6.2%]
+            Writes    :       2 [2.00e+00 ~ 6.2%]
+        Spills        :       0 bytes*
+            Reads     :       0 [0.00e+00 ~ 0.0%]
+            Writes    :       0 [0.00e+00 ~ 0.0%]
+    
+    Notes
+    
+        *Non-overlapping variables and spills may share stack space,
+         so the total stack size might be less than this.
+    
+
+===========================================================================
+
+Begin optimization report for: TIME_ALL
+
+    Report from: Interprocedural optimizations [ipo]
+
+INLINE REPORT: (TIME_ALL) [2] matrix.f90(7,12)
+  -> EXTERN: (18,3) for_write_seq_lis
+  -> EXTERN: (19,3) for_write_seq_fmt_xmit
+  -> EXTERN: (19,3) for_write_seq_fmt
+  -> EXTERN: (20,3) for_write_seq_fmt_xmit
+  -> EXTERN: (20,3) for_write_seq_fmt
+  -> EXTERN: (22,3) for_alloc_allocatable
+  -> EXTERN: (22,3) for_check_mult_overflow64
+  -> EXTERN: (22,3) for_alloc_allocatable
+  -> EXTERN: (22,3) for_check_mult_overflow64
+  -> EXTERN: (22,3) for_alloc_allocatable
+  -> EXTERN: (22,3) for_check_mult_overflow64
+  -> EXTERN: (23,8) for_random_number
+  -> EXTERN: (24,8) for_random_number
+  -> EXTERN: (27,8) for_cpusec
+  -> EXTERN: (28,8) for_date_and_time
+  -> (30,12) TIMEIT::MATMUL1
+  -> EXTERN: (32,8) for_cpusec
+  -> EXTERN: (33,8) for_date_and_time
+  -> INLINE: (36,13) TIMEIT::ELAPSEDTIME
+  -> EXTERN: (39,8) for_cpusec
+  -> EXTERN: (40,8) for_date_and_time
+  -> INLINE: (42,12) TIMEIT::MATMUL2
+  -> EXTERN: (44,8) for_cpusec
+  -> EXTERN: (45,8) for_date_and_time
+  -> INLINE: (48,13) TIMEIT::ELAPSEDTIME
+  -> EXTERN: (51,8) for_cpusec
+  -> EXTERN: (52,8) for_date_and_time
+  -> INLINE: (54,12) TIMEIT::MATMUL3
+  -> EXTERN: (56,8) for_cpusec
+  -> EXTERN: (57,8) for_date_and_time
+  -> INLINE: (60,13) TIMEIT::ELAPSEDTIME
+  -> EXTERN: (63,8) for_cpusec
+  -> EXTERN: (64,8) for_date_and_time
+  -> INLINE: (66,12) TIMEIT::MATMUL4
+  -> EXTERN: (68,8) for_cpusec
+  -> EXTERN: (69,8) for_date_and_time
+  -> INLINE: (72,13) TIMEIT::ELAPSEDTIME
+  -> EXTERN: (75,8) for_cpusec
+  -> EXTERN: (76,8) for_date_and_time
+  -> INLINE: (78,12) TIMEIT::MATMUL5
+  -> EXTERN: (80,8) for_cpusec
+  -> EXTERN: (81,8) for_date_and_time
+  -> INLINE: (84,13) TIMEIT::ELAPSEDTIME
+  -> CP_CLONE (86,8) TIMEIT::PRINTTIMES..0
+  -> EXTERN: (88,3) for_dealloc_allocatable
+  -> EXTERN: (89,3) for_dealloc_allocatable
+  -> EXTERN: (90,3) for_dealloc_allocatable
+  -> EXTERN: (91,1) for_dealloc_allocatable
+  -> EXTERN: (91,1) for_dealloc_allocatable
+  -> EXTERN: (91,1) for_dealloc_allocatable
+
+
+    Report from: Loop nest, Vector & Auto-parallelization optimizations [loop, vec, par]
+
+
+LOOP BEGIN at matrix.f90(23,8)
+   remark #15542: loop was not vectorized: inner loop was already vectorized
+
+   LOOP BEGIN at matrix.f90(23,8)
+   <Peeled loop for vectorization>
+      remark #25015: Estimate of max trip count of loop=3
+   LOOP END
+
+   LOOP BEGIN at matrix.f90(23,8)
+      remark #15300: LOOP WAS VECTORIZED
+      remark #15442: entire loop may be executed in remainder
+      remark #15451: unmasked unaligned unit stride stores: 1 
+      remark #15475: --- begin vector cost summary ---
+      remark #15476: scalar cost: 103 
+      remark #15477: vector cost: 19.000 
+      remark #15478: estimated potential speedup: 5.100 
+      remark #15482: vectorized math library calls: 1 
+      remark #15488: --- end vector cost summary ---
+   LOOP END
+
+   LOOP BEGIN at matrix.f90(23,8)
+   <Remainder loop for vectorization>
+   LOOP END
+LOOP END
+
+LOOP BEGIN at matrix.f90(24,8)
+   remark #15542: loop was not vectorized: inner loop was already vectorized
+
+   LOOP BEGIN at matrix.f90(24,8)
+   <Peeled loop for vectorization>
+      remark #25015: Estimate of max trip count of loop=3
+   LOOP END
+
+   LOOP BEGIN at matrix.f90(24,8)
+      remark #15300: LOOP WAS VECTORIZED
+      remark #15442: entire loop may be executed in remainder
+      remark #15451: unmasked unaligned unit stride stores: 1 
+      remark #15475: --- begin vector cost summary ---
+      remark #15476: scalar cost: 103 
+      remark #15477: vector cost: 19.000 
+      remark #15478: estimated potential speedup: 5.100 
+      remark #15482: vectorized math library calls: 1 
+      remark #15488: --- end vector cost summary ---
+   LOOP END
+
+   LOOP BEGIN at matrix.f90(24,8)
+   <Remainder loop for vectorization>
+   LOOP END
+LOOP END
+
+LOOP BEGIN at matrix.f90(29,3)
+   remark #15344: loop was not vectorized: vector dependence prevents vectorization. First dependence is shown below. Use level 5 report for details
+LOOP END
+
+LOOP BEGIN at matrix.f90(34,3)
+   remark #15335: loop was not vectorized: vectorization possible but seems inefficient. Use vector always directive or -vec-threshold0 to override 
+   remark #15450: unmasked unaligned unit stride loads: 1 
+   remark #15451: unmasked unaligned unit stride stores: 1 
+   remark #15475: --- begin vector cost summary ---
+   remark #15476: scalar cost: 4 
+   remark #15477: vector cost: 0.870 
+   remark #15478: estimated potential speedup: 1.730 
+   remark #15488: --- end vector cost summary ---
+   remark #25436: completely unrolled by 13  
+LOOP END
+
+LOOP BEGIN at matrix.f90(34,3)
+   remark #15301: MATERIALIZED LOOP WAS VECTORIZED
+   remark #15451: unmasked unaligned unit stride stores: 1 
+   remark #15475: --- begin vector cost summary ---
+   remark #15476: scalar cost: 2 
+   remark #15477: vector cost: 0.370 
+   remark #15478: estimated potential speedup: 3.590 
+   remark #15488: --- end vector cost summary ---
+   remark #25015: Estimate of max trip count of loop=1
+LOOP END
+
+LOOP BEGIN at matrix.f90(34,3)
+<Remainder loop for vectorization>
+   remark #25436: completely unrolled by 2  
+LOOP END
+
+LOOP BEGIN at matrix.f90(41,3)
+   remark #15542: loop was not vectorized: inner loop was already vectorized
+
+   LOOP BEGIN at matrix.f90(319,7) inlined into matrix.f90(42,12)
+      remark #15542: loop was not vectorized: inner loop was already vectorized
+
+      LOOP BEGIN at matrix.f90(319,7) inlined into matrix.f90(42,12)
+         remark #25408: memset generated
+         remark #15542: loop was not vectorized: inner loop was already vectorized
+
+         LOOP BEGIN at matrix.f90(319,7) inlined into matrix.f90(42,12)
+            remark #15300: LOOP WAS VECTORIZED
+            remark #15451: unmasked unaligned unit stride stores: 1 
+            remark #15475: --- begin vector cost summary ---
+            remark #15476: scalar cost: 3 
+            remark #15477: vector cost: 1.250 
+            remark #15478: estimated potential speedup: 1.440 
+            remark #15488: --- end vector cost summary ---
+            remark #25015: Estimate of max trip count of loop=1
+         LOOP END
+
+         LOOP BEGIN at matrix.f90(319,7) inlined into matrix.f90(42,12)
+         <Remainder loop for vectorization>
+            remark #25015: Estimate of max trip count of loop=12
+         LOOP END
+      LOOP END
+   LOOP END
+
+   LOOP BEGIN at matrix.f90(319,7) inlined into matrix.f90(42,12)
+      remark #25444: Loopnest Interchanged: ( 1 2 3 ) --> ( 2 1 3 )
+      remark #15542: loop was not vectorized: inner loop was already vectorized
+
+      LOOP BEGIN at matrix.f90(319,7) inlined into matrix.f90(42,12)
+         remark #15542: loop was not vectorized: inner loop was already vectorized
+
+         LOOP BEGIN at matrix.f90(319,7) inlined into matrix.f90(42,12)
+            remark #15542: loop was not vectorized: inner loop was already vectorized
+
+            LOOP BEGIN at matrix.f90(319,7) inlined into matrix.f90(42,12)
+               remark #25442: blocked by 125   (pre-vector) 
+               remark #25440: unrolled and jammed by 4   (pre-vector) 
+               remark #15542: loop was not vectorized: inner loop was already vectorized
+               remark #25015: Estimate of max trip count of loop=125
+
+               LOOP BEGIN at matrix.f90(319,7) inlined into matrix.f90(42,12)
+                  remark #25442: blocked by 125   (pre-vector) 
+                  remark #25440: unrolled and jammed by 4   (pre-vector) 
+                  remark #15542: loop was not vectorized: inner loop was already vectorized
+                  remark #25015: Estimate of max trip count of loop=125
+
+                  LOOP BEGIN at matrix.f90(319,7) inlined into matrix.f90(42,12)
+                     remark #25442: blocked by 128   (pre-vector) 
+                     remark #15300: LOOP WAS VECTORIZED
+                     remark #15450: unmasked unaligned unit stride loads: 8 
+                     remark #15451: unmasked unaligned unit stride stores: 16 
+                     remark #15475: --- begin vector cost summary ---
+                     remark #15476: scalar cost: 142 
+                     remark #15477: vector cost: 38.000 
+                     remark #15478: estimated potential speedup: 3.670 
+                     remark #15488: --- end vector cost summary ---
+                     remark #25456: Number of Array Refs Scalar Replaced In Loop: 36
+                     remark #25015: Estimate of max trip count of loop=32
+                  LOOP END
+
+                  LOOP BEGIN at matrix.f90(319,7) inlined into matrix.f90(42,12)
+                  <Remainder loop for vectorization>
+                     remark #25015: Estimate of max trip count of loop=128
+                  LOOP END
+               LOOP END
+
+               LOOP BEGIN at matrix.f90(319,7) inlined into matrix.f90(42,12)
+               <Remainder>
+                  remark #15542: loop was not vectorized: inner loop was already vectorized
+                  remark #25015: Estimate of max trip count of loop=125
+
+                  LOOP BEGIN at matrix.f90(319,7) inlined into matrix.f90(42,12)
+                     remark #15300: LOOP WAS VECTORIZED
+                     remark #15450: unmasked unaligned unit stride loads: 5 
+                     remark #15451: unmasked unaligned unit stride stores: 4 
+                     remark #15475: --- begin vector cost summary ---
+                     remark #15476: scalar cost: 36 
+                     remark #15477: vector cost: 10.250 
+                     remark #15478: estimated potential speedup: 3.430 
+                     remark #15488: --- end vector cost summary ---
+                     remark #25456: Number of Array Refs Scalar Replaced In Loop: 3
+                     remark #25015: Estimate of max trip count of loop=32
+                  LOOP END
+
+                  LOOP BEGIN at matrix.f90(319,7) inlined into matrix.f90(42,12)
+                  <Remainder loop for vectorization>
+                     remark #25015: Estimate of max trip count of loop=128
+                  LOOP END
+               LOOP END
+            LOOP END
+
+            LOOP BEGIN at matrix.f90(319,7) inlined into matrix.f90(42,12)
+            <Remainder>
+               remark #15542: loop was not vectorized: inner loop was already vectorized
+               remark #25015: Estimate of max trip count of loop=125
+
+               LOOP BEGIN at matrix.f90(319,7) inlined into matrix.f90(42,12)
+                  remark #15542: loop was not vectorized: inner loop was already vectorized
+                  remark #25015: Estimate of max trip count of loop=125
+
+                  LOOP BEGIN at matrix.f90(319,7) inlined into matrix.f90(42,12)
+                  <Peeled loop for vectorization>
+                     remark #25015: Estimate of max trip count of loop=3
+                  LOOP END
+
+                  LOOP BEGIN at matrix.f90(319,7) inlined into matrix.f90(42,12)
+                     remark #15300: LOOP WAS VECTORIZED
+                     remark #15442: entire loop may be executed in remainder
+                     remark #15448: unmasked aligned unit stride loads: 1 
+                     remark #15449: unmasked aligned unit stride stores: 1 
+                     remark #15450: unmasked unaligned unit stride loads: 1 
+                     remark #15475: --- begin vector cost summary ---
+                     remark #15476: scalar cost: 9 
+                     remark #15477: vector cost: 2.000 
+                     remark #15478: estimated potential speedup: 3.860 
+                     remark #15488: --- end vector cost summary ---
+                     remark #25015: Estimate of max trip count of loop=32
+                  LOOP END
+
+                  LOOP BEGIN at matrix.f90(319,7) inlined into matrix.f90(42,12)
+                  <Remainder loop for vectorization>
+                     remark #25015: Estimate of max trip count of loop=128
+                  LOOP END
+               LOOP END
+            LOOP END
+         LOOP END
+      LOOP END
+   LOOP END
+LOOP END
+
+LOOP BEGIN at matrix.f90(46,3)
+   remark #15335: loop was not vectorized: vectorization possible but seems inefficient. Use vector always directive or -vec-threshold0 to override 
+   remark #15450: unmasked unaligned unit stride loads: 1 
+   remark #15451: unmasked unaligned unit stride stores: 1 
+   remark #15475: --- begin vector cost summary ---
+   remark #15476: scalar cost: 4 
+   remark #15477: vector cost: 0.870 
+   remark #15478: estimated potential speedup: 1.570 
+   remark #15488: --- end vector cost summary ---
+   remark #25436: completely unrolled by 15  
+LOOP END
+
+LOOP BEGIN at matrix.f90(46,3)
+   remark #15301: MATERIALIZED LOOP WAS VECTORIZED
+   remark #15449: unmasked aligned unit stride stores: 1 
+   remark #15475: --- begin vector cost summary ---
+   remark #15476: scalar cost: 2 
+   remark #15477: vector cost: 0.180 
+   remark #15478: estimated potential speedup: 10.660 
+   remark #15488: --- end vector cost summary ---
+LOOP END
+
+LOOP BEGIN at matrix.f90(53,3)
+   remark #15542: loop was not vectorized: inner loop was already vectorized
+
+   LOOP BEGIN at matrix.f90(329,3) inlined into matrix.f90(54,12)
+   <Distributed chunk1>
+      remark #25426: Loop Distributed (2 way) 
+      remark #15542: loop was not vectorized: inner loop was already vectorized
+
+      LOOP BEGIN at matrix.f90(330,5) inlined into matrix.f90(54,12)
+         remark #25408: memset generated
+         remark #15542: loop was not vectorized: inner loop was already vectorized
+
+         LOOP BEGIN at matrix.f90(330,5) inlined into matrix.f90(54,12)
+            remark #15300: LOOP WAS VECTORIZED
+            remark #15451: unmasked unaligned unit stride stores: 1 
+            remark #15475: --- begin vector cost summary ---
+            remark #15476: scalar cost: 3 
+            remark #15477: vector cost: 1.250 
+            remark #15478: estimated potential speedup: 1.440 
+            remark #15488: --- end vector cost summary ---
+            remark #25015: Estimate of max trip count of loop=1
+         LOOP END
+
+         LOOP BEGIN at matrix.f90(330,5) inlined into matrix.f90(54,12)
+         <Remainder loop for vectorization>
+            remark #25015: Estimate of max trip count of loop=12
+         LOOP END
+      LOOP END
+   LOOP END
+
+   LOOP BEGIN at matrix.f90(329,3) inlined into matrix.f90(54,12)
+   <Distributed chunk2>
+      remark #15542: loop was not vectorized: inner loop was already vectorized
+
+      LOOP BEGIN at matrix.f90(334,5) inlined into matrix.f90(54,12)
+         remark #25461: Imperfect Loop Unroll-Jammed by 2   (pre-vector) 
+         remark #15542: loop was not vectorized: inner loop was already vectorized
+
+         LOOP BEGIN at matrix.f90(336,7) inlined into matrix.f90(54,12)
+         <Peeled loop for vectorization>
+            remark #25456: Number of Array Refs Scalar Replaced In Loop: 2
+            remark #25015: Estimate of max trip count of loop=3
+         LOOP END
+
+         LOOP BEGIN at matrix.f90(336,7) inlined into matrix.f90(54,12)
+            remark #15300: LOOP WAS VECTORIZED
+            remark #15442: entire loop may be executed in remainder
+            remark #15448: unmasked aligned unit stride loads: 1 
+            remark #15449: unmasked aligned unit stride stores: 2 
+            remark #15450: unmasked unaligned unit stride loads: 2 
+            remark #15475: --- begin vector cost summary ---
+            remark #15476: scalar cost: 17 
+            remark #15477: vector cost: 4.000 
+            remark #15478: estimated potential speedup: 3.710 
+            remark #15488: --- end vector cost summary ---
+            remark #25456: Number of Array Refs Scalar Replaced In Loop: 8
+         LOOP END
+
+         LOOP BEGIN at matrix.f90(336,7) inlined into matrix.f90(54,12)
+         <Remainder loop for vectorization>
+            remark #15301: REMAINDER LOOP WAS VECTORIZED
+            remark #25456: Number of Array Refs Scalar Replaced In Loop: 2
+         LOOP END
+
+         LOOP BEGIN at matrix.f90(336,7) inlined into matrix.f90(54,12)
+         <Remainder loop for vectorization>
+         LOOP END
+      LOOP END
+
+      LOOP BEGIN at matrix.f90(334,5) inlined into matrix.f90(54,12)
+      <Remainder>
+         remark #15542: loop was not vectorized: inner loop was already vectorized
+
+         LOOP BEGIN at matrix.f90(336,7) inlined into matrix.f90(54,12)
+         <Peeled loop for vectorization>
+            remark #25015: Estimate of max trip count of loop=3
+         LOOP END
+
+         LOOP BEGIN at matrix.f90(336,7) inlined into matrix.f90(54,12)
+            remark #15300: LOOP WAS VECTORIZED
+            remark #15442: entire loop may be executed in remainder
+            remark #15450: unmasked unaligned unit stride loads: 2 
+            remark #15451: unmasked unaligned unit stride stores: 1 
+            remark #15475: --- begin vector cost summary ---
+            remark #15476: scalar cost: 8 
+            remark #15477: vector cost: 2.000 
+            remark #15478: estimated potential speedup: 3.760 
+            remark #15488: --- end vector cost summary ---
+         LOOP END
+
+         LOOP BEGIN at matrix.f90(336,7) inlined into matrix.f90(54,12)
+         <Remainder loop for vectorization>
+         LOOP END
+      LOOP END
+   LOOP END
+LOOP END
+
+LOOP BEGIN at matrix.f90(58,3)
+   remark #15335: loop was not vectorized: vectorization possible but seems inefficient. Use vector always directive or -vec-threshold0 to override 
+   remark #15450: unmasked unaligned unit stride loads: 1 
+   remark #15451: unmasked unaligned unit stride stores: 1 
+   remark #15475: --- begin vector cost summary ---
+   remark #15476: scalar cost: 4 
+   remark #15477: vector cost: 0.870 
+   remark #15478: estimated potential speedup: 1.640 
+   remark #15488: --- end vector cost summary ---
+   remark #25436: completely unrolled by 14  
+LOOP END
+
+LOOP BEGIN at matrix.f90(58,3)
+   remark #15301: MATERIALIZED LOOP WAS VECTORIZED
+   remark #15451: unmasked unaligned unit stride stores: 1 
+   remark #15475: --- begin vector cost summary ---
+   remark #15476: scalar cost: 2 
+   remark #15477: vector cost: 0.370 
+   remark #15478: estimated potential speedup: 4.240 
+   remark #15488: --- end vector cost summary ---
+   remark #25015: Estimate of max trip count of loop=1
+LOOP END
+
+LOOP BEGIN at matrix.f90(58,3)
+<Remainder loop for vectorization>
+   remark #25436: completely unrolled by 1  
+LOOP END
+
+LOOP BEGIN at matrix.f90(65,3)
+   remark #15542: loop was not vectorized: inner loop was already vectorized
+
+   LOOP BEGIN at matrix.f90(349,3) inlined into matrix.f90(66,12)
+   <Distributed chunk1>
+      remark #25426: Loop Distributed (2 way) 
+      remark #15542: loop was not vectorized: inner loop was already vectorized
+
+      LOOP BEGIN at matrix.f90(350,5) inlined into matrix.f90(66,12)
+         remark #25408: memset generated
+         remark #15542: loop was not vectorized: inner loop was already vectorized
+
+         LOOP BEGIN at matrix.f90(350,5) inlined into matrix.f90(66,12)
+            remark #15300: LOOP WAS VECTORIZED
+            remark #15451: unmasked unaligned unit stride stores: 1 
+            remark #15475: --- begin vector cost summary ---
+            remark #15476: scalar cost: 3 
+            remark #15477: vector cost: 1.250 
+            remark #15478: estimated potential speedup: 1.440 
+            remark #15488: --- end vector cost summary ---
+            remark #25015: Estimate of max trip count of loop=1
+         LOOP END
+
+         LOOP BEGIN at matrix.f90(350,5) inlined into matrix.f90(66,12)
+         <Remainder loop for vectorization>
+            remark #25015: Estimate of max trip count of loop=12
+         LOOP END
+      LOOP END
+   LOOP END
+
+   LOOP BEGIN at matrix.f90(349,3) inlined into matrix.f90(66,12)
+   <Distributed chunk2>
+      remark #15542: loop was not vectorized: inner loop was already vectorized
+
+      LOOP BEGIN at matrix.f90(349,3) inlined into matrix.f90(66,12)
+         remark #15542: loop was not vectorized: inner loop was already vectorized
+
+         LOOP BEGIN at matrix.f90(349,3) inlined into matrix.f90(66,12)
+            remark #15542: loop was not vectorized: inner loop was already vectorized
+
+            LOOP BEGIN at matrix.f90(349,3) inlined into matrix.f90(66,12)
+            <Distributed chunk2>
+               remark #25442: blocked by 125   (pre-vector) 
+               remark #25440: unrolled and jammed by 4   (pre-vector) 
+               remark #15542: loop was not vectorized: inner loop was already vectorized
+               remark #25015: Estimate of max trip count of loop=125
+
+               LOOP BEGIN at matrix.f90(354,5) inlined into matrix.f90(66,12)
+                  remark #25442: blocked by 125   (pre-vector) 
+                  remark #25440: unrolled and jammed by 4   (pre-vector) 
+                  remark #15542: loop was not vectorized: inner loop was already vectorized
+                  remark #25015: Estimate of max trip count of loop=125
+
+                  LOOP BEGIN at matrix.f90(355,7) inlined into matrix.f90(66,12)
+                     remark #25442: blocked by 128   (pre-vector) 
+                     remark #15300: LOOP WAS VECTORIZED
+                     remark #15450: unmasked unaligned unit stride loads: 8 
+                     remark #15451: unmasked unaligned unit stride stores: 16 
+                     remark #15475: --- begin vector cost summary ---
+                     remark #15476: scalar cost: 142 
+                     remark #15477: vector cost: 38.000 
+                     remark #15478: estimated potential speedup: 3.670 
+                     remark #15488: --- end vector cost summary ---
+                     remark #25456: Number of Array Refs Scalar Replaced In Loop: 36
+                     remark #25015: Estimate of max trip count of loop=32
+                  LOOP END
+
+                  LOOP BEGIN at matrix.f90(355,7) inlined into matrix.f90(66,12)
+                  <Remainder loop for vectorization>
+                     remark #25015: Estimate of max trip count of loop=128
+                  LOOP END
+               LOOP END
+
+               LOOP BEGIN at matrix.f90(354,5) inlined into matrix.f90(66,12)
+               <Remainder>
+                  remark #15542: loop was not vectorized: inner loop was already vectorized
+                  remark #25015: Estimate of max trip count of loop=125
+
+                  LOOP BEGIN at matrix.f90(355,7) inlined into matrix.f90(66,12)
+                     remark #15300: LOOP WAS VECTORIZED
+                     remark #15450: unmasked unaligned unit stride loads: 5 
+                     remark #15451: unmasked unaligned unit stride stores: 4 
+                     remark #15475: --- begin vector cost summary ---
+                     remark #15476: scalar cost: 36 
+                     remark #15477: vector cost: 10.250 
+                     remark #15478: estimated potential speedup: 3.430 
+                     remark #15488: --- end vector cost summary ---
+                     remark #25456: Number of Array Refs Scalar Replaced In Loop: 3
+                     remark #25015: Estimate of max trip count of loop=32
+                  LOOP END
+
+                  LOOP BEGIN at matrix.f90(355,7) inlined into matrix.f90(66,12)
+                  <Remainder loop for vectorization>
+                     remark #25015: Estimate of max trip count of loop=128
+                  LOOP END
+               LOOP END
+            LOOP END
+
+            LOOP BEGIN at matrix.f90(349,3) inlined into matrix.f90(66,12)
+            <Remainder, Distributed chunk2>
+               remark #15542: loop was not vectorized: inner loop was already vectorized
+               remark #25015: Estimate of max trip count of loop=125
+
+               LOOP BEGIN at matrix.f90(354,5) inlined into matrix.f90(66,12)
+                  remark #15542: loop was not vectorized: inner loop was already vectorized
+                  remark #25015: Estimate of max trip count of loop=125
+
+                  LOOP BEGIN at matrix.f90(355,7) inlined into matrix.f90(66,12)
+                  <Peeled loop for vectorization>
+                     remark #25015: Estimate of max trip count of loop=3
+                  LOOP END
+
+                  LOOP BEGIN at matrix.f90(355,7) inlined into matrix.f90(66,12)
+                     remark #15300: LOOP WAS VECTORIZED
+                     remark #15442: entire loop may be executed in remainder
+                     remark #15448: unmasked aligned unit stride loads: 1 
+                     remark #15449: unmasked aligned unit stride stores: 1 
+                     remark #15450: unmasked unaligned unit stride loads: 1 
+                     remark #15475: --- begin vector cost summary ---
+                     remark #15476: scalar cost: 9 
+                     remark #15477: vector cost: 2.000 
+                     remark #15478: estimated potential speedup: 3.860 
+                     remark #15488: --- end vector cost summary ---
+                     remark #25015: Estimate of max trip count of loop=32
+                  LOOP END
+
+                  LOOP BEGIN at matrix.f90(355,7) inlined into matrix.f90(66,12)
+                  <Remainder loop for vectorization>
+                     remark #25015: Estimate of max trip count of loop=128
+                  LOOP END
+               LOOP END
+            LOOP END
+         LOOP END
+      LOOP END
+   LOOP END
+LOOP END
+
+LOOP BEGIN at matrix.f90(70,3)
+   remark #15335: loop was not vectorized: vectorization possible but seems inefficient. Use vector always directive or -vec-threshold0 to override 
+   remark #15450: unmasked unaligned unit stride loads: 1 
+   remark #15451: unmasked unaligned unit stride stores: 1 
+   remark #15475: --- begin vector cost summary ---
+   remark #15476: scalar cost: 4 
+   remark #15477: vector cost: 0.870 
+   remark #15478: estimated potential speedup: 1.640 
+   remark #15488: --- end vector cost summary ---
+   remark #25436: completely unrolled by 14  
+LOOP END
+
+LOOP BEGIN at matrix.f90(70,3)
+   remark #15301: MATERIALIZED LOOP WAS VECTORIZED
+   remark #15451: unmasked unaligned unit stride stores: 1 
+   remark #15475: --- begin vector cost summary ---
+   remark #15476: scalar cost: 2 
+   remark #15477: vector cost: 0.370 
+   remark #15478: estimated potential speedup: 4.240 
+   remark #15488: --- end vector cost summary ---
+   remark #25015: Estimate of max trip count of loop=1
+LOOP END
+
+LOOP BEGIN at matrix.f90(70,3)
+<Remainder loop for vectorization>
+   remark #25436: completely unrolled by 1  
+LOOP END
+
+LOOP BEGIN at matrix.f90(77,3)
+   remark #15542: loop was not vectorized: inner loop was already vectorized
+
+   LOOP BEGIN at matrix.f90(368,3) inlined into matrix.f90(78,12)
+   <Distributed chunk1>
+      remark #25426: Loop Distributed (2 way) 
+      remark #15542: loop was not vectorized: inner loop was already vectorized
+
+      LOOP BEGIN at matrix.f90(369,5) inlined into matrix.f90(78,12)
+      <Distributed chunk1>
+         remark #25426: Loop Distributed (2 way) 
+         remark #25408: memset generated
+         remark #15542: loop was not vectorized: inner loop was already vectorized
+
+         LOOP BEGIN at matrix.f90(369,5) inlined into matrix.f90(78,12)
+         <Distributed chunk1>
+            remark #15301: PARTIAL LOOP WAS VECTORIZED
+            remark #15451: unmasked unaligned unit stride stores: 1 
+            remark #15475: --- begin vector cost summary ---
+            remark #15476: scalar cost: 3 
+            remark #15477: vector cost: 1.250 
+            remark #15478: estimated potential speedup: 1.440 
+            remark #15488: --- end vector cost summary ---
+            remark #25015: Estimate of max trip count of loop=1
+         LOOP END
+
+         LOOP BEGIN at matrix.f90(369,5) inlined into matrix.f90(78,12)
+         <Remainder loop for vectorization, Distributed chunk1>
+            remark #25015: Estimate of max trip count of loop=12
+         LOOP END
+      LOOP END
+   LOOP END
+
+   LOOP BEGIN at matrix.f90(368,3) inlined into matrix.f90(78,12)
+   <Distributed chunk2>
+      remark #25444: Loopnest Interchanged: ( 1 2 3 ) --> ( 1 3 2 )
+      remark #15542: loop was not vectorized: inner loop was already vectorized
+
+      LOOP BEGIN at matrix.f90(368,3) inlined into matrix.f90(78,12)
+      <Distributed chunk2>
+         remark #15542: loop was not vectorized: inner loop was already vectorized
+
+         LOOP BEGIN at matrix.f90(368,3) inlined into matrix.f90(78,12)
+            remark #15542: loop was not vectorized: inner loop was already vectorized
+
+            LOOP BEGIN at matrix.f90(368,3) inlined into matrix.f90(78,12)
+            <Distributed chunk2>
+               remark #25442: blocked by 125   (pre-vector) 
+               remark #25440: unrolled and jammed by 4   (pre-vector) 
+               remark #15542: loop was not vectorized: inner loop was already vectorized
+               remark #25015: Estimate of max trip count of loop=125
+
+               LOOP BEGIN at matrix.f90(371,7) inlined into matrix.f90(78,12)
+               <Distributed chunk2>
+                  remark #25442: blocked by 125   (pre-vector) 
+                  remark #25440: unrolled and jammed by 4   (pre-vector) 
+                  remark #15542: loop was not vectorized: inner loop was already vectorized
+                  remark #25015: Estimate of max trip count of loop=125
+
+                  LOOP BEGIN at matrix.f90(369,5) inlined into matrix.f90(78,12)
+                     remark #25442: blocked by 128   (pre-vector) 
+                     remark #15301: PERMUTED LOOP WAS VECTORIZED
+                     remark #15450: unmasked unaligned unit stride loads: 8 
+                     remark #15451: unmasked unaligned unit stride stores: 16 
+                     remark #15475: --- begin vector cost summary ---
+                     remark #15476: scalar cost: 142 
+                     remark #15477: vector cost: 38.000 
+                     remark #15478: estimated potential speedup: 3.670 
+                     remark #15488: --- end vector cost summary ---
+                     remark #25456: Number of Array Refs Scalar Replaced In Loop: 36
+                     remark #25015: Estimate of max trip count of loop=32
+                  LOOP END
+
+                  LOOP BEGIN at matrix.f90(369,5) inlined into matrix.f90(78,12)
+                  <Remainder loop for vectorization>
+                     remark #25015: Estimate of max trip count of loop=128
+                  LOOP END
+               LOOP END
+
+               LOOP BEGIN at matrix.f90(371,7) inlined into matrix.f90(78,12)
+               <Remainder, Distributed chunk2>
+                  remark #15542: loop was not vectorized: inner loop was already vectorized
+                  remark #25015: Estimate of max trip count of loop=125
+
+                  LOOP BEGIN at matrix.f90(369,5) inlined into matrix.f90(78,12)
+                     remark #15301: PERMUTED LOOP WAS VECTORIZED
+                     remark #15450: unmasked unaligned unit stride loads: 5 
+                     remark #15451: unmasked unaligned unit stride stores: 4 
+                     remark #15475: --- begin vector cost summary ---
+                     remark #15476: scalar cost: 36 
+                     remark #15477: vector cost: 10.250 
+                     remark #15478: estimated potential speedup: 3.430 
+                     remark #15488: --- end vector cost summary ---
+                     remark #25456: Number of Array Refs Scalar Replaced In Loop: 3
+                     remark #25015: Estimate of max trip count of loop=32
+                  LOOP END
+
+                  LOOP BEGIN at matrix.f90(369,5) inlined into matrix.f90(78,12)
+                  <Remainder loop for vectorization>
+                     remark #25015: Estimate of max trip count of loop=128
+                  LOOP END
+               LOOP END
+            LOOP END
+
+            LOOP BEGIN at matrix.f90(368,3) inlined into matrix.f90(78,12)
+            <Remainder, Distributed chunk2>
+               remark #15542: loop was not vectorized: inner loop was already vectorized
+               remark #25015: Estimate of max trip count of loop=125
+
+               LOOP BEGIN at matrix.f90(371,7) inlined into matrix.f90(78,12)
+               <Distributed chunk2>
+                  remark #15542: loop was not vectorized: inner loop was already vectorized
+                  remark #25015: Estimate of max trip count of loop=125
+
+                  LOOP BEGIN at matrix.f90(369,5) inlined into matrix.f90(78,12)
+                  <Peeled loop for vectorization>
+                     remark #25015: Estimate of max trip count of loop=3
+                  LOOP END
+
+                  LOOP BEGIN at matrix.f90(369,5) inlined into matrix.f90(78,12)
+                     remark #15301: PERMUTED LOOP WAS VECTORIZED
+                     remark #15442: entire loop may be executed in remainder
+                     remark #15448: unmasked aligned unit stride loads: 1 
+                     remark #15449: unmasked aligned unit stride stores: 1 
+                     remark #15450: unmasked unaligned unit stride loads: 1 
+                     remark #15475: --- begin vector cost summary ---
+                     remark #15476: scalar cost: 9 
+                     remark #15477: vector cost: 2.000 
+                     remark #15478: estimated potential speedup: 3.860 
+                     remark #15488: --- end vector cost summary ---
+                     remark #25015: Estimate of max trip count of loop=32
+                  LOOP END
+
+                  LOOP BEGIN at matrix.f90(369,5) inlined into matrix.f90(78,12)
+                  <Remainder loop for vectorization>
+                     remark #25015: Estimate of max trip count of loop=128
+                  LOOP END
+               LOOP END
+            LOOP END
+         LOOP END
+      LOOP END
+   LOOP END
+LOOP END
+
+LOOP BEGIN at matrix.f90(82,3)
+   remark #15335: loop was not vectorized: vectorization possible but seems inefficient. Use vector always directive or -vec-threshold0 to override 
+   remark #15450: unmasked unaligned unit stride loads: 1 
+   remark #15451: unmasked unaligned unit stride stores: 1 
+   remark #15475: --- begin vector cost summary ---
+   remark #15476: scalar cost: 4 
+   remark #15477: vector cost: 0.870 
+   remark #15478: estimated potential speedup: 1.640 
+   remark #15488: --- end vector cost summary ---
+   remark #25436: completely unrolled by 14  
+LOOP END
+
+LOOP BEGIN at matrix.f90(82,3)
+   remark #15301: MATERIALIZED LOOP WAS VECTORIZED
+   remark #15451: unmasked unaligned unit stride stores: 1 
+   remark #15475: --- begin vector cost summary ---
+   remark #15476: scalar cost: 2 
+   remark #15477: vector cost: 0.370 
+   remark #15478: estimated potential speedup: 4.240 
+   remark #15488: --- end vector cost summary ---
+   remark #25015: Estimate of max trip count of loop=1
+LOOP END
+
+LOOP BEGIN at matrix.f90(82,3)
+<Remainder loop for vectorization>
+   remark #25436: completely unrolled by 1  
+LOOP END
+
+    Report from: Code generation optimizations [cg]
+
+matrix.f90(319,7):remark #34014: optimization advice for memset: increase the destination's alignment to 16 (and use __assume_aligned) to speed up library implementation
+matrix.f90(319,7):remark #34026: call to memset implemented as a call to optimized library version
+matrix.f90(331,7):remark #34014: optimization advice for memset: increase the destination's alignment to 16 (and use __assume_aligned) to speed up library implementation
+matrix.f90(331,7):remark #34026: call to memset implemented as a call to optimized library version
+matrix.f90(351,7):remark #34014: optimization advice for memset: increase the destination's alignment to 16 (and use __assume_aligned) to speed up library implementation
+matrix.f90(351,7):remark #34026: call to memset implemented as a call to optimized library version
+matrix.f90(370,7):remark #34014: optimization advice for memset: increase the destination's alignment to 16 (and use __assume_aligned) to speed up library implementation
+matrix.f90(370,7):remark #34026: call to memset implemented as a call to optimized library version
+matrix.f90(7,12):remark #34051: REGISTER ALLOCATION : [timeit_mp_time_all_] matrix.f90:7
+
+    Hardware registers
+        Reserved     :    2[ rsp rip]
+        Available    :   39[ rax rdx rcx rbx rbp rsi rdi r8-r15 mm0-mm7 zmm0-zmm15]
+        Callee-save  :    6[ rbx rbp r12-r15]
+        Assigned     :   30[ rax rdx rcx rbx rsi rdi r8-r15 zmm0-zmm15]
+        
+    Routine temporaries
+        Total         :    1551
+            Global    :     671
+            Local     :     880
+        Regenerable   :     182
+        Spilled       :     282
+        
+    Routine stack
+        Variables     :     432 bytes*
+            Reads     :      62 [5.28e+01 ~ 0.0%]
+            Writes    :      81 [8.10e+01 ~ 0.0%]
+        Spills        :    2504 bytes*
+            Reads     :     551 [4.21e+04 ~ 7.8%]
+            Writes    :     358 [1.02e+04 ~ 1.9%]
+    
+    Notes
+    
+        *Non-overlapping variables and spills may share stack space,
+         so the total stack size might be less than this.
+    
+
+===========================================================================
+
+Begin optimization report for: TIMEIT::MATMUL1
+
+    Report from: Interprocedural optimizations [ipo]
+
+INLINE REPORT: (TIMEIT::MATMUL1) [3] matrix.f90(307,12)
+  -> EXTERN: (313,8) __resetsp_inlined
+  -> EXTERN: (313,8) dgemm_
+  -> EXTERN: (313,8) __getsp_inlined
+  -> EXTERN: (313,41) _alloca
+  -> EXTERN: (313,47) _alloca
+  -> EXTERN: (313,61) _alloca
+
+
+    Report from: Loop nest, Vector & Auto-parallelization optimizations [loop, vec, par]
+
+
+LOOP BEGIN at matrix.f90(313,41)
+<Multiversioned v1>
+   remark #25233: Loop multiversioned for stride tests on Assumed shape arrays
+   remark #15542: loop was not vectorized: inner loop was already vectorized
+
+   LOOP BEGIN at matrix.f90(313,41)
+   <Peeled loop for vectorization>
+      remark #25015: Estimate of max trip count of loop=3
+   LOOP END
+
+   LOOP BEGIN at matrix.f90(313,41)
+      remark #15300: LOOP WAS VECTORIZED
+      remark #15450: unmasked unaligned unit stride loads: 1 
+      remark #15451: unmasked unaligned unit stride stores: 1 
+      remark #15475: --- begin vector cost summary ---
+      remark #15476: scalar cost: 4 
+      remark #15477: vector cost: 1.000 
+      remark #15478: estimated potential speedup: 3.690 
+      remark #15488: --- end vector cost summary ---
+   LOOP END
+
+   LOOP BEGIN at matrix.f90(313,41)
+   <Remainder loop for vectorization>
+   LOOP END
+LOOP END
+
+LOOP BEGIN at matrix.f90(313,41)
+<Multiversioned v2>
+   remark #15542: loop was not vectorized: inner loop was already vectorized
+
+   LOOP BEGIN at matrix.f90(313,41)
+   <Peeled loop for vectorization>
+      remark #25015: Estimate of max trip count of loop=1
+   LOOP END
+
+   LOOP BEGIN at matrix.f90(313,41)
+      remark #15300: LOOP WAS VECTORIZED
+      remark #15451: unmasked unaligned unit stride stores: 1 
+      remark #15452: unmasked strided loads: 1 
+      remark #15475: --- begin vector cost summary ---
+      remark #15476: scalar cost: 4 
+      remark #15477: vector cost: 2.500 
+      remark #15478: estimated potential speedup: 1.570 
+      remark #15488: --- end vector cost summary ---
+   LOOP END
+
+   LOOP BEGIN at matrix.f90(313,41)
+   <Remainder loop for vectorization>
+   LOOP END
+LOOP END
+
+LOOP BEGIN at matrix.f90(313,47)
+<Multiversioned v1>
+   remark #25233: Loop multiversioned for stride tests on Assumed shape arrays
+   remark #15542: loop was not vectorized: inner loop was already vectorized
+
+   LOOP BEGIN at matrix.f90(313,47)
+   <Peeled loop for vectorization>
+      remark #25015: Estimate of max trip count of loop=3
+   LOOP END
+
+   LOOP BEGIN at matrix.f90(313,47)
+      remark #15300: LOOP WAS VECTORIZED
+      remark #15450: unmasked unaligned unit stride loads: 1 
+      remark #15451: unmasked unaligned unit stride stores: 1 
+      remark #15475: --- begin vector cost summary ---
+      remark #15476: scalar cost: 4 
+      remark #15477: vector cost: 1.000 
+      remark #15478: estimated potential speedup: 3.690 
+      remark #15488: --- end vector cost summary ---
+   LOOP END
+
+   LOOP BEGIN at matrix.f90(313,47)
+   <Remainder loop for vectorization>
+   LOOP END
+LOOP END
+
+LOOP BEGIN at matrix.f90(313,47)
+<Multiversioned v2>
+   remark #15542: loop was not vectorized: inner loop was already vectorized
+
+   LOOP BEGIN at matrix.f90(313,47)
+   <Peeled loop for vectorization>
+      remark #25015: Estimate of max trip count of loop=1
+   LOOP END
+
+   LOOP BEGIN at matrix.f90(313,47)
+      remark #15300: LOOP WAS VECTORIZED
+      remark #15451: unmasked unaligned unit stride stores: 1 
+      remark #15452: unmasked strided loads: 1 
+      remark #15475: --- begin vector cost summary ---
+      remark #15476: scalar cost: 4 
+      remark #15477: vector cost: 2.500 
+      remark #15478: estimated potential speedup: 1.570 
+      remark #15488: --- end vector cost summary ---
+   LOOP END
+
+   LOOP BEGIN at matrix.f90(313,47)
+   <Remainder loop for vectorization>
+   LOOP END
+LOOP END
+
+LOOP BEGIN at matrix.f90(313,61)
+<Multiversioned v1>
+   remark #25233: Loop multiversioned for stride tests on Assumed shape arrays
+   remark #15542: loop was not vectorized: inner loop was already vectorized
+
+   LOOP BEGIN at matrix.f90(313,61)
+   <Peeled loop for vectorization>
+      remark #25015: Estimate of max trip count of loop=3
+   LOOP END
+
+   LOOP BEGIN at matrix.f90(313,61)
+      remark #15300: LOOP WAS VECTORIZED
+      remark #15450: unmasked unaligned unit stride loads: 1 
+      remark #15451: unmasked unaligned unit stride stores: 1 
+      remark #15475: --- begin vector cost summary ---
+      remark #15476: scalar cost: 4 
+      remark #15477: vector cost: 1.000 
+      remark #15478: estimated potential speedup: 3.690 
+      remark #15488: --- end vector cost summary ---
+   LOOP END
+
+   LOOP BEGIN at matrix.f90(313,61)
+   <Remainder loop for vectorization>
+   LOOP END
+LOOP END
+
+LOOP BEGIN at matrix.f90(313,61)
+<Multiversioned v2>
+   remark #15542: loop was not vectorized: inner loop was already vectorized
+
+   LOOP BEGIN at matrix.f90(313,61)
+   <Peeled loop for vectorization>
+      remark #25015: Estimate of max trip count of loop=1
+   LOOP END
+
+   LOOP BEGIN at matrix.f90(313,61)
+      remark #15300: LOOP WAS VECTORIZED
+      remark #15451: unmasked unaligned unit stride stores: 1 
+      remark #15452: unmasked strided loads: 1 
+      remark #15475: --- begin vector cost summary ---
+      remark #15476: scalar cost: 4 
+      remark #15477: vector cost: 2.500 
+      remark #15478: estimated potential speedup: 1.570 
+      remark #15488: --- end vector cost summary ---
+   LOOP END
+
+   LOOP BEGIN at matrix.f90(313,61)
+   <Remainder loop for vectorization>
+   LOOP END
+LOOP END
+
+LOOP BEGIN at matrix.f90(313,61)
+<Multiversioned v1>
+   remark #25233: Loop multiversioned for stride tests on Assumed shape arrays
+   remark #15542: loop was not vectorized: inner loop was already vectorized
+
+   LOOP BEGIN at matrix.f90(313,61)
+   <Peeled loop for vectorization>
+      remark #25015: Estimate of max trip count of loop=3
+   LOOP END
+
+   LOOP BEGIN at matrix.f90(313,61)
+      remark #15300: LOOP WAS VECTORIZED
+      remark #15442: entire loop may be executed in remainder
+      remark #15450: unmasked unaligned unit stride loads: 1 
+      remark #15451: unmasked unaligned unit stride stores: 1 
+      remark #15475: --- begin vector cost summary ---
+      remark #15476: scalar cost: 4 
+      remark #15477: vector cost: 1.000 
+      remark #15478: estimated potential speedup: 3.690 
+      remark #15488: --- end vector cost summary ---
+   LOOP END
+
+   LOOP BEGIN at matrix.f90(313,61)
+   <Remainder loop for vectorization>
+   LOOP END
+LOOP END
+
+LOOP BEGIN at matrix.f90(313,61)
+<Multiversioned v2>
+   remark #15542: loop was not vectorized: inner loop was already vectorized
+
+   LOOP BEGIN at matrix.f90(313,61)
+   <Peeled loop for vectorization>
+      remark #25015: Estimate of max trip count of loop=1
+   LOOP END
+
+   LOOP BEGIN at matrix.f90(313,61)
+      remark #15300: LOOP WAS VECTORIZED
+      remark #15450: unmasked unaligned unit stride loads: 1 
+      remark #15453: unmasked strided stores: 1 
+      remark #15475: --- begin vector cost summary ---
+      remark #15476: scalar cost: 4 
+      remark #15477: vector cost: 3.000 
+      remark #15478: estimated potential speedup: 1.310 
+      remark #15488: --- end vector cost summary ---
+   LOOP END
+
+   LOOP BEGIN at matrix.f90(313,61)
+   <Remainder loop for vectorization>
+   LOOP END
+LOOP END
+
+    Report from: Code generation optimizations [cg]
+
+matrix.f90(307,12):remark #34051: REGISTER ALLOCATION : [timeit_mp_matmul1_] matrix.f90:307
+
+    Hardware registers
+        Reserved     :    2[ rsp rip]
+        Available    :   39[ rax rdx rcx rbx rbp rsi rdi r8-r15 mm0-mm7 zmm0-zmm15]
+        Callee-save  :    6[ rbx rbp r12-r15]
+        Assigned     :   15[ rax rdx rcx rsi rdi r8-r15 zmm0-zmm1]
+        
+    Routine temporaries
+        Total         :     198
+            Global    :      98
+            Local     :     100
+        Regenerable   :      16
+        Spilled       :      17
+        
+    Routine stack
+        Variables     :       4 bytes*
+            Reads     :       0 [0.00e+00 ~ 0.0%]
+            Writes    :       1 [1.00e+00 ~ 0.1%]
+        Spills        :     104 bytes*
+            Reads     :      28 [7.80e+00 ~ 0.5%]
+            Writes    :      26 [8.35e+00 ~ 0.6%]
+    
+    Notes
+    
+        *Non-overlapping variables and spills may share stack space,
+         so the total stack size might be less than this.
+    
+
+===========================================================================
+
+Begin optimization report for: TIMEIT::PRINTTIMES..0
+
+    Report from: Interprocedural optimizations [ipo]
+
+INLINE REPORT: (TIMEIT::PRINTTIMES..0) [4] matrix.f90(284,12)
+  CLONED FROM: TIMEIT::PRINTTIMES(X,X,X,5,X)
+  -> EXTERN: (290,3) for_write_seq_fmt
+  -> EXTERN: (292,6) __getsp_inlined
+  -> EXTERN: (292,6) __resetsp_inlined
+  -> EXTERN: (292,6) for_write_seq_fmt
+  -> EXTERN: (292,39) for_trim
+  -> EXTERN: (292,44) _alloca
+  -> EXTERN: (294,3) for_write_seq_lis
+  -> EXTERN: (295,3) for_write_seq_fmt
+  -> EXTERN: (297,6) for_write_seq_fmt
+  -> EXTERN: (297,6) for_write_seq_fmt_xmit
+  -> EXTERN: (299,3) for_write_seq_lis
+  -> EXTERN: (300,3) for_write_seq_fmt
+  -> EXTERN: (302,6) for_write_seq_fmt
+  -> EXTERN: (302,6) for_write_seq_fmt_xmit
+  -> EXTERN: (304,3) for_write_seq_lis
+
+
+    Report from: Loop nest, Vector & Auto-parallelization optimizations [loop, vec, par]
+
+
+LOOP BEGIN at matrix.f90(291,3)
+   remark #15344: loop was not vectorized: vector dependence prevents vectorization. First dependence is shown below. Use level 5 report for details
+   remark #15346: vector dependence: assumed OUTPUT dependence between call:for_trim (292:39) and call:for_write_seq_fmt (292:6)
+LOOP END
+
+LOOP BEGIN at matrix.f90(296,3)
+   remark #15344: loop was not vectorized: vector dependence prevents vectorization. First dependence is shown below. Use level 5 report for details
+   remark #15346: vector dependence: assumed OUTPUT dependence between at (297:6) and at (297:6)
+LOOP END
+
+LOOP BEGIN at matrix.f90(301,3)
+   remark #15344: loop was not vectorized: vector dependence prevents vectorization. First dependence is shown below. Use level 5 report for details
+   remark #15346: vector dependence: assumed OUTPUT dependence between at (302:6) and at (302:6)
+LOOP END
+
+    Report from: Code generation optimizations [cg]
+
+matrix.f90(284,12):remark #34051: REGISTER ALLOCATION : [timeit_mp_printtimes_..0] matrix.f90:284
+
+    Hardware registers
+        Reserved     :    2[ rsp rip]
+        Available    :   39[ rax rdx rcx rbx rbp rsi rdi r8-r15 mm0-mm7 zmm0-zmm15]
+        Callee-save  :    6[ rbx rbp r12-r15]
+        Assigned     :   13[ rax rdx rcx rbx rsi rdi r8-r10 r12-r15]
+        
+    Routine temporaries
+        Total         :     133
+            Global    :      38
+            Local     :      95
+        Regenerable   :      99
+        Spilled       :       8
+        
+    Routine stack
+        Variables     :     320 bytes*
+            Reads     :       0 [0.00e+00 ~ 0.0%]
+            Writes    :      41 [1.16e+02 ~ 21.7%]
+        Spills        :      24 bytes*
+            Reads     :       4 [8.38e+00 ~ 1.6%]
+            Writes    :       3 [2.94e+00 ~ 0.5%]
+    
+    Notes
+    
+        *Non-overlapping variables and spills may share stack space,
+         so the total stack size might be less than this.
+    
+
+===========================================================================
+
+Begin optimization report for: timeit._
+
+    Report from: Interprocedural optimizations [ipo]
+
+INLINE REPORT: (timeit._) [5] matrix.f90(1,8)
+
+
+    Report from: Code generation optimizations [cg]
+
+matrix.f90(1,8):remark #34051: REGISTER ALLOCATION : [timeit._] matrix.f90:1
+
+    Hardware registers
+        Reserved     :    2[ rsp rip]
+        Available    :   39[ rax rdx rcx rbx rbp rsi rdi r8-r15 mm0-mm7 zmm0-zmm15]
+        Callee-save  :    6[ rbx rbp r12-r15]
+        Assigned     :    0[ reg_null]
+        
+    Routine temporaries
+        Total         :       6
+            Global    :       0
+            Local     :       6
+        Regenerable   :       0
+        Spilled       :       0
+        
+    Routine stack
+        Variables     :       0 bytes*
+            Reads     :       0 [0.00e+00 ~ 0.0%]
+            Writes    :       0 [0.00e+00 ~ 0.0%]
+        Spills        :       0 bytes*
+            Reads     :       0 [0.00e+00 ~ 0.0%]
+            Writes    :       0 [0.00e+00 ~ 0.0%]
+    
+    Notes
+    
+        *Non-overlapping variables and spills may share stack space,
+         so the total stack size might be less than this.
+    
+
+===========================================================================
+
+Begin optimization report for: TIMEIT::TEST_MATMUL1
+
+    Report from: Interprocedural optimizations [ipo]
+
+INLINE REPORT: (TIMEIT::TEST_MATMUL1) [6] matrix.f90(93,12)
+  -> EXTERN: (104,3) for_write_seq_lis
+  -> EXTERN: (105,3) for_write_seq_fmt_xmit
+  -> EXTERN: (105,3) for_write_seq_fmt
+  -> EXTERN: (106,3) for_write_seq_fmt_xmit
+  -> EXTERN: (106,3) for_write_seq_fmt
+  -> EXTERN: (108,3) for_alloc_allocatable
+  -> EXTERN: (108,3) for_check_mult_overflow64
+  -> EXTERN: (108,3) for_alloc_allocatable
+  -> EXTERN: (108,3) for_check_mult_overflow64
+  -> EXTERN: (108,3) for_alloc_allocatable
+  -> EXTERN: (108,3) for_check_mult_overflow64
+  -> EXTERN: (109,8) for_random_number
+  -> EXTERN: (110,8) for_random_number
+  -> EXTERN: (113,8) for_cpusec
+  -> EXTERN: (114,8) for_date_and_time
+  -> (116,12) TIMEIT::MATMUL1
+  -> EXTERN: (118,8) for_cpusec
+  -> EXTERN: (119,8) for_date_and_time
+  -> INLINE: (122,13) TIMEIT::ELAPSEDTIME
+  -> CP_CLONE (123,8) TIMEIT::PRINTTIMES..1
+  -> EXTERN: (125,3) for_dealloc_allocatable
+  -> EXTERN: (126,3) for_dealloc_allocatable
+  -> EXTERN: (127,3) for_dealloc_allocatable
+  -> EXTERN: (128,1) for_dealloc_allocatable
+  -> EXTERN: (128,1) for_dealloc_allocatable
+  -> EXTERN: (128,1) for_dealloc_allocatable
+
+
+    Report from: Loop nest, Vector & Auto-parallelization optimizations [loop, vec, par]
+
+
+LOOP BEGIN at matrix.f90(109,8)
+   remark #15542: loop was not vectorized: inner loop was already vectorized
+
+   LOOP BEGIN at matrix.f90(109,8)
+   <Peeled loop for vectorization>
+      remark #25015: Estimate of max trip count of loop=3
+   LOOP END
+
+   LOOP BEGIN at matrix.f90(109,8)
+      remark #15300: LOOP WAS VECTORIZED
+      remark #15442: entire loop may be executed in remainder
+      remark #15451: unmasked unaligned unit stride stores: 1 
+      remark #15475: --- begin vector cost summary ---
+      remark #15476: scalar cost: 103 
+      remark #15477: vector cost: 19.000 
+      remark #15478: estimated potential speedup: 5.100 
+      remark #15482: vectorized math library calls: 1 
+      remark #15488: --- end vector cost summary ---
+   LOOP END
+
+   LOOP BEGIN at matrix.f90(109,8)
+   <Remainder loop for vectorization>
+   LOOP END
+LOOP END
+
+LOOP BEGIN at matrix.f90(110,8)
+   remark #15542: loop was not vectorized: inner loop was already vectorized
+
+   LOOP BEGIN at matrix.f90(110,8)
+   <Peeled loop for vectorization>
+      remark #25015: Estimate of max trip count of loop=3
+   LOOP END
+
+   LOOP BEGIN at matrix.f90(110,8)
+      remark #15300: LOOP WAS VECTORIZED
+      remark #15442: entire loop may be executed in remainder
+      remark #15451: unmasked unaligned unit stride stores: 1 
+      remark #15475: --- begin vector cost summary ---
+      remark #15476: scalar cost: 103 
+      remark #15477: vector cost: 19.000 
+      remark #15478: estimated potential speedup: 5.100 
+      remark #15482: vectorized math library calls: 1 
+      remark #15488: --- end vector cost summary ---
+   LOOP END
+
+   LOOP BEGIN at matrix.f90(110,8)
+   <Remainder loop for vectorization>
+   LOOP END
+LOOP END
+
+LOOP BEGIN at matrix.f90(115,3)
+   remark #15344: loop was not vectorized: vector dependence prevents vectorization. First dependence is shown below. Use level 5 report for details
+LOOP END
+
+LOOP BEGIN at matrix.f90(120,3)
+   remark #15335: loop was not vectorized: vectorization possible but seems inefficient. Use vector always directive or -vec-threshold0 to override 
+   remark #15450: unmasked unaligned unit stride loads: 1 
+   remark #15451: unmasked unaligned unit stride stores: 1 
+   remark #15475: --- begin vector cost summary ---
+   remark #15476: scalar cost: 4 
+   remark #15477: vector cost: 0.870 
+   remark #15478: estimated potential speedup: 1.730 
+   remark #15488: --- end vector cost summary ---
+   remark #25436: completely unrolled by 13  
+LOOP END
+
+LOOP BEGIN at matrix.f90(120,3)
+   remark #15301: MATERIALIZED LOOP WAS VECTORIZED
+   remark #15451: unmasked unaligned unit stride stores: 1 
+   remark #15475: --- begin vector cost summary ---
+   remark #15476: scalar cost: 2 
+   remark #15477: vector cost: 0.370 
+   remark #15478: estimated potential speedup: 3.590 
+   remark #15488: --- end vector cost summary ---
+   remark #25015: Estimate of max trip count of loop=1
+LOOP END
+
+LOOP BEGIN at matrix.f90(120,3)
+<Remainder loop for vectorization>
+   remark #25436: completely unrolled by 2  
+LOOP END
+
+    Report from: Code generation optimizations [cg]
+
+matrix.f90(93,12):remark #34051: REGISTER ALLOCATION : [timeit_mp_test_matmul1_] matrix.f90:93
+
+    Hardware registers
+        Reserved     :    2[ rsp rip]
+        Available    :   39[ rax rdx rcx rbx rbp rsi rdi r8-r15 mm0-mm7 zmm0-zmm15]
+        Callee-save  :    6[ rbx rbp r12-r15]
+        Assigned     :   29[ rax rdx rcx rbx rsi rdi r8-r10 r12-r15 zmm0-zmm15]
+        
+    Routine temporaries
+        Total         :     326
+            Global    :      58
+            Local     :     268
+        Regenerable   :      97
+        Spilled       :      14
+        
+    Routine stack
+        Variables     :     432 bytes*
+            Reads     :      24 [2.14e+01 ~ 1.1%]
+            Writes    :      81 [8.10e+01 ~ 4.0%]
+        Spills        :      72 bytes*
+            Reads     :      20 [8.28e+01 ~ 4.1%]
+            Writes    :      20 [8.28e+01 ~ 4.1%]
+    
+    Notes
+    
+        *Non-overlapping variables and spills may share stack space,
+         so the total stack size might be less than this.
+    
+
+===========================================================================
+
+Begin optimization report for: TIMEIT::PRINTTIMES..1
+
+    Report from: Interprocedural optimizations [ipo]
+
+INLINE REPORT: (TIMEIT::PRINTTIMES..1) [7] matrix.f90(284,12)
+  CLONED FROM: TIMEIT::PRINTTIMES(X,X,X,1,X)
+  -> EXTERN: (290,3) for_write_seq_fmt
+  -> EXTERN: (292,6) __getsp_inlined
+  -> EXTERN: (292,6) __resetsp_inlined
+  -> EXTERN: (292,6) for_write_seq_fmt
+  -> EXTERN: (292,39) for_trim
+  -> EXTERN: (292,44) _alloca
+  -> EXTERN: (294,3) for_write_seq_lis
+  -> EXTERN: (295,3) for_write_seq_fmt
+  -> EXTERN: (297,6) for_write_seq_fmt
+  -> EXTERN: (297,6) for_write_seq_fmt_xmit
+  -> EXTERN: (299,3) for_write_seq_lis
+  -> EXTERN: (300,3) for_write_seq_fmt
+  -> EXTERN: (302,6) for_write_seq_fmt
+  -> EXTERN: (302,6) for_write_seq_fmt_xmit
+  -> EXTERN: (304,3) for_write_seq_lis
+
+
+    Report from: Loop nest, Vector & Auto-parallelization optimizations [loop, vec, par]
+
+
+LOOP BEGIN at matrix.f90(291,3)
+   remark #15344: loop was not vectorized: vector dependence prevents vectorization. First dependence is shown below. Use level 5 report for details
+   remark #15346: vector dependence: assumed OUTPUT dependence between call:for_trim (292:39) and call:for_write_seq_fmt (292:6)
+LOOP END
+
+LOOP BEGIN at matrix.f90(296,3)
+   remark #15344: loop was not vectorized: vector dependence prevents vectorization. First dependence is shown below. Use level 5 report for details
+   remark #15346: vector dependence: assumed OUTPUT dependence between at (297:6) and at (297:6)
+LOOP END
+
+LOOP BEGIN at matrix.f90(301,3)
+   remark #15344: loop was not vectorized: vector dependence prevents vectorization. First dependence is shown below. Use level 5 report for details
+   remark #15346: vector dependence: assumed OUTPUT dependence between at (302:6) and at (302:6)
+LOOP END
+
+    Report from: Code generation optimizations [cg]
+
+matrix.f90(284,12):remark #34051: REGISTER ALLOCATION : [timeit_mp_printtimes_..1] matrix.f90:284
+
+    Hardware registers
+        Reserved     :    2[ rsp rip]
+        Available    :   39[ rax rdx rcx rbx rbp rsi rdi r8-r15 mm0-mm7 zmm0-zmm15]
+        Callee-save  :    6[ rbx rbp r12-r15]
+        Assigned     :   13[ rax rdx rcx rbx rsi rdi r8-r10 r12-r15]
+        
+    Routine temporaries
+        Total         :     133
+            Global    :      38
+            Local     :      95
+        Regenerable   :      99
+        Spilled       :       8
+        
+    Routine stack
+        Variables     :     320 bytes*
+            Reads     :       0 [0.00e+00 ~ 0.0%]
+            Writes    :      41 [1.16e+02 ~ 21.7%]
+        Spills        :      24 bytes*
+            Reads     :       4 [8.38e+00 ~ 1.6%]
+            Writes    :       3 [2.94e+00 ~ 0.5%]
+    
+    Notes
+    
+        *Non-overlapping variables and spills may share stack space,
+         so the total stack size might be less than this.
+    
+
+===========================================================================
+
+Begin optimization report for: TIMEIT::TEST_MATMUL2
+
+    Report from: Interprocedural optimizations [ipo]
+
+INLINE REPORT: (TIMEIT::TEST_MATMUL2) [8] matrix.f90(130,12)
+  -> EXTERN: (141,3) for_write_seq_lis
+  -> EXTERN: (142,3) for_write_seq_fmt_xmit
+  -> EXTERN: (142,3) for_write_seq_fmt
+  -> EXTERN: (143,3) for_write_seq_fmt_xmit
+  -> EXTERN: (143,3) for_write_seq_fmt
+  -> EXTERN: (145,3) for_alloc_allocatable
+  -> EXTERN: (145,3) for_check_mult_overflow64
+  -> EXTERN: (145,3) for_alloc_allocatable
+  -> EXTERN: (145,3) for_check_mult_overflow64
+  -> EXTERN: (145,3) for_alloc_allocatable
+  -> EXTERN: (145,3) for_check_mult_overflow64
+  -> EXTERN: (146,8) for_random_number
+  -> EXTERN: (147,8) for_random_number
+  -> EXTERN: (150,8) for_cpusec
+  -> EXTERN: (151,8) for_date_and_time
+  -> INLINE: (153,12) TIMEIT::MATMUL2
+  -> EXTERN: (155,8) for_cpusec
+  -> EXTERN: (156,8) for_date_and_time
+  -> INLINE: (159,13) TIMEIT::ELAPSEDTIME
+  -> CP_CLONE (160,8) TIMEIT::PRINTTIMES..1
+  -> EXTERN: (162,3) for_dealloc_allocatable
+  -> EXTERN: (163,3) for_dealloc_allocatable
+  -> EXTERN: (164,3) for_dealloc_allocatable
+  -> EXTERN: (165,1) for_dealloc_allocatable
+  -> EXTERN: (165,1) for_dealloc_allocatable
+  -> EXTERN: (165,1) for_dealloc_allocatable
+
+
+    Report from: Loop nest, Vector & Auto-parallelization optimizations [loop, vec, par]
+
+
+LOOP BEGIN at matrix.f90(146,8)
+   remark #15542: loop was not vectorized: inner loop was already vectorized
+
+   LOOP BEGIN at matrix.f90(146,8)
+   <Peeled loop for vectorization>
+      remark #25015: Estimate of max trip count of loop=3
+   LOOP END
+
+   LOOP BEGIN at matrix.f90(146,8)
+      remark #15300: LOOP WAS VECTORIZED
+      remark #15442: entire loop may be executed in remainder
+      remark #15451: unmasked unaligned unit stride stores: 1 
+      remark #15475: --- begin vector cost summary ---
+      remark #15476: scalar cost: 103 
+      remark #15477: vector cost: 19.000 
+      remark #15478: estimated potential speedup: 5.100 
+      remark #15482: vectorized math library calls: 1 
+      remark #15488: --- end vector cost summary ---
+   LOOP END
+
+   LOOP BEGIN at matrix.f90(146,8)
+   <Remainder loop for vectorization>
+   LOOP END
+LOOP END
+
+LOOP BEGIN at matrix.f90(147,8)
+   remark #15542: loop was not vectorized: inner loop was already vectorized
+
+   LOOP BEGIN at matrix.f90(147,8)
+   <Peeled loop for vectorization>
+      remark #25015: Estimate of max trip count of loop=3
+   LOOP END
+
+   LOOP BEGIN at matrix.f90(147,8)
+      remark #15300: LOOP WAS VECTORIZED
+      remark #15442: entire loop may be executed in remainder
+      remark #15451: unmasked unaligned unit stride stores: 1 
+      remark #15475: --- begin vector cost summary ---
+      remark #15476: scalar cost: 103 
+      remark #15477: vector cost: 19.000 
+      remark #15478: estimated potential speedup: 5.100 
+      remark #15482: vectorized math library calls: 1 
+      remark #15488: --- end vector cost summary ---
+   LOOP END
+
+   LOOP BEGIN at matrix.f90(147,8)
+   <Remainder loop for vectorization>
+   LOOP END
+LOOP END
+
+LOOP BEGIN at matrix.f90(152,3)
+   remark #15542: loop was not vectorized: inner loop was already vectorized
+
+   LOOP BEGIN at matrix.f90(319,7) inlined into matrix.f90(153,12)
+      remark #15542: loop was not vectorized: inner loop was already vectorized
+
+      LOOP BEGIN at matrix.f90(319,7) inlined into matrix.f90(153,12)
+         remark #25408: memset generated
+         remark #15542: loop was not vectorized: inner loop was already vectorized
+
+         LOOP BEGIN at matrix.f90(319,7) inlined into matrix.f90(153,12)
+            remark #15300: LOOP WAS VECTORIZED
+            remark #15451: unmasked unaligned unit stride stores: 1 
+            remark #15475: --- begin vector cost summary ---
+            remark #15476: scalar cost: 3 
+            remark #15477: vector cost: 1.250 
+            remark #15478: estimated potential speedup: 1.440 
+            remark #15488: --- end vector cost summary ---
+            remark #25015: Estimate of max trip count of loop=1
+         LOOP END
+
+         LOOP BEGIN at matrix.f90(319,7) inlined into matrix.f90(153,12)
+         <Remainder loop for vectorization>
+            remark #25015: Estimate of max trip count of loop=12
+         LOOP END
+      LOOP END
+   LOOP END
+
+   LOOP BEGIN at matrix.f90(319,7) inlined into matrix.f90(153,12)
+      remark #25444: Loopnest Interchanged: ( 1 2 3 ) --> ( 2 1 3 )
+      remark #15542: loop was not vectorized: inner loop was already vectorized
+
+      LOOP BEGIN at matrix.f90(319,7) inlined into matrix.f90(153,12)
+         remark #15542: loop was not vectorized: inner loop was already vectorized
+
+         LOOP BEGIN at matrix.f90(319,7) inlined into matrix.f90(153,12)
+            remark #15542: loop was not vectorized: inner loop was already vectorized
+
+            LOOP BEGIN at matrix.f90(319,7) inlined into matrix.f90(153,12)
+               remark #25442: blocked by 125   (pre-vector) 
+               remark #25440: unrolled and jammed by 4   (pre-vector) 
+               remark #15542: loop was not vectorized: inner loop was already vectorized
+               remark #25015: Estimate of max trip count of loop=125
+
+               LOOP BEGIN at matrix.f90(319,7) inlined into matrix.f90(153,12)
+                  remark #25442: blocked by 125   (pre-vector) 
+                  remark #25440: unrolled and jammed by 4   (pre-vector) 
+                  remark #15542: loop was not vectorized: inner loop was already vectorized
+                  remark #25015: Estimate of max trip count of loop=125
+
+                  LOOP BEGIN at matrix.f90(319,7) inlined into matrix.f90(153,12)
+                     remark #25442: blocked by 128   (pre-vector) 
+                     remark #15300: LOOP WAS VECTORIZED
+                     remark #15450: unmasked unaligned unit stride loads: 8 
+                     remark #15451: unmasked unaligned unit stride stores: 16 
+                     remark #15475: --- begin vector cost summary ---
+                     remark #15476: scalar cost: 142 
+                     remark #15477: vector cost: 38.000 
+                     remark #15478: estimated potential speedup: 3.670 
+                     remark #15488: --- end vector cost summary ---
+                     remark #25456: Number of Array Refs Scalar Replaced In Loop: 36
+                     remark #25015: Estimate of max trip count of loop=32
+                  LOOP END
+
+                  LOOP BEGIN at matrix.f90(319,7) inlined into matrix.f90(153,12)
+                  <Remainder loop for vectorization>
+                     remark #25015: Estimate of max trip count of loop=128
+                  LOOP END
+               LOOP END
+
+               LOOP BEGIN at matrix.f90(319,7) inlined into matrix.f90(153,12)
+               <Remainder>
+                  remark #15542: loop was not vectorized: inner loop was already vectorized
+                  remark #25015: Estimate of max trip count of loop=125
+
+                  LOOP BEGIN at matrix.f90(319,7) inlined into matrix.f90(153,12)
+                     remark #15300: LOOP WAS VECTORIZED
+                     remark #15450: unmasked unaligned unit stride loads: 5 
+                     remark #15451: unmasked unaligned unit stride stores: 4 
+                     remark #15475: --- begin vector cost summary ---
+                     remark #15476: scalar cost: 36 
+                     remark #15477: vector cost: 10.250 
+                     remark #15478: estimated potential speedup: 3.430 
+                     remark #15488: --- end vector cost summary ---
+                     remark #25456: Number of Array Refs Scalar Replaced In Loop: 3
+                     remark #25015: Estimate of max trip count of loop=32
+                  LOOP END
+
+                  LOOP BEGIN at matrix.f90(319,7) inlined into matrix.f90(153,12)
+                  <Remainder loop for vectorization>
+                     remark #25015: Estimate of max trip count of loop=128
+                  LOOP END
+               LOOP END
+            LOOP END
+
+            LOOP BEGIN at matrix.f90(319,7) inlined into matrix.f90(153,12)
+            <Remainder>
+               remark #15542: loop was not vectorized: inner loop was already vectorized
+               remark #25015: Estimate of max trip count of loop=125
+
+               LOOP BEGIN at matrix.f90(319,7) inlined into matrix.f90(153,12)
+                  remark #15542: loop was not vectorized: inner loop was already vectorized
+                  remark #25015: Estimate of max trip count of loop=125
+
+                  LOOP BEGIN at matrix.f90(319,7) inlined into matrix.f90(153,12)
+                  <Peeled loop for vectorization>
+                     remark #25015: Estimate of max trip count of loop=3
+                  LOOP END
+
+                  LOOP BEGIN at matrix.f90(319,7) inlined into matrix.f90(153,12)
+                     remark #15300: LOOP WAS VECTORIZED
+                     remark #15442: entire loop may be executed in remainder
+                     remark #15448: unmasked aligned unit stride loads: 1 
+                     remark #15449: unmasked aligned unit stride stores: 1 
+                     remark #15450: unmasked unaligned unit stride loads: 1 
+                     remark #15475: --- begin vector cost summary ---
+                     remark #15476: scalar cost: 9 
+                     remark #15477: vector cost: 2.000 
+                     remark #15478: estimated potential speedup: 3.860 
+                     remark #15488: --- end vector cost summary ---
+                     remark #25015: Estimate of max trip count of loop=32
+                  LOOP END
+
+                  LOOP BEGIN at matrix.f90(319,7) inlined into matrix.f90(153,12)
+                  <Remainder loop for vectorization>
+                     remark #25015: Estimate of max trip count of loop=128
+                  LOOP END
+               LOOP END
+            LOOP END
+         LOOP END
+      LOOP END
+   LOOP END
+LOOP END
+
+LOOP BEGIN at matrix.f90(157,3)
+   remark #15335: loop was not vectorized: vectorization possible but seems inefficient. Use vector always directive or -vec-threshold0 to override 
+   remark #15450: unmasked unaligned unit stride loads: 1 
+   remark #15451: unmasked unaligned unit stride stores: 1 
+   remark #15475: --- begin vector cost summary ---
+   remark #15476: scalar cost: 4 
+   remark #15477: vector cost: 0.870 
+   remark #15478: estimated potential speedup: 1.570 
+   remark #15488: --- end vector cost summary ---
+   remark #25436: completely unrolled by 15  
+LOOP END
+
+LOOP BEGIN at matrix.f90(157,3)
+   remark #15301: MATERIALIZED LOOP WAS VECTORIZED
+   remark #15449: unmasked aligned unit stride stores: 1 
+   remark #15475: --- begin vector cost summary ---
+   remark #15476: scalar cost: 2 
+   remark #15477: vector cost: 0.180 
+   remark #15478: estimated potential speedup: 10.660 
+   remark #15488: --- end vector cost summary ---
+LOOP END
+
+    Report from: Code generation optimizations [cg]
+
+matrix.f90(319,7):remark #34014: optimization advice for memset: increase the destination's alignment to 16 (and use __assume_aligned) to speed up library implementation
+matrix.f90(319,7):remark #34026: call to memset implemented as a call to optimized library version
+matrix.f90(130,12):remark #34051: REGISTER ALLOCATION : [timeit_mp_test_matmul2_] matrix.f90:130
+
+    Hardware registers
+        Reserved     :    2[ rsp rip]
+        Available    :   39[ rax rdx rcx rbx rbp rsi rdi r8-r15 mm0-mm7 zmm0-zmm15]
+        Callee-save  :    6[ rbx rbp r12-r15]
+        Assigned     :   30[ rax rdx rcx rbx rsi rdi r8-r15 zmm0-zmm15]
+        
+    Routine temporaries
+        Total         :     636
+            Global    :     230
+            Local     :     406
+        Regenerable   :     100
+        Spilled       :      96
+        
+    Routine stack
+        Variables     :     432 bytes*
+            Reads     :      33 [3.22e+01 ~ 0.0%]
+            Writes    :      81 [8.10e+01 ~ 0.1%]
+        Spills        :     824 bytes*
+            Reads     :     178 [1.27e+04 ~ 8.5%]
+            Writes    :     125 [3.23e+03 ~ 2.2%]
+    
+    Notes
+    
+        *Non-overlapping variables and spills may share stack space,
+         so the total stack size might be less than this.
+    
+
+===========================================================================
+
+Begin optimization report for: TIMEIT::TEST_MATMUL3
+
+    Report from: Interprocedural optimizations [ipo]
+
+INLINE REPORT: (TIMEIT::TEST_MATMUL3) [9] matrix.f90(167,12)
+  -> EXTERN: (178,3) for_write_seq_lis
+  -> EXTERN: (179,3) for_write_seq_fmt_xmit
+  -> EXTERN: (179,3) for_write_seq_fmt
+  -> EXTERN: (180,3) for_write_seq_fmt_xmit
+  -> EXTERN: (180,3) for_write_seq_fmt
+  -> EXTERN: (182,3) for_alloc_allocatable
+  -> EXTERN: (182,3) for_check_mult_overflow64
+  -> EXTERN: (182,3) for_alloc_allocatable
+  -> EXTERN: (182,3) for_check_mult_overflow64
+  -> EXTERN: (182,3) for_alloc_allocatable
+  -> EXTERN: (182,3) for_check_mult_overflow64
+  -> EXTERN: (183,8) for_random_number
+  -> EXTERN: (184,8) for_random_number
+  -> EXTERN: (187,8) for_cpusec
+  -> EXTERN: (188,8) for_date_and_time
+  -> INLINE: (190,12) TIMEIT::MATMUL3
+  -> EXTERN: (192,8) for_cpusec
+  -> EXTERN: (193,8) for_date_and_time
+  -> INLINE: (196,13) TIMEIT::ELAPSEDTIME
+  -> CP_CLONE (197,8) TIMEIT::PRINTTIMES..1
+  -> EXTERN: (199,3) for_dealloc_allocatable
+  -> EXTERN: (200,3) for_dealloc_allocatable
+  -> EXTERN: (201,3) for_dealloc_allocatable
+  -> EXTERN: (202,1) for_dealloc_allocatable
+  -> EXTERN: (202,1) for_dealloc_allocatable
+  -> EXTERN: (202,1) for_dealloc_allocatable
+
+
+    Report from: Loop nest, Vector & Auto-parallelization optimizations [loop, vec, par]
+
+
+LOOP BEGIN at matrix.f90(183,8)
+   remark #15542: loop was not vectorized: inner loop was already vectorized
+
+   LOOP BEGIN at matrix.f90(183,8)
+   <Peeled loop for vectorization>
+      remark #25015: Estimate of max trip count of loop=3
+   LOOP END
+
+   LOOP BEGIN at matrix.f90(183,8)
+      remark #15300: LOOP WAS VECTORIZED
+      remark #15442: entire loop may be executed in remainder
+      remark #15451: unmasked unaligned unit stride stores: 1 
+      remark #15475: --- begin vector cost summary ---
+      remark #15476: scalar cost: 103 
+      remark #15477: vector cost: 19.000 
+      remark #15478: estimated potential speedup: 5.100 
+      remark #15482: vectorized math library calls: 1 
+      remark #15488: --- end vector cost summary ---
+   LOOP END
+
+   LOOP BEGIN at matrix.f90(183,8)
+   <Remainder loop for vectorization>
+   LOOP END
+LOOP END
+
+LOOP BEGIN at matrix.f90(184,8)
+   remark #15542: loop was not vectorized: inner loop was already vectorized
+
+   LOOP BEGIN at matrix.f90(184,8)
+   <Peeled loop for vectorization>
+      remark #25015: Estimate of max trip count of loop=3
+   LOOP END
+
+   LOOP BEGIN at matrix.f90(184,8)
+      remark #15300: LOOP WAS VECTORIZED
+      remark #15442: entire loop may be executed in remainder
+      remark #15451: unmasked unaligned unit stride stores: 1 
+      remark #15475: --- begin vector cost summary ---
+      remark #15476: scalar cost: 103 
+      remark #15477: vector cost: 19.000 
+      remark #15478: estimated potential speedup: 5.100 
+      remark #15482: vectorized math library calls: 1 
+      remark #15488: --- end vector cost summary ---
+   LOOP END
+
+   LOOP BEGIN at matrix.f90(184,8)
+   <Remainder loop for vectorization>
+   LOOP END
+LOOP END
+
+LOOP BEGIN at matrix.f90(189,3)
+   remark #15542: loop was not vectorized: inner loop was already vectorized
+
+   LOOP BEGIN at matrix.f90(329,3) inlined into matrix.f90(190,12)
+   <Distributed chunk1>
+      remark #25426: Loop Distributed (2 way) 
+      remark #15542: loop was not vectorized: inner loop was already vectorized
+
+      LOOP BEGIN at matrix.f90(330,5) inlined into matrix.f90(190,12)
+         remark #25408: memset generated
+         remark #15542: loop was not vectorized: inner loop was already vectorized
+
+         LOOP BEGIN at matrix.f90(330,5) inlined into matrix.f90(190,12)
+            remark #15300: LOOP WAS VECTORIZED
+            remark #15451: unmasked unaligned unit stride stores: 1 
+            remark #15475: --- begin vector cost summary ---
+            remark #15476: scalar cost: 3 
+            remark #15477: vector cost: 1.250 
+            remark #15478: estimated potential speedup: 1.440 
+            remark #15488: --- end vector cost summary ---
+            remark #25015: Estimate of max trip count of loop=1
+         LOOP END
+
+         LOOP BEGIN at matrix.f90(330,5) inlined into matrix.f90(190,12)
+         <Remainder loop for vectorization>
+            remark #25015: Estimate of max trip count of loop=12
+         LOOP END
+      LOOP END
+   LOOP END
+
+   LOOP BEGIN at matrix.f90(329,3) inlined into matrix.f90(190,12)
+   <Distributed chunk2>
+      remark #15542: loop was not vectorized: inner loop was already vectorized
+
+      LOOP BEGIN at matrix.f90(334,5) inlined into matrix.f90(190,12)
+         remark #25461: Imperfect Loop Unroll-Jammed by 2   (pre-vector) 
+         remark #15542: loop was not vectorized: inner loop was already vectorized
+
+         LOOP BEGIN at matrix.f90(336,7) inlined into matrix.f90(190,12)
+         <Peeled loop for vectorization>
+            remark #25456: Number of Array Refs Scalar Replaced In Loop: 2
+            remark #25015: Estimate of max trip count of loop=3
+         LOOP END
+
+         LOOP BEGIN at matrix.f90(336,7) inlined into matrix.f90(190,12)
+            remark #15300: LOOP WAS VECTORIZED
+            remark #15442: entire loop may be executed in remainder
+            remark #15448: unmasked aligned unit stride loads: 1 
+            remark #15449: unmasked aligned unit stride stores: 2 
+            remark #15450: unmasked unaligned unit stride loads: 2 
+            remark #15475: --- begin vector cost summary ---
+            remark #15476: scalar cost: 17 
+            remark #15477: vector cost: 4.000 
+            remark #15478: estimated potential speedup: 3.710 
+            remark #15488: --- end vector cost summary ---
+            remark #25456: Number of Array Refs Scalar Replaced In Loop: 8
+         LOOP END
+
+         LOOP BEGIN at matrix.f90(336,7) inlined into matrix.f90(190,12)
+         <Remainder loop for vectorization>
+            remark #15301: REMAINDER LOOP WAS VECTORIZED
+            remark #25456: Number of Array Refs Scalar Replaced In Loop: 2
+         LOOP END
+
+         LOOP BEGIN at matrix.f90(336,7) inlined into matrix.f90(190,12)
+         <Remainder loop for vectorization>
+         LOOP END
+      LOOP END
+
+      LOOP BEGIN at matrix.f90(334,5) inlined into matrix.f90(190,12)
+      <Remainder>
+         remark #15542: loop was not vectorized: inner loop was already vectorized
+
+         LOOP BEGIN at matrix.f90(336,7) inlined into matrix.f90(190,12)
+         <Peeled loop for vectorization>
+            remark #25015: Estimate of max trip count of loop=3
+         LOOP END
+
+         LOOP BEGIN at matrix.f90(336,7) inlined into matrix.f90(190,12)
+            remark #15300: LOOP WAS VECTORIZED
+            remark #15442: entire loop may be executed in remainder
+            remark #15450: unmasked unaligned unit stride loads: 2 
+            remark #15451: unmasked unaligned unit stride stores: 1 
+            remark #15475: --- begin vector cost summary ---
+            remark #15476: scalar cost: 8 
+            remark #15477: vector cost: 2.000 
+            remark #15478: estimated potential speedup: 3.760 
+            remark #15488: --- end vector cost summary ---
+         LOOP END
+
+         LOOP BEGIN at matrix.f90(336,7) inlined into matrix.f90(190,12)
+         <Remainder loop for vectorization>
+         LOOP END
+      LOOP END
+   LOOP END
+LOOP END
+
+LOOP BEGIN at matrix.f90(194,3)
+   remark #15335: loop was not vectorized: vectorization possible but seems inefficient. Use vector always directive or -vec-threshold0 to override 
+   remark #15450: unmasked unaligned unit stride loads: 1 
+   remark #15451: unmasked unaligned unit stride stores: 1 
+   remark #15475: --- begin vector cost summary ---
+   remark #15476: scalar cost: 4 
+   remark #15477: vector cost: 0.870 
+   remark #15478: estimated potential speedup: 1.640 
+   remark #15488: --- end vector cost summary ---
+   remark #25436: completely unrolled by 14  
+LOOP END
+
+LOOP BEGIN at matrix.f90(194,3)
+   remark #15301: MATERIALIZED LOOP WAS VECTORIZED
+   remark #15451: unmasked unaligned unit stride stores: 1 
+   remark #15475: --- begin vector cost summary ---
+   remark #15476: scalar cost: 2 
+   remark #15477: vector cost: 0.370 
+   remark #15478: estimated potential speedup: 4.240 
+   remark #15488: --- end vector cost summary ---
+   remark #25015: Estimate of max trip count of loop=1
+LOOP END
+
+LOOP BEGIN at matrix.f90(194,3)
+<Remainder loop for vectorization>
+   remark #25436: completely unrolled by 1  
+LOOP END
+
+    Report from: Code generation optimizations [cg]
+
+matrix.f90(331,7):remark #34014: optimization advice for memset: increase the destination's alignment to 16 (and use __assume_aligned) to speed up library implementation
+matrix.f90(331,7):remark #34026: call to memset implemented as a call to optimized library version
+matrix.f90(167,12):remark #34051: REGISTER ALLOCATION : [timeit_mp_test_matmul3_] matrix.f90:167
+
+    Hardware registers
+        Reserved     :    2[ rsp rip]
+        Available    :   39[ rax rdx rcx rbx rbp rsi rdi r8-r15 mm0-mm7 zmm0-zmm15]
+        Callee-save  :    6[ rbx rbp r12-r15]
+        Assigned     :   30[ rax rdx rcx rbx rsi rdi r8-r15 zmm0-zmm15]
+        
+    Routine temporaries
+        Total         :     462
+            Global    :     123
+            Local     :     339
+        Regenerable   :     100
+        Spilled       :      36
+        
+    Routine stack
+        Variables     :     432 bytes*
+            Reads     :      31 [2.83e+01 ~ 0.0%]
+            Writes    :      81 [8.10e+01 ~ 0.1%]
+        Spills        :     248 bytes*
+            Reads     :      56 [1.47e+03 ~ 1.8%]
+            Writes    :      47 [3.85e+02 ~ 0.5%]
+    
+    Notes
+    
+        *Non-overlapping variables and spills may share stack space,
+         so the total stack size might be less than this.
+    
+
+===========================================================================
+
+Begin optimization report for: TIMEIT::TEST_MATMUL4
+
+    Report from: Interprocedural optimizations [ipo]
+
+INLINE REPORT: (TIMEIT::TEST_MATMUL4) [10] matrix.f90(204,12)
+  -> EXTERN: (215,3) for_write_seq_lis
+  -> EXTERN: (216,3) for_write_seq_fmt_xmit
+  -> EXTERN: (216,3) for_write_seq_fmt
+  -> EXTERN: (217,3) for_write_seq_fmt_xmit
+  -> EXTERN: (217,3) for_write_seq_fmt
+  -> EXTERN: (219,3) for_alloc_allocatable
+  -> EXTERN: (219,3) for_check_mult_overflow64
+  -> EXTERN: (219,3) for_alloc_allocatable
+  -> EXTERN: (219,3) for_check_mult_overflow64
+  -> EXTERN: (219,3) for_alloc_allocatable
+  -> EXTERN: (219,3) for_check_mult_overflow64
+  -> EXTERN: (220,8) for_random_number
+  -> EXTERN: (221,8) for_random_number
+  -> EXTERN: (224,8) for_cpusec
+  -> EXTERN: (225,8) for_date_and_time
+  -> INLINE: (227,12) TIMEIT::MATMUL4
+  -> EXTERN: (229,8) for_cpusec
+  -> EXTERN: (230,8) for_date_and_time
+  -> INLINE: (233,13) TIMEIT::ELAPSEDTIME
+  -> CP_CLONE (234,8) TIMEIT::PRINTTIMES..1
+  -> EXTERN: (236,3) for_dealloc_allocatable
+  -> EXTERN: (237,3) for_dealloc_allocatable
+  -> EXTERN: (238,3) for_dealloc_allocatable
+  -> EXTERN: (239,1) for_dealloc_allocatable
+  -> EXTERN: (239,1) for_dealloc_allocatable
+  -> EXTERN: (239,1) for_dealloc_allocatable
+
+
+    Report from: Loop nest, Vector & Auto-parallelization optimizations [loop, vec, par]
+
+
+LOOP BEGIN at matrix.f90(220,8)
+   remark #15542: loop was not vectorized: inner loop was already vectorized
+
+   LOOP BEGIN at matrix.f90(220,8)
+   <Peeled loop for vectorization>
+      remark #25015: Estimate of max trip count of loop=3
+   LOOP END
+
+   LOOP BEGIN at matrix.f90(220,8)
+      remark #15300: LOOP WAS VECTORIZED
+      remark #15442: entire loop may be executed in remainder
+      remark #15451: unmasked unaligned unit stride stores: 1 
+      remark #15475: --- begin vector cost summary ---
+      remark #15476: scalar cost: 103 
+      remark #15477: vector cost: 19.000 
+      remark #15478: estimated potential speedup: 5.100 
+      remark #15482: vectorized math library calls: 1 
+      remark #15488: --- end vector cost summary ---
+   LOOP END
+
+   LOOP BEGIN at matrix.f90(220,8)
+   <Remainder loop for vectorization>
+   LOOP END
+LOOP END
+
+LOOP BEGIN at matrix.f90(221,8)
+   remark #15542: loop was not vectorized: inner loop was already vectorized
+
+   LOOP BEGIN at matrix.f90(221,8)
+   <Peeled loop for vectorization>
+      remark #25015: Estimate of max trip count of loop=3
+   LOOP END
+
+   LOOP BEGIN at matrix.f90(221,8)
+      remark #15300: LOOP WAS VECTORIZED
+      remark #15442: entire loop may be executed in remainder
+      remark #15451: unmasked unaligned unit stride stores: 1 
+      remark #15475: --- begin vector cost summary ---
+      remark #15476: scalar cost: 103 
+      remark #15477: vector cost: 19.000 
+      remark #15478: estimated potential speedup: 5.100 
+      remark #15482: vectorized math library calls: 1 
+      remark #15488: --- end vector cost summary ---
+   LOOP END
+
+   LOOP BEGIN at matrix.f90(221,8)
+   <Remainder loop for vectorization>
+   LOOP END
+LOOP END
+
+LOOP BEGIN at matrix.f90(226,3)
+   remark #15542: loop was not vectorized: inner loop was already vectorized
+
+   LOOP BEGIN at matrix.f90(349,3) inlined into matrix.f90(227,12)
+   <Distributed chunk1>
+      remark #25426: Loop Distributed (2 way) 
+      remark #15542: loop was not vectorized: inner loop was already vectorized
+
+      LOOP BEGIN at matrix.f90(350,5) inlined into matrix.f90(227,12)
+         remark #25408: memset generated
+         remark #15542: loop was not vectorized: inner loop was already vectorized
+
+         LOOP BEGIN at matrix.f90(350,5) inlined into matrix.f90(227,12)
+            remark #15300: LOOP WAS VECTORIZED
+            remark #15451: unmasked unaligned unit stride stores: 1 
+            remark #15475: --- begin vector cost summary ---
+            remark #15476: scalar cost: 3 
+            remark #15477: vector cost: 1.250 
+            remark #15478: estimated potential speedup: 1.440 
+            remark #15488: --- end vector cost summary ---
+            remark #25015: Estimate of max trip count of loop=1
+         LOOP END
+
+         LOOP BEGIN at matrix.f90(350,5) inlined into matrix.f90(227,12)
+         <Remainder loop for vectorization>
+            remark #25015: Estimate of max trip count of loop=12
+         LOOP END
+      LOOP END
+   LOOP END
+
+   LOOP BEGIN at matrix.f90(349,3) inlined into matrix.f90(227,12)
+   <Distributed chunk2>
+      remark #15542: loop was not vectorized: inner loop was already vectorized
+
+      LOOP BEGIN at matrix.f90(349,3) inlined into matrix.f90(227,12)
+         remark #15542: loop was not vectorized: inner loop was already vectorized
+
+         LOOP BEGIN at matrix.f90(349,3) inlined into matrix.f90(227,12)
+            remark #15542: loop was not vectorized: inner loop was already vectorized
+
+            LOOP BEGIN at matrix.f90(349,3) inlined into matrix.f90(227,12)
+            <Distributed chunk2>
+               remark #25442: blocked by 125   (pre-vector) 
+               remark #25440: unrolled and jammed by 4   (pre-vector) 
+               remark #15542: loop was not vectorized: inner loop was already vectorized
+               remark #25015: Estimate of max trip count of loop=125
+
+               LOOP BEGIN at matrix.f90(354,5) inlined into matrix.f90(227,12)
+                  remark #25442: blocked by 125   (pre-vector) 
+                  remark #25440: unrolled and jammed by 4   (pre-vector) 
+                  remark #15542: loop was not vectorized: inner loop was already vectorized
+                  remark #25015: Estimate of max trip count of loop=125
+
+                  LOOP BEGIN at matrix.f90(355,7) inlined into matrix.f90(227,12)
+                     remark #25442: blocked by 128   (pre-vector) 
+                     remark #15300: LOOP WAS VECTORIZED
+                     remark #15450: unmasked unaligned unit stride loads: 8 
+                     remark #15451: unmasked unaligned unit stride stores: 16 
+                     remark #15475: --- begin vector cost summary ---
+                     remark #15476: scalar cost: 142 
+                     remark #15477: vector cost: 38.000 
+                     remark #15478: estimated potential speedup: 3.670 
+                     remark #15488: --- end vector cost summary ---
+                     remark #25456: Number of Array Refs Scalar Replaced In Loop: 36
+                     remark #25015: Estimate of max trip count of loop=32
+                  LOOP END
+
+                  LOOP BEGIN at matrix.f90(355,7) inlined into matrix.f90(227,12)
+                  <Remainder loop for vectorization>
+                     remark #25015: Estimate of max trip count of loop=128
+                  LOOP END
+               LOOP END
+
+               LOOP BEGIN at matrix.f90(354,5) inlined into matrix.f90(227,12)
+               <Remainder>
+                  remark #15542: loop was not vectorized: inner loop was already vectorized
+                  remark #25015: Estimate of max trip count of loop=125
+
+                  LOOP BEGIN at matrix.f90(355,7) inlined into matrix.f90(227,12)
+                     remark #15300: LOOP WAS VECTORIZED
+                     remark #15450: unmasked unaligned unit stride loads: 5 
+                     remark #15451: unmasked unaligned unit stride stores: 4 
+                     remark #15475: --- begin vector cost summary ---
+                     remark #15476: scalar cost: 36 
+                     remark #15477: vector cost: 10.250 
+                     remark #15478: estimated potential speedup: 3.430 
+                     remark #15488: --- end vector cost summary ---
+                     remark #25456: Number of Array Refs Scalar Replaced In Loop: 3
+                     remark #25015: Estimate of max trip count of loop=32
+                  LOOP END
+
+                  LOOP BEGIN at matrix.f90(355,7) inlined into matrix.f90(227,12)
+                  <Remainder loop for vectorization>
+                     remark #25015: Estimate of max trip count of loop=128
+                  LOOP END
+               LOOP END
+            LOOP END
+
+            LOOP BEGIN at matrix.f90(349,3) inlined into matrix.f90(227,12)
+            <Remainder, Distributed chunk2>
+               remark #15542: loop was not vectorized: inner loop was already vectorized
+               remark #25015: Estimate of max trip count of loop=125
+
+               LOOP BEGIN at matrix.f90(354,5) inlined into matrix.f90(227,12)
+                  remark #15542: loop was not vectorized: inner loop was already vectorized
+                  remark #25015: Estimate of max trip count of loop=125
+
+                  LOOP BEGIN at matrix.f90(355,7) inlined into matrix.f90(227,12)
+                  <Peeled loop for vectorization>
+                     remark #25015: Estimate of max trip count of loop=3
+                  LOOP END
+
+                  LOOP BEGIN at matrix.f90(355,7) inlined into matrix.f90(227,12)
+                     remark #15300: LOOP WAS VECTORIZED
+                     remark #15442: entire loop may be executed in remainder
+                     remark #15448: unmasked aligned unit stride loads: 1 
+                     remark #15449: unmasked aligned unit stride stores: 1 
+                     remark #15450: unmasked unaligned unit stride loads: 1 
+                     remark #15475: --- begin vector cost summary ---
+                     remark #15476: scalar cost: 9 
+                     remark #15477: vector cost: 2.000 
+                     remark #15478: estimated potential speedup: 3.860 
+                     remark #15488: --- end vector cost summary ---
+                     remark #25015: Estimate of max trip count of loop=32
+                  LOOP END
+
+                  LOOP BEGIN at matrix.f90(355,7) inlined into matrix.f90(227,12)
+                  <Remainder loop for vectorization>
+                     remark #25015: Estimate of max trip count of loop=128
+                  LOOP END
+               LOOP END
+            LOOP END
+         LOOP END
+      LOOP END
+   LOOP END
+LOOP END
+
+LOOP BEGIN at matrix.f90(231,3)
+   remark #15335: loop was not vectorized: vectorization possible but seems inefficient. Use vector always directive or -vec-threshold0 to override 
+   remark #15450: unmasked unaligned unit stride loads: 1 
+   remark #15451: unmasked unaligned unit stride stores: 1 
+   remark #15475: --- begin vector cost summary ---
+   remark #15476: scalar cost: 4 
+   remark #15477: vector cost: 0.870 
+   remark #15478: estimated potential speedup: 1.640 
+   remark #15488: --- end vector cost summary ---
+   remark #25436: completely unrolled by 14  
+LOOP END
+
+LOOP BEGIN at matrix.f90(231,3)
+   remark #15301: MATERIALIZED LOOP WAS VECTORIZED
+   remark #15451: unmasked unaligned unit stride stores: 1 
+   remark #15475: --- begin vector cost summary ---
+   remark #15476: scalar cost: 2 
+   remark #15477: vector cost: 0.370 
+   remark #15478: estimated potential speedup: 4.240 
+   remark #15488: --- end vector cost summary ---
+   remark #25015: Estimate of max trip count of loop=1
+LOOP END
+
+LOOP BEGIN at matrix.f90(231,3)
+<Remainder loop for vectorization>
+   remark #25436: completely unrolled by 1  
+LOOP END
+
+    Report from: Code generation optimizations [cg]
+
+matrix.f90(351,7):remark #34014: optimization advice for memset: increase the destination's alignment to 16 (and use __assume_aligned) to speed up library implementation
+matrix.f90(351,7):remark #34026: call to memset implemented as a call to optimized library version
+matrix.f90(204,12):remark #34051: REGISTER ALLOCATION : [timeit_mp_test_matmul4_] matrix.f90:204
+
+    Hardware registers
+        Reserved     :    2[ rsp rip]
+        Available    :   39[ rax rdx rcx rbx rbp rsi rdi r8-r15 mm0-mm7 zmm0-zmm15]
+        Callee-save  :    6[ rbx rbp r12-r15]
+        Assigned     :   30[ rax rdx rcx rbx rsi rdi r8-r15 zmm0-zmm15]
+        
+    Routine temporaries
+        Total         :     641
+            Global    :     235
+            Local     :     406
+        Regenerable   :     104
+        Spilled       :      96
+        
+    Routine stack
+        Variables     :     432 bytes*
+            Reads     :      31 [2.83e+01 ~ 0.0%]
+            Writes    :      81 [8.10e+01 ~ 0.1%]
+        Spills        :     824 bytes*
+            Reads     :     184 [1.39e+04 ~ 8.9%]
+            Writes    :     127 [3.39e+03 ~ 2.2%]
+    
+    Notes
+    
+        *Non-overlapping variables and spills may share stack space,
+         so the total stack size might be less than this.
+    
+
+===========================================================================
+
+Begin optimization report for: TIMEIT::TEST_MATMUL5
+
+    Report from: Interprocedural optimizations [ipo]
+
+INLINE REPORT: (TIMEIT::TEST_MATMUL5) [11] matrix.f90(241,12)
+  -> EXTERN: (252,3) for_write_seq_lis
+  -> EXTERN: (253,3) for_write_seq_fmt_xmit
+  -> EXTERN: (253,3) for_write_seq_fmt
+  -> EXTERN: (254,3) for_write_seq_fmt_xmit
+  -> EXTERN: (254,3) for_write_seq_fmt
+  -> EXTERN: (256,3) for_alloc_allocatable
+  -> EXTERN: (256,3) for_check_mult_overflow64
+  -> EXTERN: (256,3) for_alloc_allocatable
+  -> EXTERN: (256,3) for_check_mult_overflow64
+  -> EXTERN: (256,3) for_alloc_allocatable
+  -> EXTERN: (256,3) for_check_mult_overflow64
+  -> EXTERN: (257,8) for_random_number
+  -> EXTERN: (258,8) for_random_number
+  -> EXTERN: (261,8) for_cpusec
+  -> EXTERN: (262,8) for_date_and_time
+  -> INLINE: (264,12) TIMEIT::MATMUL5
+  -> EXTERN: (266,8) for_cpusec
+  -> EXTERN: (267,8) for_date_and_time
+  -> INLINE: (270,13) TIMEIT::ELAPSEDTIME
+  -> CP_CLONE (271,8) TIMEIT::PRINTTIMES..1
+  -> EXTERN: (273,3) for_dealloc_allocatable
+  -> EXTERN: (274,3) for_dealloc_allocatable
+  -> EXTERN: (275,3) for_dealloc_allocatable
+  -> EXTERN: (276,1) for_dealloc_allocatable
+  -> EXTERN: (276,1) for_dealloc_allocatable
+  -> EXTERN: (276,1) for_dealloc_allocatable
+
+
+    Report from: Loop nest, Vector & Auto-parallelization optimizations [loop, vec, par]
+
+
+LOOP BEGIN at matrix.f90(257,8)
+   remark #15542: loop was not vectorized: inner loop was already vectorized
+
+   LOOP BEGIN at matrix.f90(257,8)
+   <Peeled loop for vectorization>
+      remark #25015: Estimate of max trip count of loop=3
+   LOOP END
+
+   LOOP BEGIN at matrix.f90(257,8)
+      remark #15300: LOOP WAS VECTORIZED
+      remark #15442: entire loop may be executed in remainder
+      remark #15451: unmasked unaligned unit stride stores: 1 
+      remark #15475: --- begin vector cost summary ---
+      remark #15476: scalar cost: 103 
+      remark #15477: vector cost: 19.000 
+      remark #15478: estimated potential speedup: 5.100 
+      remark #15482: vectorized math library calls: 1 
+      remark #15488: --- end vector cost summary ---
+   LOOP END
+
+   LOOP BEGIN at matrix.f90(257,8)
+   <Remainder loop for vectorization>
+   LOOP END
+LOOP END
+
+LOOP BEGIN at matrix.f90(258,8)
+   remark #15542: loop was not vectorized: inner loop was already vectorized
+
+   LOOP BEGIN at matrix.f90(258,8)
+   <Peeled loop for vectorization>
+      remark #25015: Estimate of max trip count of loop=3
+   LOOP END
+
+   LOOP BEGIN at matrix.f90(258,8)
+      remark #15300: LOOP WAS VECTORIZED
+      remark #15442: entire loop may be executed in remainder
+      remark #15451: unmasked unaligned unit stride stores: 1 
+      remark #15475: --- begin vector cost summary ---
+      remark #15476: scalar cost: 103 
+      remark #15477: vector cost: 19.000 
+      remark #15478: estimated potential speedup: 5.100 
+      remark #15482: vectorized math library calls: 1 
+      remark #15488: --- end vector cost summary ---
+   LOOP END
+
+   LOOP BEGIN at matrix.f90(258,8)
+   <Remainder loop for vectorization>
+   LOOP END
+LOOP END
+
+LOOP BEGIN at matrix.f90(263,3)
+   remark #15542: loop was not vectorized: inner loop was already vectorized
+
+   LOOP BEGIN at matrix.f90(368,3) inlined into matrix.f90(264,12)
+   <Distributed chunk1>
+      remark #25426: Loop Distributed (2 way) 
+      remark #15542: loop was not vectorized: inner loop was already vectorized
+
+      LOOP BEGIN at matrix.f90(369,5) inlined into matrix.f90(264,12)
+      <Distributed chunk1>
+         remark #25426: Loop Distributed (2 way) 
+         remark #25408: memset generated
+         remark #15542: loop was not vectorized: inner loop was already vectorized
+
+         LOOP BEGIN at matrix.f90(369,5) inlined into matrix.f90(264,12)
+         <Distributed chunk1>
+            remark #15301: PARTIAL LOOP WAS VECTORIZED
+            remark #15451: unmasked unaligned unit stride stores: 1 
+            remark #15475: --- begin vector cost summary ---
+            remark #15476: scalar cost: 3 
+            remark #15477: vector cost: 1.250 
+            remark #15478: estimated potential speedup: 1.440 
+            remark #15488: --- end vector cost summary ---
+            remark #25015: Estimate of max trip count of loop=1
+         LOOP END
+
+         LOOP BEGIN at matrix.f90(369,5) inlined into matrix.f90(264,12)
+         <Remainder loop for vectorization, Distributed chunk1>
+            remark #25015: Estimate of max trip count of loop=12
+         LOOP END
+      LOOP END
+   LOOP END
+
+   LOOP BEGIN at matrix.f90(368,3) inlined into matrix.f90(264,12)
+   <Distributed chunk2>
+      remark #25444: Loopnest Interchanged: ( 1 2 3 ) --> ( 1 3 2 )
+      remark #15542: loop was not vectorized: inner loop was already vectorized
+
+      LOOP BEGIN at matrix.f90(368,3) inlined into matrix.f90(264,12)
+      <Distributed chunk2>
+         remark #15542: loop was not vectorized: inner loop was already vectorized
+
+         LOOP BEGIN at matrix.f90(368,3) inlined into matrix.f90(264,12)
+            remark #15542: loop was not vectorized: inner loop was already vectorized
+
+            LOOP BEGIN at matrix.f90(368,3) inlined into matrix.f90(264,12)
+            <Distributed chunk2>
+               remark #25442: blocked by 125   (pre-vector) 
+               remark #25440: unrolled and jammed by 4   (pre-vector) 
+               remark #15542: loop was not vectorized: inner loop was already vectorized
+               remark #25015: Estimate of max trip count of loop=125
+
+               LOOP BEGIN at matrix.f90(371,7) inlined into matrix.f90(264,12)
+               <Distributed chunk2>
+                  remark #25442: blocked by 125   (pre-vector) 
+                  remark #25440: unrolled and jammed by 4   (pre-vector) 
+                  remark #15542: loop was not vectorized: inner loop was already vectorized
+                  remark #25015: Estimate of max trip count of loop=125
+
+                  LOOP BEGIN at matrix.f90(369,5) inlined into matrix.f90(264,12)
+                     remark #25442: blocked by 128   (pre-vector) 
+                     remark #15301: PERMUTED LOOP WAS VECTORIZED
+                     remark #15450: unmasked unaligned unit stride loads: 8 
+                     remark #15451: unmasked unaligned unit stride stores: 16 
+                     remark #15475: --- begin vector cost summary ---
+                     remark #15476: scalar cost: 142 
+                     remark #15477: vector cost: 38.000 
+                     remark #15478: estimated potential speedup: 3.670 
+                     remark #15488: --- end vector cost summary ---
+                     remark #25456: Number of Array Refs Scalar Replaced In Loop: 36
+                     remark #25015: Estimate of max trip count of loop=32
+                  LOOP END
+
+                  LOOP BEGIN at matrix.f90(369,5) inlined into matrix.f90(264,12)
+                  <Remainder loop for vectorization>
+                     remark #25015: Estimate of max trip count of loop=128
+                  LOOP END
+               LOOP END
+
+               LOOP BEGIN at matrix.f90(371,7) inlined into matrix.f90(264,12)
+               <Remainder, Distributed chunk2>
+                  remark #15542: loop was not vectorized: inner loop was already vectorized
+                  remark #25015: Estimate of max trip count of loop=125
+
+                  LOOP BEGIN at matrix.f90(369,5) inlined into matrix.f90(264,12)
+                     remark #15301: PERMUTED LOOP WAS VECTORIZED
+                     remark #15450: unmasked unaligned unit stride loads: 5 
+                     remark #15451: unmasked unaligned unit stride stores: 4 
+                     remark #15475: --- begin vector cost summary ---
+                     remark #15476: scalar cost: 36 
+                     remark #15477: vector cost: 10.250 
+                     remark #15478: estimated potential speedup: 3.430 
+                     remark #15488: --- end vector cost summary ---
+                     remark #25456: Number of Array Refs Scalar Replaced In Loop: 3
+                     remark #25015: Estimate of max trip count of loop=32
+                  LOOP END
+
+                  LOOP BEGIN at matrix.f90(369,5) inlined into matrix.f90(264,12)
+                  <Remainder loop for vectorization>
+                     remark #25015: Estimate of max trip count of loop=128
+                  LOOP END
+               LOOP END
+            LOOP END
+
+            LOOP BEGIN at matrix.f90(368,3) inlined into matrix.f90(264,12)
+            <Remainder, Distributed chunk2>
+               remark #15542: loop was not vectorized: inner loop was already vectorized
+               remark #25015: Estimate of max trip count of loop=125
+
+               LOOP BEGIN at matrix.f90(371,7) inlined into matrix.f90(264,12)
+               <Distributed chunk2>
+                  remark #15542: loop was not vectorized: inner loop was already vectorized
+                  remark #25015: Estimate of max trip count of loop=125
+
+                  LOOP BEGIN at matrix.f90(369,5) inlined into matrix.f90(264,12)
+                  <Peeled loop for vectorization>
+                     remark #25015: Estimate of max trip count of loop=3
+                  LOOP END
+
+                  LOOP BEGIN at matrix.f90(369,5) inlined into matrix.f90(264,12)
+                     remark #15301: PERMUTED LOOP WAS VECTORIZED
+                     remark #15442: entire loop may be executed in remainder
+                     remark #15448: unmasked aligned unit stride loads: 1 
+                     remark #15449: unmasked aligned unit stride stores: 1 
+                     remark #15450: unmasked unaligned unit stride loads: 1 
+                     remark #15475: --- begin vector cost summary ---
+                     remark #15476: scalar cost: 9 
+                     remark #15477: vector cost: 2.000 
+                     remark #15478: estimated potential speedup: 3.860 
+                     remark #15488: --- end vector cost summary ---
+                     remark #25015: Estimate of max trip count of loop=32
+                  LOOP END
+
+                  LOOP BEGIN at matrix.f90(369,5) inlined into matrix.f90(264,12)
+                  <Remainder loop for vectorization>
+                     remark #25015: Estimate of max trip count of loop=128
+                  LOOP END
+               LOOP END
+            LOOP END
+         LOOP END
+      LOOP END
+   LOOP END
+LOOP END
+
+LOOP BEGIN at matrix.f90(268,3)
+   remark #15335: loop was not vectorized: vectorization possible but seems inefficient. Use vector always directive or -vec-threshold0 to override 
+   remark #15450: unmasked unaligned unit stride loads: 1 
+   remark #15451: unmasked unaligned unit stride stores: 1 
+   remark #15475: --- begin vector cost summary ---
+   remark #15476: scalar cost: 4 
+   remark #15477: vector cost: 0.870 
+   remark #15478: estimated potential speedup: 1.640 
+   remark #15488: --- end vector cost summary ---
+   remark #25436: completely unrolled by 14  
+LOOP END
+
+LOOP BEGIN at matrix.f90(268,3)
+   remark #15301: MATERIALIZED LOOP WAS VECTORIZED
+   remark #15451: unmasked unaligned unit stride stores: 1 
+   remark #15475: --- begin vector cost summary ---
+   remark #15476: scalar cost: 2 
+   remark #15477: vector cost: 0.370 
+   remark #15478: estimated potential speedup: 4.240 
+   remark #15488: --- end vector cost summary ---
+   remark #25015: Estimate of max trip count of loop=1
+LOOP END
+
+LOOP BEGIN at matrix.f90(268,3)
+<Remainder loop for vectorization>
+   remark #25436: completely unrolled by 1  
+LOOP END
+
+    Report from: Code generation optimizations [cg]
+
+matrix.f90(370,7):remark #34014: optimization advice for memset: increase the destination's alignment to 16 (and use __assume_aligned) to speed up library implementation
+matrix.f90(370,7):remark #34026: call to memset implemented as a call to optimized library version
+matrix.f90(241,12):remark #34051: REGISTER ALLOCATION : [timeit_mp_test_matmul5_] matrix.f90:241
+
+    Hardware registers
+        Reserved     :    2[ rsp rip]
+        Available    :   39[ rax rdx rcx rbx rbp rsi rdi r8-r15 mm0-mm7 zmm0-zmm15]
+        Callee-save  :    6[ rbx rbp r12-r15]
+        Assigned     :   30[ rax rdx rcx rbx rsi rdi r8-r15 zmm0-zmm15]
+        
+    Routine temporaries
+        Total         :     641
+            Global    :     235
+            Local     :     406
+        Regenerable   :     104
+        Spilled       :      96
+        
+    Routine stack
+        Variables     :     432 bytes*
+            Reads     :      31 [2.83e+01 ~ 0.0%]
+            Writes    :      81 [8.10e+01 ~ 0.0%]
+        Spills        :     824 bytes*
+            Reads     :     184 [1.45e+04 ~ 8.9%]
+            Writes    :     125 [3.47e+03 ~ 2.1%]
+    
+    Notes
+    
+        *Non-overlapping variables and spills may share stack space,
+         so the total stack size might be less than this.
+    
+
+===========================================================================
+
+Begin optimization report for: TIMEIT::ELAPSEDTIME
+
+    Report from: Interprocedural optimizations [ipo]
+
+INLINE REPORT: (TIMEIT::ELAPSEDTIME) [12] matrix.f90(278,19)
+
+
+    Report from: Code generation optimizations [cg]
+
+matrix.f90(278,19):remark #34051: REGISTER ALLOCATION : [timeit_mp_elapsedtime_] matrix.f90:278
+
+    Hardware registers
+        Reserved     :    2[ rsp rip]
+        Available    :   39[ rax rdx rcx rbx rbp rsi rdi r8-r15 mm0-mm7 zmm0-zmm15]
+        Callee-save  :    6[ rbx rbp r12-r15]
+        Assigned     :   18[ rsi rdi zmm0-zmm15]
+        
+    Routine temporaries
+        Total         :      30
+            Global    :       0
+            Local     :      30
+        Regenerable   :       1
+        Spilled       :       0
+        
+    Routine stack
+        Variables     :       0 bytes*
+            Reads     :       0 [0.00e+00 ~ 0.0%]
+            Writes    :       0 [0.00e+00 ~ 0.0%]
+        Spills        :       0 bytes*
+            Reads     :       0 [0.00e+00 ~ 0.0%]
+            Writes    :       0 [0.00e+00 ~ 0.0%]
+    
+    Notes
+    
+        *Non-overlapping variables and spills may share stack space,
+         so the total stack size might be less than this.
+    
+
+===========================================================================
+
+Begin optimization report for: TIMEIT::PRINTTIMES
+
+    Report from: Interprocedural optimizations [ipo]
+
+INLINE REPORT: (TIMEIT::PRINTTIMES) [13] matrix.f90(284,12)
+  -> EXTERN: (290,3) for_write_seq_fmt
+  -> EXTERN: (292,6) for_write_seq_fmt
+  -> EXTERN: (292,6) __resetsp_inlined
+  -> EXTERN: (292,6) __getsp_inlined
+  -> EXTERN: (292,39) for_trim
+  -> EXTERN: (292,44) _alloca
+  -> EXTERN: (294,3) for_write_seq_lis
+  -> EXTERN: (295,3) for_write_seq_fmt
+  -> EXTERN: (297,6) for_write_seq_fmt_xmit
+  -> EXTERN: (297,6) for_write_seq_fmt
+  -> EXTERN: (299,3) for_write_seq_lis
+  -> EXTERN: (300,3) for_write_seq_fmt
+  -> EXTERN: (302,6) for_write_seq_fmt_xmit
+  -> EXTERN: (302,6) for_write_seq_fmt
+  -> EXTERN: (304,3) for_write_seq_lis
+
+
+    Report from: Loop nest, Vector & Auto-parallelization optimizations [loop, vec, par]
+
+
+LOOP BEGIN at matrix.f90(291,3)
+   remark #15344: loop was not vectorized: vector dependence prevents vectorization. First dependence is shown below. Use level 5 report for details
+   remark #15346: vector dependence: assumed OUTPUT dependence between call:for_trim (292:39) and call:for_write_seq_fmt (292:6)
+LOOP END
+
+LOOP BEGIN at matrix.f90(296,3)
+   remark #15344: loop was not vectorized: vector dependence prevents vectorization. First dependence is shown below. Use level 5 report for details
+   remark #15346: vector dependence: assumed OUTPUT dependence between at (297:6) and at (297:6)
+LOOP END
+
+LOOP BEGIN at matrix.f90(301,3)
+   remark #15344: loop was not vectorized: vector dependence prevents vectorization. First dependence is shown below. Use level 5 report for details
+   remark #15346: vector dependence: assumed OUTPUT dependence between at (302:6) and at (302:6)
+LOOP END
+
+    Report from: Code generation optimizations [cg]
+
+matrix.f90(284,12):remark #34051: REGISTER ALLOCATION : [timeit_mp_printtimes_] matrix.f90:284
+
+    Hardware registers
+        Reserved     :    2[ rsp rip]
+        Available    :   39[ rax rdx rcx rbx rbp rsi rdi r8-r15 mm0-mm7 zmm0-zmm15]
+        Callee-save  :    6[ rbx rbp r12-r15]
+        Assigned     :   13[ rax rdx rcx rbx rsi rdi r8-r10 r12-r15]
+        
+    Routine temporaries
+        Total         :     133
+            Global    :      38
+            Local     :      95
+        Regenerable   :      99
+        Spilled       :       8
+        
+    Routine stack
+        Variables     :     320 bytes*
+            Reads     :       0 [0.00e+00 ~ 0.0%]
+            Writes    :      41 [1.16e+02 ~ 21.7%]
+        Spills        :      24 bytes*
+            Reads     :       4 [8.38e+00 ~ 1.6%]
+            Writes    :       3 [2.94e+00 ~ 0.5%]
+    
+    Notes
+    
+        *Non-overlapping variables and spills may share stack space,
+         so the total stack size might be less than this.
+    
+
+===========================================================================
+
+Begin optimization report for: TIMEIT::MATMUL2
+
+    Report from: Interprocedural optimizations [ipo]
+
+INLINE REPORT: (TIMEIT::MATMUL2) [14] matrix.f90(316,12)
+
+
+    Report from: Loop nest, Vector & Auto-parallelization optimizations [loop, vec, par]
+
+
+LOOP BEGIN at matrix.f90(319,7)
+<Multiversioned v1>
+   remark #25233: Loop multiversioned for stride tests on Assumed shape arrays
+   remark #15542: loop was not vectorized: inner loop was already vectorized
+
+   LOOP BEGIN at matrix.f90(319,7)
+   <Peeled loop for vectorization>
+      remark #25015: Estimate of max trip count of loop=3
+   LOOP END
+
+   LOOP BEGIN at matrix.f90(319,7)
+      remark #15300: LOOP WAS VECTORIZED
+      remark #15442: entire loop may be executed in remainder
+      remark #15449: unmasked aligned unit stride stores: 1 
+      remark #15475: --- begin vector cost summary ---
+      remark #15476: scalar cost: 3 
+      remark #15477: vector cost: 0.750 
+      remark #15478: estimated potential speedup: 3.430 
+      remark #15488: --- end vector cost summary ---
+   LOOP END
+
+   LOOP BEGIN at matrix.f90(319,7)
+   <Remainder loop for vectorization>
+      remark #15301: REMAINDER LOOP WAS VECTORIZED
+   LOOP END
+
+   LOOP BEGIN at matrix.f90(319,7)
+   <Remainder loop for vectorization>
+   LOOP END
+LOOP END
+
+LOOP BEGIN at matrix.f90(319,7)
+<Multiversioned v2>
+   remark #15335: loop was not vectorized: vectorization possible but seems inefficient. Use vector always directive or -vec-threshold0 to override 
+   remark #15453: unmasked strided stores: 1 
+   remark #15475: --- begin vector cost summary ---
+   remark #15476: scalar cost: 3 
+   remark #15477: vector cost: 3.500 
+   remark #15478: estimated potential speedup: 0.850 
+   remark #15488: --- end vector cost summary ---
+
+   LOOP BEGIN at matrix.f90(319,7)
+      remark #15335: loop was not vectorized: vectorization possible but seems inefficient. Use vector always directive or -vec-threshold0 to override 
+      remark #15453: unmasked strided stores: 1 
+      remark #15475: --- begin vector cost summary ---
+      remark #15476: scalar cost: 3 
+      remark #15477: vector cost: 3.000 
+      remark #15478: estimated potential speedup: 1.000 
+      remark #15488: --- end vector cost summary ---
+      remark #25439: unrolled with remainder by 2  
+   LOOP END
+
+   LOOP BEGIN at matrix.f90(319,7)
+   <Remainder>
+   LOOP END
+LOOP END
+
+LOOP BEGIN at matrix.f90(319,7)
+   remark #25444: Loopnest Interchanged: ( 1 2 3 ) --> ( 2 1 3 )
+   remark #15542: loop was not vectorized: inner loop was already vectorized
+
+   LOOP BEGIN at matrix.f90(319,7)
+   <Multiversioned v1>
+      remark #25233: Loop multiversioned for stride tests on Assumed shape arrays
+      remark #15542: loop was not vectorized: inner loop was already vectorized
+
+      LOOP BEGIN at matrix.f90(319,7)
+      <Peeled loop for vectorization>
+         remark #25015: Estimate of max trip count of loop=3
+      LOOP END
+
+      LOOP BEGIN at matrix.f90(319,7)
+         remark #15300: LOOP WAS VECTORIZED
+         remark #15442: entire loop may be executed in remainder
+         remark #15450: unmasked unaligned unit stride loads: 2 
+         remark #15451: unmasked unaligned unit stride stores: 1 
+         remark #15475: --- begin vector cost summary ---
+         remark #15476: scalar cost: 9 
+         remark #15477: vector cost: 2.000 
+         remark #15478: estimated potential speedup: 4.200 
+         remark #15488: --- end vector cost summary ---
+      LOOP END
+
+      LOOP BEGIN at matrix.f90(319,7)
+      <Remainder loop for vectorization>
+      LOOP END
+   LOOP END
+
+   LOOP BEGIN at matrix.f90(319,7)
+   <Multiversioned v2>
+      remark #15542: loop was not vectorized: inner loop was already vectorized
+
+      LOOP BEGIN at matrix.f90(319,7)
+         remark #15300: LOOP WAS VECTORIZED
+         remark #15452: unmasked strided loads: 2 
+         remark #15453: unmasked strided stores: 1 
+         remark #15475: --- begin vector cost summary ---
+         remark #15476: scalar cost: 9 
+         remark #15477: vector cost: 7.000 
+         remark #15478: estimated potential speedup: 1.270 
+         remark #15488: --- end vector cost summary ---
+      LOOP END
+
+      LOOP BEGIN at matrix.f90(319,7)
+      <Remainder loop for vectorization>
+      LOOP END
+   LOOP END
+LOOP END
+
+    Report from: Code generation optimizations [cg]
+
+matrix.f90(316,12):remark #34051: REGISTER ALLOCATION : [timeit_mp_matmul2_] matrix.f90:316
+
+    Hardware registers
+        Reserved     :    2[ rsp rip]
+        Available    :   39[ rax rdx rcx rbx rbp rsi rdi r8-r15 mm0-mm7 zmm0-zmm15]
+        Callee-save  :    6[ rbx rbp r12-r15]
+        Assigned     :   30[ rax rdx rcx rbx rsi rdi r8-r15 zmm0-zmm15]
+        
+    Routine temporaries
+        Total         :     164
+            Global    :      92
+            Local     :      72
+        Regenerable   :       3
+        Spilled       :      44
+        
+    Routine stack
+        Variables     :       0 bytes*
+            Reads     :       0 [0.00e+00 ~ 0.0%]
+            Writes    :       0 [0.00e+00 ~ 0.0%]
+        Spills        :     304 bytes*
+            Reads     :      61 [4.73e+02 ~ 6.3%]
+            Writes    :      47 [1.55e+02 ~ 2.0%]
+    
+    Notes
+    
+        *Non-overlapping variables and spills may share stack space,
+         so the total stack size might be less than this.
+    
+
+===========================================================================
+
+Begin optimization report for: TIMEIT::MATMUL3
+
+    Report from: Interprocedural optimizations [ipo]
+
+INLINE REPORT: (TIMEIT::MATMUL3) [15] matrix.f90(322,12)
+
+
+    Report from: Loop nest, Vector & Auto-parallelization optimizations [loop, vec, par]
+
+
+LOOP BEGIN at matrix.f90(329,3)
+   remark #15542: loop was not vectorized: inner loop was already vectorized
+
+   LOOP BEGIN at matrix.f90(330,5)
+   <Peeled loop for vectorization, Multiversioned v1>
+      remark #25015: Estimate of max trip count of loop=3
+   LOOP END
+
+   LOOP BEGIN at matrix.f90(330,5)
+   <Multiversioned v1>
+      remark #25233: Loop multiversioned for stride tests on Assumed shape arrays
+      remark #15300: LOOP WAS VECTORIZED
+      remark #15442: entire loop may be executed in remainder
+      remark #15449: unmasked aligned unit stride stores: 1 
+      remark #15475: --- begin vector cost summary ---
+      remark #15476: scalar cost: 3 
+      remark #15477: vector cost: 0.750 
+      remark #15478: estimated potential speedup: 3.430 
+      remark #15488: --- end vector cost summary ---
+   LOOP END
+
+   LOOP BEGIN at matrix.f90(330,5)
+   <Remainder loop for vectorization, Multiversioned v1>
+      remark #15301: REMAINDER LOOP WAS VECTORIZED
+   LOOP END
+
+   LOOP BEGIN at matrix.f90(330,5)
+   <Remainder loop for vectorization, Multiversioned v1>
+   LOOP END
+
+   LOOP BEGIN at matrix.f90(330,5)
+   <Multiversioned v2>
+      remark #15335: loop was not vectorized: vectorization possible but seems inefficient. Use vector always directive or -vec-threshold0 to override 
+      remark #15453: unmasked strided stores: 1 
+      remark #15475: --- begin vector cost summary ---
+      remark #15476: scalar cost: 3 
+      remark #15477: vector cost: 3.000 
+      remark #15478: estimated potential speedup: 1.000 
+      remark #15488: --- end vector cost summary ---
+      remark #25439: unrolled with remainder by 2  
+   LOOP END
+
+   LOOP BEGIN at matrix.f90(330,5)
+   <Remainder, Multiversioned v2>
+   LOOP END
+
+   LOOP BEGIN at matrix.f90(334,5)
+   <Multiversioned v1>
+      remark #25233: Loop multiversioned for stride tests on Assumed shape arrays
+      remark #25461: Imperfect Loop Unroll-Jammed by 2   (pre-vector) 
+      remark #15542: loop was not vectorized: inner loop was already vectorized
+
+      LOOP BEGIN at matrix.f90(336,7)
+      <Peeled loop for vectorization>
+         remark #25015: Estimate of max trip count of loop=3
+      LOOP END
+
+      LOOP BEGIN at matrix.f90(336,7)
+         remark #15300: LOOP WAS VECTORIZED
+         remark #15442: entire loop may be executed in remainder
+         remark #15448: unmasked aligned unit stride loads: 1 
+         remark #15449: unmasked aligned unit stride stores: 2 
+         remark #15450: unmasked unaligned unit stride loads: 2 
+         remark #15475: --- begin vector cost summary ---
+         remark #15476: scalar cost: 17 
+         remark #15477: vector cost: 4.000 
+         remark #15478: estimated potential speedup: 3.710 
+         remark #15488: --- end vector cost summary ---
+      LOOP END
+
+      LOOP BEGIN at matrix.f90(336,7)
+      <Remainder loop for vectorization>
+         remark #15301: REMAINDER LOOP WAS VECTORIZED
+      LOOP END
+
+      LOOP BEGIN at matrix.f90(336,7)
+      <Remainder loop for vectorization>
+      LOOP END
+   LOOP END
+
+   LOOP BEGIN at matrix.f90(334,5)
+   <Remainder, Multiversioned v1>
+      remark #15542: loop was not vectorized: inner loop was already vectorized
+
+      LOOP BEGIN at matrix.f90(336,7)
+      <Peeled loop for vectorization>
+         remark #25015: Estimate of max trip count of loop=3
+      LOOP END
+
+      LOOP BEGIN at matrix.f90(336,7)
+         remark #15300: LOOP WAS VECTORIZED
+         remark #15442: entire loop may be executed in remainder
+         remark #15450: unmasked unaligned unit stride loads: 2 
+         remark #15451: unmasked unaligned unit stride stores: 1 
+         remark #15475: --- begin vector cost summary ---
+         remark #15476: scalar cost: 8 
+         remark #15477: vector cost: 2.000 
+         remark #15478: estimated potential speedup: 3.760 
+         remark #15488: --- end vector cost summary ---
+      LOOP END
+
+      LOOP BEGIN at matrix.f90(336,7)
+      <Remainder loop for vectorization>
+      LOOP END
+   LOOP END
+
+   LOOP BEGIN at matrix.f90(334,5)
+   <Multiversioned v2>
+      remark #25461: Imperfect Loop Unroll-Jammed by 2   (pre-vector) 
+      remark #15542: loop was not vectorized: inner loop was already vectorized
+
+      LOOP BEGIN at matrix.f90(336,7)
+         remark #15300: LOOP WAS VECTORIZED
+         remark #15452: unmasked strided loads: 4 
+         remark #15453: unmasked strided stores: 2 
+         remark #15475: --- begin vector cost summary ---
+         remark #15476: scalar cost: 17 
+         remark #15477: vector cost: 15.000 
+         remark #15478: estimated potential speedup: 1.120 
+         remark #15488: --- end vector cost summary ---
+      LOOP END
+
+      LOOP BEGIN at matrix.f90(336,7)
+      <Remainder loop for vectorization>
+      LOOP END
+   LOOP END
+
+   LOOP BEGIN at matrix.f90(334,5)
+   <Remainder, Multiversioned v2>
+      remark #15542: loop was not vectorized: inner loop was already vectorized
+
+      LOOP BEGIN at matrix.f90(336,7)
+         remark #15300: LOOP WAS VECTORIZED
+         remark #15452: unmasked strided loads: 2 
+         remark #15453: unmasked strided stores: 1 
+         remark #15475: --- begin vector cost summary ---
+         remark #15476: scalar cost: 8 
+         remark #15477: vector cost: 7.000 
+         remark #15478: estimated potential speedup: 1.130 
+         remark #15488: --- end vector cost summary ---
+      LOOP END
+
+      LOOP BEGIN at matrix.f90(336,7)
+      <Remainder loop for vectorization>
+      LOOP END
+   LOOP END
+LOOP END
+
+    Report from: Code generation optimizations [cg]
+
+matrix.f90(322,12):remark #34051: REGISTER ALLOCATION : [timeit_mp_matmul3_] matrix.f90:322
+
+    Hardware registers
+        Reserved     :    2[ rsp rip]
+        Available    :   39[ rax rdx rcx rbx rbp rsi rdi r8-r15 mm0-mm7 zmm0-zmm15]
+        Callee-save  :    6[ rbx rbp r12-r15]
+        Assigned     :   30[ rax rdx rcx rbx rsi rdi r8-r15 zmm0-zmm15]
+        
+    Routine temporaries
+        Total         :     364
+            Global    :     159
+            Local     :     205
+        Regenerable   :       3
+        Spilled       :      66
+        
+    Routine stack
+        Variables     :       0 bytes*
+            Reads     :       0 [0.00e+00 ~ 0.0%]
+            Writes    :       0 [0.00e+00 ~ 0.0%]
+        Spills        :     512 bytes*
+            Reads     :     140 [1.39e+03 ~ 7.2%]
+            Writes    :      67 [2.49e+02 ~ 1.3%]
+    
+    Notes
+    
+        *Non-overlapping variables and spills may share stack space,
+         so the total stack size might be less than this.
+    
+
+===========================================================================
+
+Begin optimization report for: TIMEIT::MATMUL4
+
+    Report from: Interprocedural optimizations [ipo]
+
+INLINE REPORT: (TIMEIT::MATMUL4) [16] matrix.f90(343,12)
+
+
+    Report from: Loop nest, Vector & Auto-parallelization optimizations [loop, vec, par]
+
+
+LOOP BEGIN at matrix.f90(349,3)
+   remark #15542: loop was not vectorized: inner loop was already vectorized
+
+   LOOP BEGIN at matrix.f90(350,5)
+   <Peeled loop for vectorization, Multiversioned v1>
+      remark #25015: Estimate of max trip count of loop=3
+   LOOP END
+
+   LOOP BEGIN at matrix.f90(350,5)
+   <Multiversioned v1>
+      remark #25233: Loop multiversioned for stride tests on Assumed shape arrays
+      remark #15300: LOOP WAS VECTORIZED
+      remark #15442: entire loop may be executed in remainder
+      remark #15449: unmasked aligned unit stride stores: 1 
+      remark #15475: --- begin vector cost summary ---
+      remark #15476: scalar cost: 3 
+      remark #15477: vector cost: 0.750 
+      remark #15478: estimated potential speedup: 3.430 
+      remark #15488: --- end vector cost summary ---
+   LOOP END
+
+   LOOP BEGIN at matrix.f90(350,5)
+   <Remainder loop for vectorization, Multiversioned v1>
+      remark #15301: REMAINDER LOOP WAS VECTORIZED
+   LOOP END
+
+   LOOP BEGIN at matrix.f90(350,5)
+   <Remainder loop for vectorization, Multiversioned v1>
+   LOOP END
+
+   LOOP BEGIN at matrix.f90(350,5)
+   <Multiversioned v2>
+      remark #15335: loop was not vectorized: vectorization possible but seems inefficient. Use vector always directive or -vec-threshold0 to override 
+      remark #15453: unmasked strided stores: 1 
+      remark #15475: --- begin vector cost summary ---
+      remark #15476: scalar cost: 3 
+      remark #15477: vector cost: 3.000 
+      remark #15478: estimated potential speedup: 1.000 
+      remark #15488: --- end vector cost summary ---
+      remark #25439: unrolled with remainder by 2  
+   LOOP END
+
+   LOOP BEGIN at matrix.f90(350,5)
+   <Remainder, Multiversioned v2>
+   LOOP END
+
+   LOOP BEGIN at matrix.f90(354,5)
+   <Multiversioned v1>
+      remark #25233: Loop multiversioned for stride tests on Assumed shape arrays
+      remark #15542: loop was not vectorized: inner loop was already vectorized
+
+      LOOP BEGIN at matrix.f90(355,7)
+      <Peeled loop for vectorization>
+         remark #25015: Estimate of max trip count of loop=3
+      LOOP END
+
+      LOOP BEGIN at matrix.f90(355,7)
+         remark #15300: LOOP WAS VECTORIZED
+         remark #15442: entire loop may be executed in remainder
+         remark #15450: unmasked unaligned unit stride loads: 2 
+         remark #15451: unmasked unaligned unit stride stores: 1 
+         remark #15475: --- begin vector cost summary ---
+         remark #15476: scalar cost: 9 
+         remark #15477: vector cost: 2.000 
+         remark #15478: estimated potential speedup: 4.200 
+         remark #15488: --- end vector cost summary ---
+      LOOP END
+
+      LOOP BEGIN at matrix.f90(355,7)
+      <Remainder loop for vectorization>
+      LOOP END
+   LOOP END
+
+   LOOP BEGIN at matrix.f90(354,5)
+   <Multiversioned v2>
+      remark #15542: loop was not vectorized: inner loop was already vectorized
+
+      LOOP BEGIN at matrix.f90(355,7)
+         remark #15300: LOOP WAS VECTORIZED
+         remark #15452: unmasked strided loads: 2 
+         remark #15453: unmasked strided stores: 1 
+         remark #15475: --- begin vector cost summary ---
+         remark #15476: scalar cost: 9 
+         remark #15477: vector cost: 7.000 
+         remark #15478: estimated potential speedup: 1.270 
+         remark #15488: --- end vector cost summary ---
+      LOOP END
+
+      LOOP BEGIN at matrix.f90(355,7)
+      <Remainder loop for vectorization>
+      LOOP END
+   LOOP END
+LOOP END
+
+    Report from: Code generation optimizations [cg]
+
+matrix.f90(343,12):remark #34051: REGISTER ALLOCATION : [timeit_mp_matmul4_] matrix.f90:343
+
+    Hardware registers
+        Reserved     :    2[ rsp rip]
+        Available    :   39[ rax rdx rcx rbx rbp rsi rdi r8-r15 mm0-mm7 zmm0-zmm15]
+        Callee-save  :    6[ rbx rbp r12-r15]
+        Assigned     :   30[ rax rdx rcx rbx rsi rdi r8-r15 zmm0-zmm15]
+        
+    Routine temporaries
+        Total         :     178
+            Global    :      90
+            Local     :      88
+        Regenerable   :       2
+        Spilled       :      37
+        
+    Routine stack
+        Variables     :       0 bytes*
+            Reads     :       0 [0.00e+00 ~ 0.0%]
+            Writes    :       0 [0.00e+00 ~ 0.0%]
+        Spills        :     296 bytes*
+            Reads     :      85 [5.18e+02 ~ 6.4%]
+            Writes    :      60 [1.25e+02 ~ 1.6%]
+    
+    Notes
+    
+        *Non-overlapping variables and spills may share stack space,
+         so the total stack size might be less than this.
+    
+
+===========================================================================
+
+Begin optimization report for: TIMEIT::MATMUL5
+
+    Report from: Interprocedural optimizations [ipo]
+
+INLINE REPORT: (TIMEIT::MATMUL5) [17] matrix.f90(362,12)
+
+
+    Report from: Loop nest, Vector & Auto-parallelization optimizations [loop, vec, par]
+
+
+LOOP BEGIN at matrix.f90(368,3)
+   remark #15542: loop was not vectorized: inner loop was already vectorized
+
+   LOOP BEGIN at matrix.f90(369,5)
+   <Peeled loop for vectorization, Multiversioned v1, Distributed chunk1>
+      remark #25015: Estimate of max trip count of loop=3
+   LOOP END
+
+   LOOP BEGIN at matrix.f90(369,5)
+   <Multiversioned v1, Distributed chunk1>
+      remark #25426: Loop Distributed (2 way) 
+      remark #25233: Loop multiversioned for stride tests on Assumed shape arrays
+      remark #15301: PARTIAL LOOP WAS VECTORIZED
+      remark #15442: entire loop may be executed in remainder
+      remark #15449: unmasked aligned unit stride stores: 1 
+      remark #15475: --- begin vector cost summary ---
+      remark #15476: scalar cost: 3 
+      remark #15477: vector cost: 0.750 
+      remark #15478: estimated potential speedup: 3.430 
+      remark #15488: --- end vector cost summary ---
+   LOOP END
+
+   LOOP BEGIN at matrix.f90(369,5)
+   <Remainder loop for vectorization, Multiversioned v1, Distributed chunk1>
+      remark #15301: REMAINDER LOOP WAS VECTORIZED
+   LOOP END
+
+   LOOP BEGIN at matrix.f90(369,5)
+   <Remainder loop for vectorization, Multiversioned v1, Distributed chunk1>
+   LOOP END
+
+   LOOP BEGIN at matrix.f90(369,5)
+   <Multiversioned v2, Distributed chunk1>
+      remark #15335: loop was not vectorized: vectorization possible but seems inefficient. Use vector always directive or -vec-threshold0 to override 
+      remark #15453: unmasked strided stores: 1 
+      remark #15475: --- begin vector cost summary ---
+      remark #15476: scalar cost: 3 
+      remark #15477: vector cost: 3.000 
+      remark #15478: estimated potential speedup: 1.000 
+      remark #15488: --- end vector cost summary ---
+      remark #25439: unrolled with remainder by 2  
+   LOOP END
+
+   LOOP BEGIN at matrix.f90(369,5)
+   <Remainder, Multiversioned v2, Distributed chunk1>
+   LOOP END
+
+   LOOP BEGIN at matrix.f90(371,7)
+   <Multiversioned v1, Distributed chunk2>
+      remark #25444: Loopnest Interchanged: ( 1 2 ) --> ( 2 1 )
+      remark #25233: Loop multiversioned for stride tests on Assumed shape arrays
+      remark #15542: loop was not vectorized: inner loop was already vectorized   [ matrix.f90(371,7) ]
+
+      LOOP BEGIN at matrix.f90(369,5)
+      <Peeled loop for vectorization>
+         remark #25015: Estimate of max trip count of loop=3
+      LOOP END
+
+      LOOP BEGIN at matrix.f90(369,5)
+         remark #15301: PERMUTED LOOP WAS VECTORIZED
+         remark #15442: entire loop may be executed in remainder
+         remark #15450: unmasked unaligned unit stride loads: 2 
+         remark #15451: unmasked unaligned unit stride stores: 1 
+         remark #15475: --- begin vector cost summary ---
+         remark #15476: scalar cost: 9 
+         remark #15477: vector cost: 2.000 
+         remark #15478: estimated potential speedup: 4.200 
+         remark #15488: --- end vector cost summary ---
+      LOOP END
+
+      LOOP BEGIN at matrix.f90(369,5)
+      <Remainder loop for vectorization>
+      LOOP END
+   LOOP END
+
+   LOOP BEGIN at matrix.f90(371,7)
+   <Multiversioned v2, Distributed chunk2>
+      remark #15542: loop was not vectorized: inner loop was already vectorized
+
+      LOOP BEGIN at matrix.f90(369,5)
+         remark #15301: PERMUTED LOOP WAS VECTORIZED
+         remark #15452: unmasked strided loads: 2 
+         remark #15453: unmasked strided stores: 1 
+         remark #15475: --- begin vector cost summary ---
+         remark #15476: scalar cost: 9 
+         remark #15477: vector cost: 7.000 
+         remark #15478: estimated potential speedup: 1.270 
+         remark #15488: --- end vector cost summary ---
+      LOOP END
+
+      LOOP BEGIN at matrix.f90(369,5)
+      <Remainder loop for vectorization>
+      LOOP END
+   LOOP END
+LOOP END
+
+    Report from: Code generation optimizations [cg]
+
+matrix.f90(362,12):remark #34051: REGISTER ALLOCATION : [timeit_mp_matmul5_] matrix.f90:362
+
+    Hardware registers
+        Reserved     :    2[ rsp rip]
+        Available    :   39[ rax rdx rcx rbx rbp rsi rdi r8-r15 mm0-mm7 zmm0-zmm15]
+        Callee-save  :    6[ rbx rbp r12-r15]
+        Assigned     :   30[ rax rdx rcx rbx rsi rdi r8-r15 zmm0-zmm15]
+        
+    Routine temporaries
+        Total         :     178
+            Global    :      90
+            Local     :      88
+        Regenerable   :       2
+        Spilled       :      37
+        
+    Routine stack
+        Variables     :       0 bytes*
+            Reads     :       0 [0.00e+00 ~ 0.0%]
+            Writes    :       0 [0.00e+00 ~ 0.0%]
+        Spills        :     296 bytes*
+            Reads     :      83 [4.93e+02 ~ 6.0%]
+            Writes    :      60 [1.28e+02 ~ 1.6%]
+    
+    Notes
+    
+        *Non-overlapping variables and spills may share stack space,
+         so the total stack size might be less than this.
+    
+
+===========================================================================

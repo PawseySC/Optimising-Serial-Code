@@ -1,0 +1,76 @@
+matrices.O0
+
+    Matrix size:      1000
+     Iterations:         1
+         Method:        External dgemm      Intrinsic matmul       Manual loops v1       Manual loops V2       Manual loops V3 
+       CPU time:               0.048 s               0.108 s               3.236 s               3.936 s               5.372 s 
+   Elapsed time:               0.064 s               0.108 s               3.236 s               3.938 s               5.372 s 
+
+    Matrix size:        20
+     Iterations:   1000000
+         Method:        External dgemm      Intrinsic matmul       Manual loops v1       Manual loops V2       Manual loops V3 
+       CPU time:               0.704 s               2.044 s              30.396 s              36.248 s              33.548 s 
+   Elapsed time:               0.709 s               2.043 s              30.400 s              36.247 s              33.550 s 
+
+    Matrix size:         3
+     Iterations:  10000000
+         Method:        External dgemm      Intrinsic matmul       Manual loops v1       Manual loops V2       Manual loops V3 
+       CPU time:               1.084 s               1.124 s               1.452 s               1.576 s               1.456 s 
+   Elapsed time:               1.088 s               1.122 s               1.454 s               1.576 s               1.457 s 
+matrix.O1
+
+    Matrix size:      1000
+     Iterations:         1
+         Method:        External dgemm      Intrinsic matmul       Manual loops v1       Manual loops V2       Manual loops V3 
+       CPU time:               0.052 s               0.104 s               0.612 s               0.668 s               2.736 s 
+   Elapsed time:               0.067 s               0.103 s               0.613 s               0.668 s               2.739 s 
+
+    Matrix size:        20
+     Iterations:   1000000
+         Method:        External dgemm      Intrinsic matmul       Manual loops v1       Manual loops V2       Manual loops V3 
+       CPU time:               0.688 s               5.588 s               5.344 s               7.288 s              13.432 s 
+   Elapsed time:               0.692 s               5.586 s               5.343 s               7.290 s              13.431 s 
+
+    Matrix size:         3
+     Iterations:  10000000
+         Method:        External dgemm      Intrinsic matmul       Manual loops v1       Manual loops V2       Manual loops V3 
+       CPU time:               1.020 s               0.388 s               0.392 s               0.400 s               0.476 s 
+   Elapsed time:               1.022 s               0.387 s               0.390 s               0.401 s               0.475 s 
+matrix.O2
+
+    Matrix size:      1000
+     Iterations:         1
+         Method:        External dgemm      Intrinsic matmul       Manual loops v1       Manual loops V2       Manual loops V3 
+       CPU time:               0.048 s               0.100 s               0.528 s               0.528 s               1.656 s 
+   Elapsed time:               0.063 s               0.104 s               0.528 s               0.528 s               1.653 s 
+
+    Matrix size:        20
+     Iterations:   1000000
+         Method:        External dgemm      Intrinsic matmul       Manual loops v1       Manual loops V2       Manual loops V3 
+       CPU time:               0.696 s               5.288 s               5.144 s               5.144 s               5.700 s 
+   Elapsed time:               0.699 s               5.289 s               5.144 s               5.146 s               5.699 s 
+
+    Matrix size:         3
+     Iterations:  10000000
+         Method:        External dgemm      Intrinsic matmul       Manual loops v1       Manual loops V2       Manual loops V3 
+       CPU time:               0.992 s               0.400 s               0.308 s               0.300 s               0.268 s 
+   Elapsed time:               0.996 s               0.398 s               0.307 s               0.303 s               0.265 s 
+matrix.O3
+
+    Matrix size:      1000
+     Iterations:         1
+         Method:        External dgemm      Intrinsic matmul       Manual loops v1       Manual loops V2       Manual loops V3 
+       CPU time:               0.052 s               0.108 s               0.524 s               0.528 s               1.652 s 
+   Elapsed time:               0.058 s               0.106 s               0.528 s               0.527 s               1.653 s 
+
+    Matrix size:        20
+     Iterations:   1000000
+         Method:        External dgemm      Intrinsic matmul       Manual loops v1       Manual loops V2       Manual loops V3 
+       CPU time:               0.688 s               5.084 s               5.144 s               5.144 s               5.688 s 
+   Elapsed time:               0.691 s               5.082 s               5.146 s               5.145 s               5.686 s 
+
+    Matrix size:         3
+     Iterations:  10000000
+         Method:        External dgemm      Intrinsic matmul       Manual loops v1       Manual loops V2       Manual loops V3 
+       CPU time:               0.952 s               0.384 s               0.308 s               0.304 s               0.264 s 
+   Elapsed time:               0.953 s               0.385 s               0.308 s               0.306 s               0.264 s 

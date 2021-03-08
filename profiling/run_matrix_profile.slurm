@@ -10,10 +10,10 @@ module load perftools
 
 export PAT_RT_PERFCTR=1
 export PAT_RT_SAMPLING_INTERVAL=1000
-optLevel='.O0'
+optLevel='.O2'
 #optLevel=''
 expType=pat
 #expType=apa
-srun --export=all -n 1 matrix${optLevel}+${expType}
+srun -n 1 matrix${optLevel}+${expType}
 
 
