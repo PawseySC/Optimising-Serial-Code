@@ -2,111 +2,135 @@ matrices.O0
  
     Matrix size:      1000
      Iterations:         1
-         Method:        External dgemm      Intrinsic matmul       Manual loops v1       Manual loops V2       Manual loops V3
+         Method:               matmul1               matmul2               matmul3               matmul4               matmul5
  
-       CPU time:               0.052 s               9.192 s               7.116 s               8.908 s              11.984 s
+           Info:        External dgemm        Fortran matmul        Using loops V3        Using loops V4        Using loops V5
  
-   Elapsed time:               0.052 s               9.192 s               7.115 s               8.910 s              11.984 s
+       CPU time:               0.052 s               9.192 s               7.124 s               9.368 s              11.944 s
+ 
+   Elapsed time:               0.106 s               9.189 s               7.125 s               9.367 s              11.947 s
  
  
     Matrix size:        20
      Iterations:   1000000
-         Method:        External dgemm      Intrinsic matmul       Manual loops v1       Manual loops V2       Manual loops V3
+         Method:               matmul1               matmul2               matmul3               matmul4               matmul5
  
-       CPU time:               0.760 s              77.484 s              61.620 s              76.728 s              76.076 s
+           Info:        External dgemm        Fortran matmul        Using loops V3        Using loops V4        Using loops V5
  
-   Elapsed time:               0.760 s              77.482 s              61.624 s              76.728 s              76.080 s
+       CPU time:               0.644 s              77.508 s              60.160 s              74.500 s              73.224 s
+ 
+   Elapsed time:               0.643 s              77.509 s              60.162 s              74.501 s              73.224 s
  
  
     Matrix size:         3
      Iterations:  10000000
-         Method:        External dgemm      Intrinsic matmul       Manual loops v1       Manual loops V2       Manual loops V3
+         Method:               matmul1               matmul2               matmul3               matmul4               matmul5
  
-       CPU time:               2.220 s               2.916 s               2.612 s               2.932 s               2.864 s
+           Info:        External dgemm        Fortran matmul        Using loops V3        Using loops V4        Using loops V5
  
-   Elapsed time:               2.220 s               2.916 s               2.609 s               2.935 s               2.862 s
+       CPU time:               0.824 s               2.900 s               2.552 s               2.940 s               2.856 s
+ 
+   Elapsed time:               0.895 s               2.900 s               2.551 s               2.939 s               2.858 s
  
 matrix.O1
  
     Matrix size:      1000
      Iterations:         1
-         Method:        External dgemm      Intrinsic matmul       Manual loops v1       Manual loops V2       Manual loops V3
+         Method:               matmul1               matmul2               matmul3               matmul4               matmul5
  
-       CPU time:               0.052 s               0.660 s               0.540 s               0.864 s               1.580 s
+           Info:        External dgemm        Fortran matmul        Using loops V3        Using loops V4        Using loops V5
  
-   Elapsed time:               0.052 s               0.660 s               0.537 s               0.866 s               1.578 s
+       CPU time:               0.052 s               0.596 s               0.536 s               0.868 s               1.544 s
+ 
+   Elapsed time:               0.109 s               0.597 s               0.537 s               0.865 s               1.547 s
  
  
     Matrix size:        20
      Iterations:   1000000
-         Method:        External dgemm      Intrinsic matmul       Manual loops v1       Manual loops V2       Manual loops V3
+         Method:               matmul1               matmul2               matmul3               matmul4               matmul5
  
-       CPU time:               0.748 s               5.716 s               5.120 s               7.476 s               5.788 s
+           Info:        External dgemm        Fortran matmul        Using loops V3        Using loops V4        Using loops V5
  
-   Elapsed time:               0.749 s               5.715 s               5.120 s               7.475 s               5.789 s
+       CPU time:               0.624 s               5.308 s               5.224 s               7.508 s               5.688 s
+ 
+   Elapsed time:               0.628 s               5.307 s               5.223 s               7.510 s               5.686 s
  
  
     Matrix size:         3
      Iterations:  10000000
-         Method:        External dgemm      Intrinsic matmul       Manual loops v1       Manual loops V2       Manual loops V3
+         Method:               matmul1               matmul2               matmul3               matmul4               matmul5
  
-       CPU time:               2.132 s               0.392 s               0.348 s               0.416 s               0.348 s
+           Info:        External dgemm        Fortran matmul        Using loops V3        Using loops V4        Using loops V5
  
-   Elapsed time:               2.131 s               0.393 s               0.349 s               0.413 s               0.351 s
+       CPU time:               0.704 s               0.388 s               0.368 s               0.424 s               0.352 s
+ 
+   Elapsed time:               0.716 s               0.385 s               0.368 s               0.426 s               0.350 s
  
 matrix.O2
  
     Matrix size:      1000
      Iterations:         1
-         Method:        External dgemm      Intrinsic matmul       Manual loops v1       Manual loops V2       Manual loops V3
+         Method:               matmul1               matmul2               matmul3               matmul4               matmul5
  
-       CPU time:               0.052 s               0.248 s               0.252 s               0.252 s               0.252 s
+           Info:        External dgemm        Fortran matmul        Using loops V3        Using loops V4        Using loops V5
  
-   Elapsed time:               0.053 s               0.251 s               0.251 s               0.252 s               0.252 s
+       CPU time:               0.048 s               0.252 s               0.252 s               0.252 s               0.252 s
+ 
+   Elapsed time:               0.060 s               0.251 s               0.252 s               0.250 s               0.252 s
  
  
     Matrix size:        20
      Iterations:   1000000
-         Method:        External dgemm      Intrinsic matmul       Manual loops v1       Manual loops V2       Manual loops V3
+         Method:               matmul1               matmul2               matmul3               matmul4               matmul5
  
-       CPU time:               0.756 s               2.424 s               2.268 s               1.968 s               2.276 s
+           Info:        External dgemm        Fortran matmul        Using loops V3        Using loops V4        Using loops V5
  
-   Elapsed time:               0.753 s               2.425 s               2.268 s               1.969 s               2.277 s
+       CPU time:               0.628 s               2.400 s               2.796 s               1.900 s               2.388 s
+ 
+   Elapsed time:               0.632 s               2.400 s               2.795 s               1.899 s               2.388 s
  
  
     Matrix size:         3
      Iterations:  10000000
-         Method:        External dgemm      Intrinsic matmul       Manual loops v1       Manual loops V2       Manual loops V3
+         Method:               matmul1               matmul2               matmul3               matmul4               matmul5
  
-       CPU time:               2.140 s               0.440 s               0.380 s               0.404 s               0.436 s
+           Info:        External dgemm        Fortran matmul        Using loops V3        Using loops V4        Using loops V5
  
-   Elapsed time:               2.140 s               0.439 s               0.383 s               0.403 s               0.437 s
+       CPU time:               0.736 s               0.424 s               0.408 s               0.452 s               0.452 s
+ 
+   Elapsed time:               0.739 s               0.423 s               0.409 s               0.452 s               0.452 s
  
 matrix.O3
  
     Matrix size:      1000
      Iterations:         1
-         Method:        External dgemm      Intrinsic matmul       Manual loops v1       Manual loops V2       Manual loops V3
+         Method:               matmul1               matmul2               matmul3               matmul4               matmul5
  
-       CPU time:               0.052 s               0.096 s               0.224 s               0.096 s               0.092 s
+           Info:        External dgemm        Fortran matmul        Using loops V3        Using loops V4        Using loops V5
  
-   Elapsed time:               0.053 s               0.098 s               0.222 s               0.098 s               0.095 s
+       CPU time:               0.052 s               0.088 s               0.220 s               0.092 s               0.092 s
+ 
+   Elapsed time:               0.105 s               0.088 s               0.222 s               0.092 s               0.091 s
  
  
     Matrix size:        20
      Iterations:   1000000
-         Method:        External dgemm      Intrinsic matmul       Manual loops v1       Manual loops V2       Manual loops V3
+         Method:               matmul1               matmul2               matmul3               matmul4               matmul5
  
-       CPU time:               0.752 s               0.912 s               1.524 s               0.916 s               0.924 s
+           Info:        External dgemm        Fortran matmul        Using loops V3        Using loops V4        Using loops V5
  
-   Elapsed time:               0.754 s               0.914 s               1.522 s               0.916 s               0.924 s
+       CPU time:               0.628 s               0.904 s               1.496 s               0.924 s               0.920 s
+ 
+   Elapsed time:               0.627 s               0.905 s               1.497 s               0.923 s               0.921 s
  
  
     Matrix size:         3
      Iterations:  10000000
-         Method:        External dgemm      Intrinsic matmul       Manual loops v1       Manual loops V2       Manual loops V3
+         Method:               matmul1               matmul2               matmul3               matmul4               matmul5
  
-       CPU time:               2.128 s               0.460 s               0.400 s               0.540 s               0.544 s
+           Info:        External dgemm        Fortran matmul        Using loops V3        Using loops V4        Using loops V5
  
-   Elapsed time:               2.128 s               0.460 s               0.401 s               0.540 s               0.543 s
+       CPU time:               0.696 s               0.484 s               0.408 s               0.548 s               0.540 s
+ 
+   Elapsed time:               0.717 s               0.481 s               0.412 s               0.547 s               0.540 s
  

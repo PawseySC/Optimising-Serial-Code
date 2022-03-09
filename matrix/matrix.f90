@@ -12,6 +12,7 @@ subroutine time_all(n,iters)
   real(dp), allocatable :: C(:, :)
   integer, intent(in) :: n,iters
   character(len=32), dimension(5) :: methods
+  character(len=32), dimension(5) :: info
   real(dp), dimension(5) :: ctimes
   real(dp), dimension(5) :: etimes
 
@@ -31,7 +32,8 @@ subroutine time_all(n,iters)
   end do
   call cpu_time(t2)
   call date_and_time(values=ut2)
-  methods(1)="External dgemm"
+  methods(1)="matmul1"
+  info(1)="External dgemm"
   ctimes(1)=t2-t1
   etimes(1)=elapsedtime(ut1,ut2)
 
@@ -43,7 +45,8 @@ subroutine time_all(n,iters)
   end do
   call cpu_time(t2)
   call date_and_time(values=ut2)
-  methods(2)="Intrinsic matmul"
+  methods(2)="matmul2"
+  info(2)="Fortran matmul"
   ctimes(2)=t2-t1
   etimes(2)=elapsedtime(ut1,ut2)
 
@@ -55,7 +58,8 @@ subroutine time_all(n,iters)
   end do
   call cpu_time(t2)
   call date_and_time(values=ut2)
-  methods(3)="Manual loops v1"
+  methods(3)="matmul3"
+  info(3)="Using loops V3"
   ctimes(3)=t2-t1
   etimes(3)=elapsedtime(ut1,ut2)
 
@@ -67,7 +71,8 @@ subroutine time_all(n,iters)
   end do
   call cpu_time(t2)
   call date_and_time(values=ut2)
-  methods(4)="Manual loops V2"
+  methods(4)="matmul4"
+  info(4)="Using loops V4"
   ctimes(4)=t2-t1
   etimes(4)=elapsedtime(ut1,ut2)
 
@@ -79,11 +84,12 @@ subroutine time_all(n,iters)
   end do
   call cpu_time(t2)
   call date_and_time(values=ut2)
-  methods(5)="Manual loops V3"
+  methods(5)="matmul5"
+  info(5)="Using loops V5"
   ctimes(5)=t2-t1
   etimes(5)=elapsedtime(ut1,ut2)
 
-  call printtimes(methods,ctimes,etimes,5)
+  call printtimes(methods,info,ctimes,etimes,5)
 
   deallocate(A)
   deallocate(B)
@@ -98,6 +104,7 @@ subroutine test_matmul1(n,iters)
   real(dp), allocatable :: C(:, :)
   integer, intent(in) :: n,iters
   character(len=32), dimension(5) :: methods
+  character(len=32), dimension(5) :: info
   real(dp), dimension(5) :: ctimes
   real(dp), dimension(5) :: etimes
 
@@ -117,10 +124,11 @@ subroutine test_matmul1(n,iters)
   end do
   call cpu_time(t2)
   call date_and_time(values=ut2)
-  methods(1)="External dgemm"
+  methods(1)="matmul1"
+  info(1)="External dgemm"
   ctimes(1)=t2-t1
   etimes(1)=elapsedtime(ut1,ut2)
-  call printtimes(methods,ctimes,etimes,1)
+  call printtimes(methods,info,ctimes,etimes,1)
 
   deallocate(A)
   deallocate(B)
@@ -135,6 +143,7 @@ subroutine test_matmul2(n,iters)
   real(dp), allocatable :: C(:, :)
   integer, intent(in) :: n,iters
   character(len=32), dimension(5) :: methods
+  character(len=32), dimension(5) :: info
   real(dp), dimension(5) :: ctimes
   real(dp), dimension(5) :: etimes
 
@@ -154,10 +163,11 @@ subroutine test_matmul2(n,iters)
   end do
   call cpu_time(t2)
   call date_and_time(values=ut2)
-  methods(1)="Intrinsic matmul"
+  methods(1)="matmul2"
+  info(1)="Fortran matmul"
   ctimes(1)=t2-t1
   etimes(1)=elapsedtime(ut1,ut2)
-  call printtimes(methods,ctimes,etimes,1)
+  call printtimes(methods,info,ctimes,etimes,1)
 
   deallocate(A)
   deallocate(B)
@@ -172,6 +182,7 @@ subroutine test_matmul3(n,iters)
   real(dp), allocatable :: C(:, :)
   integer, intent(in) :: n,iters
   character(len=32), dimension(5) :: methods
+  character(len=32), dimension(5) :: info
   real(dp), dimension(5) :: ctimes
   real(dp), dimension(5) :: etimes
 
@@ -191,10 +202,11 @@ subroutine test_matmul3(n,iters)
   end do
   call cpu_time(t2)
   call date_and_time(values=ut2)
-  methods(1)="Manual loops V1"
+  methods(1)="matmul3"
+  info(1)="Using loops V3"
   ctimes(1)=t2-t1
   etimes(1)=elapsedtime(ut1,ut2)
-  call printtimes(methods,ctimes,etimes,1)
+  call printtimes(methods,info,ctimes,etimes,1)
 
   deallocate(A)
   deallocate(B)
@@ -209,6 +221,7 @@ subroutine test_matmul4(n,iters)
   real(dp), allocatable :: C(:, :)
   integer, intent(in) :: n,iters
   character(len=32), dimension(5) :: methods
+  character(len=32), dimension(5) :: info
   real(dp), dimension(5) :: ctimes
   real(dp), dimension(5) :: etimes
 
@@ -228,10 +241,11 @@ subroutine test_matmul4(n,iters)
   end do
   call cpu_time(t2)
   call date_and_time(values=ut2)
-  methods(1)="Manual loops V2"
+  methods(1)="matmul4"
+  info(1)="Using loops V4"
   ctimes(1)=t2-t1
   etimes(1)=elapsedtime(ut1,ut2)
-  call printtimes(methods,ctimes,etimes,1)
+  call printtimes(methods,info,ctimes,etimes,1)
 
   deallocate(A)
   deallocate(B)
@@ -246,6 +260,7 @@ subroutine test_matmul5(n,iters)
   real(dp), allocatable :: C(:, :)
   integer, intent(in) :: n,iters
   character(len=32), dimension(5) :: methods
+  character(len=32), dimension(5) :: info
   real(dp), dimension(5) :: ctimes
   real(dp), dimension(5) :: etimes
 
@@ -265,10 +280,11 @@ subroutine test_matmul5(n,iters)
   end do
   call cpu_time(t2)
   call date_and_time(values=ut2)
-  methods(1)="Manual loops V3"
+  methods(1)="matmul5"
+  info(1)="Using loops V5"
   ctimes(1)=t2-t1
   etimes(1)=elapsedtime(ut1,ut2)
-  call printtimes(methods,ctimes,etimes,1)
+  call printtimes(methods,info,ctimes,etimes,1)
 
   deallocate(A)
   deallocate(B)
@@ -281,15 +297,21 @@ real(dp) function elapsedtime(starttime,stoptime)
        (starttime(5)*3600._dp+starttime(6)*60._dp+real(starttime(7),kind=dp)+starttime(8)/1000._dp)
 end function
 
-subroutine printtimes(methods,ctimes,etimes,n_methods)
+subroutine printtimes(methods,info,ctimes,etimes,n_methods)
   integer, intent(in) :: n_methods
   character(len=*), dimension(n_methods), intent(in) :: methods
+  character(len=*), dimension(n_methods), intent(in) :: info
   real(dp),dimension(n_methods), intent(in) :: ctimes
   real(dp),dimension(n_methods), intent(in) :: etimes
   integer :: i
   write(*,'(a16)',advance='no')    "Method:"
   do i=1,n_methods
      write(*,'(a22)',advance='no')    trim(methods(i))
+  end do
+  write(*,*) ''
+  write(*,'(a16)',advance='no')    "Info:"
+  do i=1,n_methods
+     write(*,'(a22)',advance='no')    trim(info(i))
   end do
   write(*,*) ''
   write(*,'(a16)',advance='no') "CPU time:"
@@ -319,7 +341,7 @@ subroutine matmul2(A,B,C) !Using matmul
   C = matmul(A, B)
 end subroutine
 
-subroutine matmul3(A,B,C) !Manual loops V1 (Similar to dgemm logic)
+subroutine matmul3(A,B,C) !Manual loops V3 (Similar to dgemm logic)
   real(dp), intent(out) :: C(:, :)
   real(dp), intent(in) :: A(:, :), B(:, :)
   integer :: i,j,k,l,n
@@ -340,7 +362,7 @@ subroutine matmul3(A,B,C) !Manual loops V1 (Similar to dgemm logic)
   end do
 end subroutine
 
-subroutine matmul4(A,B,C) !Manual loops V2 (Not using tmp outside the i loop)
+subroutine matmul4(A,B,C) !Manual loops V4 (Not using tmp outside the i loop)
   real(dp), intent(out) :: C(:, :)
   real(dp), intent(in) :: A(:, :), B(:, :)
   integer :: i,j,k,l,n
@@ -359,7 +381,7 @@ subroutine matmul4(A,B,C) !Manual loops V2 (Not using tmp outside the i loop)
   end do
 end subroutine
 
-subroutine matmul5(A,B,C) !Manual loops V3 (Not using initialization loop for C)
+subroutine matmul5(A,B,C) !Manual loops V5 (Not using initialization loop for C)
   real(dp), intent(out) :: C(:, :)
   real(dp), intent(in) :: A(:, :), B(:, :)
   integer :: i,j,k,n
