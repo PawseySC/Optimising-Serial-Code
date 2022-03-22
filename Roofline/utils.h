@@ -1,3 +1,4 @@
+//Original code provided by Gilles Fourestey
 #include <math.h>
 
 static void simple_dgemm(int n, double alpha, const double *A, const double *B,
@@ -34,9 +35,9 @@ double verifyResult(const double *mat, const double *mat_ref, int M, int N)
         for (j = 0; j < N; j++)
           {
             //mat[i+j*M] << " " << mat_ref[i + j*M] << std::endl;
-            if (abs((double)mat[i + j*M ] - (double)mat_ref[i + j*M ]) > norm)
+            if (fabs((double)mat[i + j*M ] - (double)mat_ref[i + j*M ]) > norm)
               {
-                norm = abs((double)mat[i + j*M] - (double)mat_ref[i + j*M]);
+                norm = fabs((double)mat[i + j*M] - (double)mat_ref[i + j*M]);
 		if (norm != 0.)
 			printf("%d %d = %f\n", i, j, norm); 
               }
@@ -56,9 +57,9 @@ double verifyVec(const double *vec, const double *vec_ref, int N)
     for (i = 0; i < N; i++)
           {
             printf("%f %f\n", vec[i], vec_ref[i]);
-            if (abs((double)vec[i] - (double)vec_ref[i]) > norm)
+            if (fabs((double)vec[i] - (double)vec_ref[i]) > norm)
               {
-                norm = abs((double)vec[i] - (double)vec_ref[i]);
+                norm = fabs((double)vec[i] - (double)vec_ref[i]);
                 if (norm != 0.)
                         printf("%d %d = %f\n", i, j, norm);
               }

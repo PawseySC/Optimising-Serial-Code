@@ -1,3 +1,5 @@
+//Original code provided by Gilles Fourestey
+
 #include <stdio.h>       /* standard I/O routines                 */
 #include <stdlib.h>
 #include <string.h>
@@ -17,7 +19,7 @@
 #   define NTIMES 10
 #endif
 
-#if 0
+#if 1
 //extern "C"{
 //   void dgemm_ (char *transa,
 extern void dgemm_ (char *transa,
