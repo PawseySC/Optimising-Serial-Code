@@ -14,3 +14,11 @@ matrix.O0.intel
 matrix.O1.intel
 matrix.O2.intel
 matrix.O3.intel
+matrix.O0+apa
+matrix.O1+apa
+matrix.O2+apa
+matrix.O3+apa
+matrix.O0+pat
+matrix.O1+pat
+matrix.O2+pat
+matrix.O3+pat

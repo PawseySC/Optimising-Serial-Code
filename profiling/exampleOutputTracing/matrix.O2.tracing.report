@@ -1,0 +1,754 @@
+CrayPat/X:  Version 22.09.0 Revision 15e027213  08/04/22 21:24:30
+
+Number of PEs (MPI ranks):    1
+                           
+Numbers of PEs per Node:      1
+                           
+Numbers of Threads per PE:    1
+                           
+Number of Cores per Socket:  64
+
+Execution start time:  Mon May  1 18:29:45 2023
+
+System name and speed:  nid002817  1.933 GHz (nominal)
+
+AMD   Milan                CPU  Family: 25  Model:  1  Stepping:  1
+
+Core Performance Boost:  1 PE has CPB capability
+
+
+Current path to data file:
+  /software/projects/pawsey0001/espinosa/pawseyTraining/Optimising-Serial-Code/profiling/matrix.O2+apa+20041-8646438t   (RTS)
+
+
+Notes for table 1:
+
+  This table shows functions that have significant exclusive time,
+    averaged across ranks.
+  For further explanation, see the "General table notes" below, or 
+    use:  pat_report -v -O profile ...
+
+Table 1:  Profile by Function Group and Function
+
+  Time% |     Time | Imb. |  Imb. | Calls | Group
+        |          | Time | Time% |       |  Function
+       
+ 100.0% | 0.394913 |   -- |    -- | 575.0 | Total
+|----------------------------------------------------------------
+|  90.0% | 0.355435 |   -- |    -- |   6.0 | USER
+||---------------------------------------------------------------
+||  33.4% | 0.132045 |   -- |    -- |   1.0 | test_matmul3$timeit_
+||  31.4% | 0.124190 |   -- |    -- |   1.0 | test_matmul4$timeit_
+||  11.4% | 0.045001 |   -- |    -- |   1.0 | test_matmul2$timeit_
+||  11.3% | 0.044635 |   -- |    -- |   1.0 | test_matmul5$timeit_
+||   2.4% | 0.009549 |   -- |    -- |   1.0 | test_matmul1$timeit_
+||   0.0% | 0.000015 |   -- |    -- |   1.0 | matrix_
+||===============================================================
+|   9.8% | 0.038837 |   -- |    -- |   3.0 | BLAS
+||---------------------------------------------------------------
+||   9.8% | 0.038837 |   -- |    -- |   3.0 | dgemm_
+||===============================================================
+|   0.2% | 0.000636 |   -- |    -- | 555.0 | ETC
+||---------------------------------------------------------------
+||   0.1% | 0.000277 |   -- |    -- |  15.0 | __ALLOCATE
+||   0.0% | 0.000158 |   -- |    -- | 400.0 | __libc_csu_init
+||   0.0% | 0.000146 |   -- |    -- |   4.0 | _END
+||   0.0% | 0.000016 |   -- |    -- |  90.0 | _fwch
+||   0.0% | 0.000015 |   -- |    -- |  10.0 | tzset_internal.part.0
+||   0.0% | 0.000007 |   -- |    -- |  15.0 | __DEALLOCATE
+||   0.0% | 0.000006 |   -- |    -- |   4.0 | _do_open
+||   0.0% | 0.000004 |   -- |    -- |   2.0 | _f_open
+||   0.0% | 0.000003 |   -- |    -- |  10.0 | __tzfile_read
+||   0.0% | 0.000003 |   -- |    -- |   1.0 | _alloc_unit
+||   0.0% | 0.000001 |   -- |    -- |   1.0 | _get_a_options
+||   0.0% | 0.000001 |   -- |    -- |   1.0 | _FWF
+||   0.0% | 0.000001 |   -- |    -- |   2.0 | _f_opn
+||===============================================================
+|   0.0% | 0.000005 |   -- |    -- |  11.0 | STRING
+||---------------------------------------------------------------
+||   0.0% | 0.000005 |   -- |    -- |  11.0 | strdup
+|================================================================
+
+Notes for table 2:
+
+  This table shows functions that have significant exclusive time,
+    averaged across ranks.
+    Processor HW counter data is also shown, if available.
+  For further explanation, see the "General table notes" below, or 
+    use:  pat_report -v -O profile+hwpc ...
+
+Table 2:  Profile by Function Group and Function
+
+Group / Function
+
+  
+==============================================================================
+  Total
+------------------------------------------------------------------------------
+  Time%                                          100.0% 
+  Time                                         0.394913 secs
+  Imb. Time                                          -- secs
+  Imb. Time%                                         -- 
+  Calls                   0.001M/sec              575.0 calls
+  PAPI_BR_TKN             0.352G/sec    139,052,199.000 branch
+  PAPI_TOT_INS            9.433G/sec  3,725,359,908.000 instr
+  PAPI_BR_INS             0.359G/sec    141,966,280.000 branch
+  PAPI_TOT_CYC                        1,376,177,175.000 cycles
+  Instr per cycle                                  2.71 inst/cycle
+  MIPS                 9,433.38M/sec                    
+  Average Time per Call                        0.000687 secs
+  CrayPat Overhead : Time  0.1%                         
+==============================================================================
+  USER
+------------------------------------------------------------------------------
+  Time%                                           90.0% 
+  Time                                         0.355435 secs
+  Imb. Time                                          -- secs
+  Imb. Time%                                         -- 
+  Calls                  16.881 /sec                6.0 calls
+  PAPI_BR_TKN             0.376G/sec    133,489,480.000 branch
+  PAPI_TOT_INS            9.145G/sec  3,250,577,735.000 instr
+  PAPI_BR_INS             0.382G/sec    135,740,266.000 branch
+  PAPI_TOT_CYC                        1,241,744,472.000 cycles
+  Instr per cycle                                  2.62 inst/cycle
+  MIPS                 9,145.36M/sec                    
+  Average Time per Call                        0.059239 secs
+  CrayPat Overhead : Time  0.0%                         
+==============================================================================
+  USER / test_matmul3$timeit_
+------------------------------------------------------------------------------
+  Time%                                           33.4% 
+  Time                                         0.132045 secs
+  Imb. Time                                          -- secs
+  Imb. Time%                                         -- 
+  Calls                   7.573 /sec                1.0 calls
+  PAPI_BR_TKN             0.329G/sec     43,382,213.000 branch
+  PAPI_TOT_INS            8.204G/sec  1,083,317,265.000 instr
+  PAPI_BR_INS             0.336G/sec     44,387,502.000 branch
+  PAPI_TOT_CYC                          461,867,311.000 cycles
+  Instr per cycle                                  2.35 inst/cycle
+  MIPS                 8,204.15M/sec                    
+  Average Time per Call                        0.132045 secs
+  CrayPat Overhead : Time  0.0%                         
+==============================================================================
+  USER / test_matmul4$timeit_
+------------------------------------------------------------------------------
+  Time%                                           31.4% 
+  Time                                         0.124190 secs
+  Imb. Time                                          -- secs
+  Imb. Time%                                         -- 
+  Calls                   8.052 /sec                1.0 calls
+  PAPI_BR_TKN             0.349G/sec     43,382,210.000 branch
+  PAPI_TOT_INS            8.718G/sec  1,082,691,772.000 instr
+  PAPI_BR_INS             0.351G/sec     43,637,497.000 branch
+  PAPI_TOT_CYC                          436,411,703.000 cycles
+  Instr per cycle                                  2.48 inst/cycle
+  MIPS                 8,718.03M/sec                    
+  Average Time per Call                        0.124190 secs
+  CrayPat Overhead : Time  0.0%                         
+==============================================================================
+  USER / test_matmul2$timeit_
+------------------------------------------------------------------------------
+  Time%                                           11.4% 
+  Time                                         0.045001 secs
+  Imb. Time                                          -- secs
+  Imb. Time%                                         -- 
+  Calls                  22.222 /sec                1.0 calls
+  PAPI_BR_TKN             0.386G/sec     17,353,094.000 branch
+  PAPI_TOT_INS           11.537G/sec    519,187,289.000 instr
+  PAPI_BR_INS             0.396G/sec     17,838,009.000 branch
+  PAPI_TOT_CYC                          157,915,407.000 cycles
+  Instr per cycle                                  3.29 inst/cycle
+  MIPS                11,537.28M/sec                    
+  Average Time per Call                        0.045001 secs
+  CrayPat Overhead : Time  0.0%                         
+==============================================================================
+  USER / test_matmul5$timeit_
+------------------------------------------------------------------------------
+  Time%                                           11.3% 
+  Time                                         0.044635 secs
+  Imb. Time                                          -- secs
+  Imb. Time%                                         -- 
+  Calls                  22.404 /sec                1.0 calls
+  PAPI_BR_TKN             0.389G/sec     17,353,062.000 branch
+  PAPI_TOT_INS           11.632G/sec    519,186,543.000 instr
+  PAPI_BR_INS             0.400G/sec     17,837,905.000 branch
+  PAPI_TOT_CYC                          156,677,291.000 cycles
+  Instr per cycle                                  3.31 inst/cycle
+  MIPS                11,631.88M/sec                    
+  Average Time per Call                        0.044635 secs
+  CrayPat Overhead : Time  0.0%                         
+==============================================================================
+  USER / test_matmul1$timeit_
+------------------------------------------------------------------------------
+  Time%                                            2.4% 
+  Time                                         0.009549 secs
+  Imb. Time                                          -- secs
+  Imb. Time%                                         -- 
+  Calls                 104.725 /sec                1.0 calls
+  PAPI_BR_TKN             1.259G/sec     12,017,806.000 branch
+  PAPI_TOT_INS            4.837G/sec     46,185,110.000 instr
+  PAPI_BR_INS             1.261G/sec     12,037,341.000 branch
+  PAPI_TOT_CYC                           28,828,092.000 cycles
+  Instr per cycle                                  1.60 inst/cycle
+  MIPS                 4,836.75M/sec                    
+  Average Time per Call                        0.009549 secs
+  CrayPat Overhead : Time  0.0%                         
+==============================================================================
+  USER / matrix_
+------------------------------------------------------------------------------
+  Time%                                            0.0% 
+  Time                                         0.000015 secs
+  Imb. Time                                          -- secs
+  Imb. Time%                                         -- 
+  Calls                   0.065M/sec                1.0 calls
+  PAPI_BR_TKN             0.071G/sec          1,095.000 branch
+  PAPI_TOT_INS            0.635G/sec          9,756.000 instr
+  PAPI_BR_INS             0.131G/sec          2,012.000 branch
+  PAPI_TOT_CYC                               44,668.000 cycles
+  Instr per cycle                                  0.22 inst/cycle
+  MIPS                   634.73M/sec                    
+  Average Time per Call                        0.000015 secs
+  CrayPat Overhead : Time  4.3%                         
+==============================================================================
+==============================================================================
+  BLAS
+------------------------------------------------------------------------------
+  Time%                                            9.8% 
+  Time                                         0.038837 secs
+  Imb. Time                                          -- secs
+  Imb. Time%                                         -- 
+  Calls                  77.246 /sec                3.0 calls
+  PAPI_BR_TKN             0.138G/sec      5,352,583.000 branch
+  PAPI_TOT_INS           12.184G/sec    473,181,971.000 instr
+  PAPI_BR_INS             0.150G/sec      5,838,350.000 branch
+  PAPI_TOT_CYC                          133,350,420.000 cycles
+  Instr per cycle                                  3.55 inst/cycle
+  MIPS                12,183.83M/sec                    
+  Average Time per Call                        0.012946 secs
+  CrayPat Overhead : Time  0.0%                         
+==============================================================================
+  BLAS / dgemm_
+------------------------------------------------------------------------------
+  Time%                                            9.8% 
+  Time                                         0.038837 secs
+  Imb. Time                                          -- secs
+  Imb. Time%                                         -- 
+  Calls                  77.246 /sec                3.0 calls
+  PAPI_BR_TKN             0.138G/sec      5,352,583.000 branch
+  PAPI_TOT_INS           12.184G/sec    473,181,971.000 instr
+  PAPI_BR_INS             0.150G/sec      5,838,350.000 branch
+  PAPI_TOT_CYC                          133,350,420.000 cycles
+  Instr per cycle                                  3.55 inst/cycle
+  MIPS                12,183.83M/sec                    
+  Average Time per Call                        0.012946 secs
+  CrayPat Overhead : Time  0.0%                         
+==============================================================================
+  ETC
+------------------------------------------------------------------------------
+  Time%                                             0.2% 
+  Time                                          0.000636 secs
+  Imb. Time                                           -- secs
+  Imb. Time%                                          -- 
+  Calls                    0.872M/sec              555.0 calls
+  PAPI_BR_TKN              0.325G/sec        206,625.000 branch
+  PAPI_TOT_INS             2.468G/sec      1,571,000.000 instr
+  PAPI_BR_INS              0.600G/sec        381,635.000 branch
+  PAPI_TOT_CYC                             1,059,019.000 cycles
+  Instr per cycle                                   1.48 inst/cycle
+  MIPS                  2,468.46M/sec                    
+  Average Time per Call                         0.000001 secs
+  CrayPat Overhead : Time  57.5%                         
+==============================================================================
+  ETC / __ALLOCATE
+------------------------------------------------------------------------------
+  Time%                                             0.1% 
+  Time                                          0.000277 secs
+  Imb. Time                                           -- secs
+  Imb. Time%                                          -- 
+  Calls                    0.054M/sec               15.0 calls
+  PAPI_BR_TKN              0.018G/sec          5,059.000 branch
+  PAPI_TOT_INS             0.154G/sec         42,564.000 instr
+  PAPI_BR_INS              0.033G/sec          9,049.000 branch
+  PAPI_TOT_CYC                                38,577.000 cycles
+  Instr per cycle                                   1.10 inst/cycle
+  MIPS                    153.66M/sec                    
+  Average Time per Call                         0.000018 secs
+  CrayPat Overhead : Time   3.6%                         
+==============================================================================
+  ETC / __libc_csu_init
+------------------------------------------------------------------------------
+  Time%                                              0.0% 
+  Time                                           0.000158 secs
+  Imb. Time                                            -- secs
+  Imb. Time%                                           -- 
+  Calls                     0.003G/sec              400.0 calls
+  PAPI_BR_TKN               0.551G/sec         86,834.000 branch
+  PAPI_TOT_INS              4.980G/sec        784,687.000 instr
+  PAPI_BR_INS               1.127G/sec        177,504.000 branch
+  PAPI_TOT_CYC                                365,198.000 cycles
+  Instr per cycle                                    2.15 inst/cycle
+  MIPS                   4,980.27M/sec                    
+  Average Time per Call                          0.000000 secs
+  CrayPat Overhead : Time  167.5%                         
+==============================================================================
+  ETC / _END
+------------------------------------------------------------------------------
+  Time%                                              0.0% 
+  Time                                           0.000146 secs
+  Imb. Time                                            -- secs
+  Imb. Time%                                           -- 
+  Calls                     0.027M/sec                4.0 calls
+  PAPI_BR_TKN               0.556G/sec         80,924.000 branch
+  PAPI_TOT_INS              3.129G/sec        455,469.000 instr
+  PAPI_BR_INS               0.921G/sec        134,009.000 branch
+  PAPI_TOT_CYC                                424,292.000 cycles
+  Instr per cycle                                    1.07 inst/cycle
+  MIPS                   3,129.13M/sec                    
+  Average Time per Call                          0.000036 secs
+  CrayPat Overhead : Time    1.8%                         
+==============================================================================
+  ETC / _fwch
+------------------------------------------------------------------------------
+  Time%                                              0.0% 
+  Time                                           0.000016 secs
+  Imb. Time                                            -- secs
+  Imb. Time%                                           -- 
+  Calls                     0.006G/sec               90.0 calls
+  PAPI_BR_TKN               1.098G/sec         17,541.000 branch
+  PAPI_TOT_INS              9.831G/sec        157,094.000 instr
+  PAPI_BR_INS               2.102G/sec         33,590.000 branch
+  PAPI_TOT_CYC                                104,096.000 cycles
+  Instr per cycle                                    1.51 inst/cycle
+  MIPS                   9,831.34M/sec                    
+  Average Time per Call                          0.000000 secs
+  CrayPat Overhead : Time  371.5%                         
+==============================================================================
+  ETC / tzset_internal.part.0
+------------------------------------------------------------------------------
+  Time%                                              0.0% 
+  Time                                           0.000015 secs
+  Imb. Time                                            -- secs
+  Imb. Time%                                           -- 
+  Calls                     0.660M/sec               10.0 calls
+  PAPI_BR_TKN               0.225G/sec          3,406.000 branch
+  PAPI_TOT_INS              1.858G/sec         28,136.000 instr
+  PAPI_BR_INS               0.382G/sec          5,791.000 branch
+  PAPI_TOT_CYC                                 38,583.000 cycles
+  Instr per cycle                                    0.73 inst/cycle
+  MIPS                   1,857.89M/sec                    
+  Average Time per Call                          0.000002 secs
+  CrayPat Overhead : Time   43.6%                         
+==============================================================================
+  ETC / __DEALLOCATE
+------------------------------------------------------------------------------
+  Time%                                              0.0% 
+  Time                                           0.000007 secs
+  Imb. Time                                            -- secs
+  Imb. Time%                                           -- 
+  Calls                     0.002G/sec               15.0 calls
+  PAPI_BR_TKN               0.703G/sec          4,850.000 branch
+  PAPI_TOT_INS              6.115G/sec         42,170.000 instr
+  PAPI_BR_INS               1.259G/sec          8,680.000 branch
+  PAPI_TOT_CYC                                 33,418.000 cycles
+  Instr per cycle                                    1.26 inst/cycle
+  MIPS                   6,115.01M/sec                    
+  Average Time per Call                          0.000000 secs
+  CrayPat Overhead : Time  143.5%                         
+==============================================================================
+  ETC / _do_open
+------------------------------------------------------------------------------
+  Time%                                              0.0% 
+  Time                                           0.000006 secs
+  Imb. Time                                            -- secs
+  Imb. Time%                                           -- 
+  Calls                     0.697M/sec                4.0 calls
+  PAPI_BR_TKN               0.302G/sec          1,732.000 branch
+  PAPI_TOT_INS              2.203G/sec         12,635.000 instr
+  PAPI_BR_INS               0.470G/sec          2,694.000 branch
+  PAPI_TOT_CYC                                 12,779.000 cycles
+  Instr per cycle                                    0.99 inst/cycle
+  MIPS                   2,202.89M/sec                    
+  Average Time per Call                          0.000001 secs
+  CrayPat Overhead : Time   46.0%                         
+==============================================================================
+  ETC / _f_open
+------------------------------------------------------------------------------
+  Time%                                              0.0% 
+  Time                                           0.000004 secs
+  Imb. Time                                            -- secs
+  Imb. Time%                                           -- 
+  Calls                     0.448M/sec                2.0 calls
+  PAPI_BR_TKN               0.232G/sec          1,037.000 branch
+  PAPI_TOT_INS              1.740G/sec          7,763.000 instr
+  PAPI_BR_INS               0.372G/sec          1,660.000 branch
+  PAPI_TOT_CYC                                  9,869.000 cycles
+  Instr per cycle                                    0.79 inst/cycle
+  MIPS                   1,740.26M/sec                    
+  Average Time per Call                          0.000002 secs
+  CrayPat Overhead : Time   29.6%                         
+==============================================================================
+  ETC / __tzfile_read
+------------------------------------------------------------------------------
+  Time%                                              0.0% 
+  Time                                           0.000003 secs
+  Imb. Time                                            -- secs
+  Imb. Time%                                           -- 
+  Calls                     0.003G/sec               10.0 calls
+  PAPI_BR_TKN               0.955G/sec          2,997.000 branch
+  PAPI_TOT_INS              7.670G/sec         24,076.000 instr
+  PAPI_BR_INS               1.654G/sec          5,191.000 branch
+  PAPI_TOT_CYC                                 14,486.000 cycles
+  Instr per cycle                                    1.66 inst/cycle
+  MIPS                   7,669.71M/sec                    
+  Average Time per Call                          0.000000 secs
+  CrayPat Overhead : Time  210.1%                         
+==============================================================================
+  ETC / _alloc_unit
+------------------------------------------------------------------------------
+  Time%                                              0.0% 
+  Time                                           0.000003 secs
+  Imb. Time                                            -- secs
+  Imb. Time%                                           -- 
+  Calls                     0.399M/sec                1.0 calls
+  PAPI_BR_TKN               0.227G/sec            568.000 branch
+  PAPI_TOT_INS              1.663G/sec          4,167.000 instr
+  PAPI_BR_INS               0.338G/sec            846.000 branch
+  PAPI_TOT_CYC                                  7,787.000 cycles
+  Instr per cycle                                    0.54 inst/cycle
+  MIPS                   1,662.54M/sec                    
+  Average Time per Call                          0.000003 secs
+  CrayPat Overhead : Time   26.3%                         
+==============================================================================
+  ETC / _get_a_options
+------------------------------------------------------------------------------
+  Time%                                              0.0% 
+  Time                                           0.000001 secs
+  Imb. Time                                            -- secs
+  Imb. Time%                                           -- 
+  Calls                     0.001G/sec                1.0 calls
+  PAPI_BR_TKN               0.452G/sec            435.000 branch
+  PAPI_TOT_INS              3.326G/sec          3,204.000 instr
+  PAPI_BR_INS               0.707G/sec            681.000 branch
+  PAPI_TOT_CYC                                  3,569.000 cycles
+  Instr per cycle                                    0.90 inst/cycle
+  MIPS                   3,325.69M/sec                    
+  Average Time per Call                          0.000001 secs
+  CrayPat Overhead : Time   68.5%                         
+==============================================================================
+  ETC / _FWF
+------------------------------------------------------------------------------
+  Time%                                              0.0% 
+  Time                                           0.000001 secs
+  Imb. Time                                            -- secs
+  Imb. Time%                                           -- 
+  Calls                     0.001G/sec                1.0 calls
+  PAPI_BR_TKN               0.563G/sec            447.000 branch
+  PAPI_TOT_INS              4.303G/sec          3,414.000 instr
+  PAPI_BR_INS               0.896G/sec            711.000 branch
+  PAPI_TOT_CYC                                  2,934.000 cycles
+  Instr per cycle                                    1.16 inst/cycle
+  MIPS                   4,302.95M/sec                    
+  Average Time per Call                          0.000001 secs
+  CrayPat Overhead : Time   83.1%                         
+==============================================================================
+  ETC / _f_opn
+------------------------------------------------------------------------------
+  Time%                                              0.0% 
+  Time                                           0.000001 secs
+  Imb. Time                                            -- secs
+  Imb. Time%                                           -- 
+  Calls                     0.003G/sec                2.0 calls
+  PAPI_BR_TKN               1.161G/sec            795.000 branch
+  PAPI_TOT_INS              8.208G/sec          5,621.000 instr
+  PAPI_BR_INS               1.795G/sec          1,229.000 branch
+  PAPI_TOT_CYC                                  3,431.000 cycles
+  Instr per cycle                                    1.64 inst/cycle
+  MIPS                   8,208.00M/sec                    
+  Average Time per Call                          0.000000 secs
+  CrayPat Overhead : Time  192.6%                         
+==============================================================================
+==============================================================================
+  STRING
+------------------------------------------------------------------------------
+  Time%                                              0.0% 
+  Time                                           0.000005 secs
+  Imb. Time                                            -- secs
+  Imb. Time%                                           -- 
+  Calls                     0.002G/sec               11.0 calls
+  PAPI_BR_TKN               0.772G/sec          3,511.000 branch
+  PAPI_TOT_INS              6.424G/sec         29,202.000 instr
+  PAPI_BR_INS               1.326G/sec          6,029.000 branch
+  PAPI_TOT_CYC                                 23,264.000 cycles
+  Instr per cycle                                    1.26 inst/cycle
+  MIPS                   6,424.36M/sec                    
+  Average Time per Call                          0.000000 secs
+  CrayPat Overhead : Time  159.6%                         
+==============================================================================
+  STRING / strdup
+------------------------------------------------------------------------------
+  Time%                                              0.0% 
+  Time                                           0.000005 secs
+  Imb. Time                                            -- secs
+  Imb. Time%                                           -- 
+  Calls                     0.002G/sec               11.0 calls
+  PAPI_BR_TKN               0.772G/sec          3,511.000 branch
+  PAPI_TOT_INS              6.424G/sec         29,202.000 instr
+  PAPI_BR_INS               1.326G/sec          6,029.000 branch
+  PAPI_TOT_CYC                                 23,264.000 cycles
+  Instr per cycle                                    1.26 inst/cycle
+  MIPS                   6,424.36M/sec                    
+  Average Time per Call                          0.000000 secs
+  CrayPat Overhead : Time  159.6%                         
+==============================================================================
+
+Notes for table 3:
+
+  This table shows the high water mark and other statisitics for the
+    heap.  It necessarily excludes heap activity that occurs before
+    the perftools runtime library is initialized or after it is
+    finalized.
+  For further explanation, see the "General table notes" below, or 
+    use:  pat_report -v -O heap_hiwater ...
+
+Table 3:  Heap Stats during Main Program
+
+Total
+
+  
+========================================================================
+  Total
+------------------------------------------------------------------------
+  Tracked Heap HiWater MiBytes     23.201 
+  MiBytes Not Tracked               0.000 
+  Total Allocs                         31 
+  Allocs Not Tracked                    0 
+  Total Frees                          29 
+  Inferred Frees                        0 
+  Tracked Objects Not Freed             3 
+  Tracked MiBytes Not Freed         0.063 
+========================================================================
+
+Notes for table 4:
+
+  This table shows objects of significant size that were allocated but
+    not yet freed when the perftools runtime library is finalized.
+  For further explanation, see the "General table notes" below, or 
+    use:  pat_report -v -O heap_leaks ...
+
+Table 4:  Heap Leaks during Main Program
+
+ Tracked | Tracked | Tracked | Caller
+ MiBytes | MiBytes | Objects | 
+     Not |     Not |     Not | 
+  Freed% |   Freed |   Freed | 
+        
+  100.0% |   0.063 |       3 | Total
+|--------------------------------------------------
+|  100.0% |   0.063 |       2 | test_matmul1$timeit_
+|         |         |         |  matrix_
+|    0.0% |   0.000 |       1 | test_matmul5$timeit_
+|         |         |         |  matrix_
+|==================================================
+
+Notes for table 5:
+
+  This table show the average time and number of bytes written to each
+    output file, taking the average over the number of ranks that
+    wrote to the file.  It also shows the number of write operations,
+    and average rates.
+  For further explanation, see the "General table notes" below, or 
+    use:  pat_report -v -O write_stats ...
+
+Table 5:  File Output Stats by Filename
+
+      Avg |      Avg |  Write Rate | Number |    Avg | Bytes/ | File Name
+    Write |    Write | MiBytes/sec |     of | Writes |   Call |  PE=HIDE
+ Time per |  MiBytes |             | Writer |    per |        | 
+   Writer |      per |             |  Ranks | Writer |        | 
+     Rank |   Writer |             |        |   Rank |        | 
+          |     Rank |             |        |        |        | 
+|------------------------------------------------------------------------
+| 0.000041 | 0.000796 |   19.352063 |      1 |   45.0 |  18.56 | stdout
+|========================================================================
+
+Notes for table 6:
+
+  This table shows energy and power usage for the nodes with the
+    maximum, mean, and minimum usage, as well as the sum of usage over
+    all nodes.
+    Energy and power for accelerators is also shown, if applicable.
+  For further explanation, see the "General table notes" below, or 
+    use:  pat_report -v -O program_energy ...
+
+Table 6:  Program energy and power usage (from Cray PM)
+
+   Node |     Node |  Process | Total
+ Energy |    Power |     Time | 
+    (J) |      (W) |          | 
+-------------------------------------
+    120 |  282.321 | 0.425048 | Total
+=====================================
+
+Notes for table 7:
+
+  This table shows values shown for HiMem calculated from information
+    in the /proc/self/numa_maps files captured near the end of the
+    program. It is the total size of all pages, including huge pages,
+    that were actually mapped into physical memory from both private
+    and shared memory segments.
+  For further explanation, see the "General table notes" below, or 
+    use:  pat_report -v -O himem ...
+
+Table 7:  Memory High Water Mark by Numa Node
+
+Numanode
+
+  
+===========================================================================
+  numanode.0
+---------------------------------------------------------------------------
+  Process HiMem (MiBytes)         77.7 
+  HiMem Numa Node 0 (MiBytes)     59.3 MiBytes
+  HiMem Numa Node 1 (MiBytes)      1.5 MiBytes
+  HiMem Numa Node 2 (MiBytes)      1.6 MiBytes
+  HiMem Numa Node 3 (MiBytes)      1.6 MiBytes
+  HiMem Numa Node 4 (MiBytes)      1.9 MiBytes
+  HiMem Numa Node 5 (MiBytes)      1.9 MiBytes
+  HiMem Numa Node 6 (MiBytes)      8.0 MiBytes
+  HiMem Numa Node 7 (MiBytes)      1.8 MiBytes
+===========================================================================
+
+Notes for table 8:
+
+  This table shows total wall clock time for the ranks with the
+    maximum, mean, and minimum time, as well as the average across
+    ranks.
+    It also shows maximum memory usage from /proc/self/numa_maps for
+    those ranks, and on average.  The usage is total size of all
+    pages, including huge pages, that were actually mapped into
+    physical memory from both private and shared memory segments.
+  For further explanation, see the "General table notes" below, or 
+    use:  pat_report -v -O program_time ...
+
+Table 8:  Wall Clock Time, Memory High Water Mark
+
+  Process |   Process | Total
+     Time |     HiMem | 
+          | (MiBytes) | 
+-----------------------------
+ 0.425048 |      77.7 | Total
+=============================
+
+========================  Additional details  ========================
+
+
+
+General table notes:
+
+    The default notes for a table are based on the default definition of
+    the table, and do not account for the effects of command-line options
+    that may modify the content of the table.
+    
+    Detailed notes, produced by the pat_report -v option, do account for
+    all command-line options, and also show how data is aggregated, and
+    if the table content is limited by thresholds, rank selections, etc.
+    
+    An imbalance metric in a line is based on values in main threads
+    across multiple ranks, or on values across all threads, as applicable.
+    
+    An imbalance percent in a line is relative to the maximum value
+    for that line across ranks or threads, as applicable.
+    
+Experiment:  trace
+
+Original path to data file:
+  /software/projects/pawsey0001/espinosa/pawseyTraining/Optimising-Serial-Code/profiling/matrix.O2+apa+20041-8646438t/xf-files   (RTS)
+
+Original program:
+  /software/projects/pawsey0001/espinosa/pawseyTraining/Optimising-Serial-Code/profiling/matrix.O2
+
+Instrumented with:
+  pat_build -O matrix.O2+pat+12204-8646438s/build-options.apa
+
+  Option file "matrix.O2+pat+12204-8646438s/build-options.apa" contained:
+    -Drtenv=PAT_RT_PERFCTR=default
+    -g mpi,blas,io,heap
+    -w
+    -T test_matmul3$timeit_
+    -T test_matmul4$timeit_
+    -T test_matmul1$timeit_
+    -T test_matmul2$timeit_
+    -T test_matmul5$timeit_
+    -o matrix.O2+apa
+    -U /software/projects/pawsey0001/espinosa/pawseyTraining/Optimising-Serial-Code/profiling/matrix.O2
+
+Instrumented program:
+  /software/projects/pawsey0001/espinosa/pawseyTraining/Optimising-Serial-Code/profiling/matrix.O2+apa
+
+Program invocation:  matrix.O2+apa
+
+Exit Status:  0 for 1 PE
+
+Memory pagesize:  4 KiB
+
+Memory hugepagesize:  Not Available
+
+Programming environment:  CRAY
+
+Runtime environment variables:
+  CRAYPAT_COMPILER_OPTIONS=1
+  CRAYPAT_LD_LIBRARY_PATH=/opt/cray/pe/gcc-libs:/opt/cray/gcc-libs:/opt/cray/pe/perftools/22.09.0/lib64
+  CRAYPAT_OPTS_EXECUTABLE=libexec64/opts
+  CRAYPAT_ROOT=/opt/cray/pe/perftools/22.09.0
+  CRAYPE_VERSION=2.7.17
+  CRAY_DSMML_VERSION=0.2.2
+  CRAY_LIBSCI_VERSION=22.08.1.1
+  CRAY_MPICH_VERSION=8.1.19
+  CRAY_PERFTOOLS_VERSION=22.09.0
+  GCC_VERSION=12.1.0
+  GNU_VERSION=12.1.0
+  LIBSCI_VERSION=22.08.1.1
+  LMOD_FAMILY_COMPILER_VERSION=12.1.0
+  LMOD_FAMILY_CRAYPE_CPU_VERSION=false
+  LMOD_FAMILY_CRAYPE_NETWORK_VERSION=false
+  LMOD_FAMILY_CRAYPE_VERSION=2.7.17
+  LMOD_FAMILY_MPI_VERSION=8.1.19
+  LMOD_FAMILY_PERFTOOLS_VERSION=false
+  LMOD_FAMILY_PRGENV_VERSION=8.3.3
+  LMOD_VERSION=8.3.1
+  MPICH_DIR=/opt/cray/pe/mpich/8.1.19/ofi/gnu/9.1
+  PAT_BUILD_PAPI_LIBDIR=/opt/cray/pe/papi/6.0.0.16/lib64
+  PAT_RT_PERFCTR=1
+  PAT_RT_PERFCTR_DISABLE_COMPONENTS=nvml,cuda
+  PAT_RT_SAMPLING_INTERVAL=1000
+  PERFTOOLS_VERSION=22.09.0
+  PMI_CONTROL_PORT=25674
+
+Report time environment variables:
+    CRAYPAT_ROOT=/opt/cray/pe/perftools/22.09.0
+
+Number of MPI control variables collected:  117
+
+  (To see the list, specify: -s mpi_cvar=show)
+
+Report command line options:  -T
+
+Operating system:
+  Linux 5.3.18-150300.59.87_11.0.78-cray_shasta_c #1 SMP Thu Oct 20 22:11:23 UTC 2022 (c16132b)
+
+Hardware performance counter events:
+   PAPI_BR_TKN   Conditional branch instructions taken
+   PAPI_TOT_INS  Instructions completed
+   PAPI_BR_INS   Branch instructions
+   PAPI_TOT_CYC  Total cycles
+
+Estimated minimum instrumentation overhead per call of a traced function,
+  which was subtracted from the data shown in this report
+  (for raw data, use the option:  -s overhead=include):
+    Time  0.660  microsecs
+
+Number of traced functions that were called:  20
+
+  (To see the list, specify:  -s traced_functions=show)
+

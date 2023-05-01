@@ -1,0 +1,34 @@
+CrayPat/X:  Version 22.09.0 Revision 15e027213  08/04/22 21:24:30
+pat[WARNING][0]: override the environment variable 'PAT_RT_PERFCTR' embedded by pat_build with '1'
+ 
+    Matrix size:      1000
+     Iterations:         1
+         Method:        External dgemm
+       CPU time:               0.039 s
+   Elapsed time:               0.039 s
+ 
+    Matrix size:      1000
+     Iterations:         1
+         Method:      Intrinsic matmul
+       CPU time:               0.038 s
+   Elapsed time:               0.038 s
+ 
+    Matrix size:      1000
+     Iterations:         1
+         Method:       Manual loops V1
+       CPU time:               0.125 s
+   Elapsed time:               0.125 s
+ 
+    Matrix size:      1000
+     Iterations:         1
+         Method:       Manual loops V2
+       CPU time:               0.117 s
+   Elapsed time:               0.117 s
+ 
+    Matrix size:      1000
+     Iterations:         1
+         Method:       Manual loops V3
+       CPU time:               0.038 s
+   Elapsed time:               0.038 s
+Experiment data directory written:
+matrix.O2+apa+20041-8646438t
