@@ -4,63 +4,40 @@
 
 Compilation
 -----------
-File     : /group/pawsey0001/espinosa/pawseyTraining/Optimising-Serial-Code/compiler_reports/exampleOutput/matrix.f90
-Compiled : 03/09/21  07:02:32
-Compiler : Version 8.6.x.x
-Ftnlx    : Version 8503 (libcif 85008)
+File     : /software/projects/pawsey0001/espinosa/pawseyTraining/Optimising-Serial-Code/compiler_reports/matrix.f90
+Compiled : 05/01/23  13:02:52
+Compiler : Version 14.0.3
+Ftnlx    : Version 14.0.3 
 Target   : x86-64
-Command  : ftn_driver.exe -hcpu=haswell -hstatic -D__CRAYXC -D__CRAY_HASWELL
-           -D__CRAYXT_COMPUTE_LINUX_TARGET -hnetwork=aries
-           -I/opt/cray/pe/perftools/7.0.0/include -DCRAYPAT -homp_trace
-           -hpat_trace -L/opt/cray/pe/perftools/7.0.0/lib64 -O1 -rm
+Command  : ftn_driver.exe -hcpu=x86-milan -hnetwork=ofi -hdynamic
+           -D__CRAY_X86_MILAN -D__CRAYXT_COMPUTE_LINUX_TARGET -O1 -hlist=m
            -omatrix.O1 matrix.f90
-           -I/opt/cray/pe/cce/8.6.5/cce/x86_64/include/craylibs -I/usr/include
-           -L/opt/gcc/6.1.0/snos/lib64 -L/usr/lib64 -L/lib64 -I/usr/include
-           -I/opt/cray/pe/mpt/7.7.0/gni/mpich-cray/8.6/include
-           -I/opt/cray/pe/libsci/17.12.1/CRAY/8.6/x86_64/include
-           -I/opt/cray/rca/2.2.18-6.0.7.1_5.61__g2aa4f39.ari/include
-           -I/opt/cray/alps/6.6.43-6.0.7.1_5.61__ga796da32.ari/include
-           -I/opt/cray/xpmem/2.2.15-6.0.7.1_5.20__g7549d06.ari/include
-           -I/opt/cray/gni-headers/5.0.12.0-6.0.7.1_3.20__g3b1768f.ari/include
-           -I/opt/cray/dmapp/7.1.1-6.0.7.1_6.16__g45d1b37.ari/include
-           -I/opt/cray/pe/pmi/5.0.13/include
-           -I/opt/cray/ugni/6.0.14.0-6.0.7.1_3.22__gea11d3d.ari/include
-           -I/opt/cray/udreg/2.3.2-6.0.7.1_5.22__g5196236.ari/include
-           -I/opt/cray/wlm_detect/1.3.3-6.0.7.1_5.10__g7109084.ari/include
-           -I/opt/cray/krca/2.2.4-6.0.7.1_5.56__g8505b97.ari/include
-           -I/opt/cray-hss-devel/8.0.0/include -L/opt/cray/dmapp/default/lib64
-           -L/opt/cray/pe/mpt/7.7.0/gni/mpich-cray/8.6/lib
-           -L/opt/cray/dmapp/default/lib64
-           -L/opt/cray/pe/mpt/7.7.0/gni/mpich-cray/8.6/lib
-           -L/opt/cray/pe/libsci/17.12.1/CRAY/8.6/x86_64/lib
-           -L/opt/cray/rca/2.2.18-6.0.7.1_5.61__g2aa4f39.ari/lib64
-           -L/opt/cray/alps/6.6.43-6.0.7.1_5.61__ga796da32.ari/lib64
-           -L/opt/cray/xpmem/2.2.15-6.0.7.1_5.20__g7549d06.ari/lib64
-           -L/opt/cray/dmapp/7.1.1-6.0.7.1_6.16__g45d1b37.ari/lib64
-           -L/opt/cray/pe/pmi/5.0.13/lib64
-           -L/opt/cray/ugni/6.0.14.0-6.0.7.1_3.22__gea11d3d.ari/lib64
-           -L/opt/cray/udreg/2.3.2-6.0.7.1_5.22__g5196236.ari/lib64
-           -L/opt/cray/pe/atp/2.1.1/libApp
-           -L/opt/cray/pe/cce/8.6.5/cce/x86_64/lib/pkgconfig/../
-           -L/opt/cray/wlm_detect/1.3.3-6.0.7.1_5.10__g7109084.ari/lib64
-           -lpthread -lmpichf90_cray -lrt -lpthread -lugni -lpmi
-           -lsci_cray_mpi_mp -lm -lf -lsci_cray_mp -lmpich_cray -lrt -lpthread
-           -lugni -lpmi -lsci_cray_mp -lcraymp -lm -lpthread -lf -lhugetlbfs
-           -lpgas-dmapp -lfi -lu -lrt -ldmapp -lugni -ludreg -lpthread -lm
-           -lcray-c++-rts -lstdc++ -lxpmem -ldmapp -lpthread -lpmi -lpthread
-           -lalpslli -lpthread -lwlm_detect -lugni -lpthread -lalpsutil
-           -lpthread -lrca -ludreg -lquadmath -lm -lomp -lcraymp -lpthread -lrt
-           -ldl -lcray-c++-rts -lstdc++ -lm -lmodules -lm -lfi -lm -lquadmath
-           -lcraymath -lm -lgfortran -lquadmath -lf -lm -lpthread -lu -lrt -ldl
-           -lcray-c++-rts -lstdc++ -lm -lcsup -lstdc++ -lpthread
+           -I/opt/cray/pe/cce/14.0.3/cce-clang/x86_64/lib/clang/14.0.6/include
+           -I/opt/cray/pe/cce/14.0.3/cce/x86_64/include/craylibs -I/usr/include
+           -L/opt/cray/pe/gcc/10.3.0/snos/lib64
+           -I/opt/cray/pe/libsci/22.08.1.1/CRAY/9.0/x86_64/include
+           -I/opt/cray/pe/mpich/8.1.19/ofi/cray/10.0/include
+           -I/opt/cray/pe/dsmml/0.2.2/dsmml//include
+           -I/opt/cray/xpmem/2.4.4-2.3_13.8__gff0e1d9.shasta/include
+           -L/opt/cray/pe/libsci/22.08.1.1/CRAY/9.0/x86_64/lib
+           -L/opt/cray/pe/mpich/8.1.19/ofi/cray/10.0/lib
+           -L/opt/cray/pe/dsmml/0.2.2/dsmml//lib
+           -L/opt/cray/pe/cce/14.0.3/cce/x86_64/lib/pkgconfig/../
+           -L/opt/gcc/10.3.0/snos/lib64 -L/opt/cray/pe/gcc/10.3.0/snos/lib64
+           -L/opt/cray/pe/cce/14.0.3/cce/x86_64/lib/pkgconfig/../
+           -L/opt/cray/xpmem/2.4.4-2.3_13.8__gff0e1d9.shasta/lib64 -ldl -lxpmem
+           -lquadmath -lmodules -lfi -lcraymath -lf -lu -lcsup -I/usr/include
+           -lstdc++ -lpthread
+           -L/opt/cray/pe/cce/14.0.3/cce-clang/x86_64/lib/clang/14.0.6/lib/linux
+           -lclang_rt.builtins-x86_64
 Program
   Units  : TIMEIT
           MATRIX
 
 ftnlx report
 ------------
-Source   : /group/pawsey0001/espinosa/pawseyTraining/Optimising-Serial-Code/compiler_reports/exampleOutput/matrix.f90
-Date     : 03/09/2021  07:02:40
+Source   : /software/projects/pawsey0001/espinosa/pawseyTraining/Optimising-Serial-Code/compiler_reports/matrix.f90
+Date     : 05/01/2023  13:02:54
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -105,376 +82,392 @@ Date     : 03/09/2021  07:02:40
    12.                   real(dp), allocatable :: C(:, :)
    13.                   integer, intent(in) :: n,iters
    14.                   character(len=32), dimension(5) :: methods
-   15.                   real(dp), dimension(5) :: ctimes
-   16.                   real(dp), dimension(5) :: etimes
-   17.                 
-   18.                   write(*,*)
-   19.                   write(*,'(a16,i10)') "Matrix size:",n
-   20.                   write(*,'(a16,i10)') "Iterations:",iters
-   21.                 
-   22.                   allocate(A(n, n), B(n, n), C(n, n))
-   23.  + C---------<>   call random_number(A)
-   24.  + C---------<>   call random_number(B)
-   25.                 
-   26.                   !Testing matmul1 (dgemm)
-   27.                   call cpu_time(t1)
-   28.                   call date_and_time(values=ut1)
-   29.  + 1----------<   do i = 1, iters
-   30.    1                  call matmul1(A,B,C)
-   31.    1---------->   end do
-   32.                   call cpu_time(t2)
-   33.                   call date_and_time(values=ut2)
-   34.                   methods(1)="External dgemm"
-   35.                   ctimes(1)=t2-t1
-   36.                   etimes(1)=elapsedtime(ut1,ut2)
-   37.                 
-   38.                   !Testing matmul2 (intrinsic matmul)
-   39.                   call cpu_time(t1)
-   40.                   call date_and_time(values=ut1)
-   41.  + 1----------<   do i = 1, iters
-   42.    1                  call matmul2(A,B,C)
-   43.    1---------->   end do
-   44.                   call cpu_time(t2)
-   45.                   call date_and_time(values=ut2)
-   46.                   methods(2)="Intrinsic matmul"
-   47.                   ctimes(2)=t2-t1
-   48.                   etimes(2)=elapsedtime(ut1,ut2)
-   49.                 
-   50.                   !Testing matmul3 (manual looping)
-   51.                   call cpu_time(t1)
-   52.                   call date_and_time(values=ut1)
-   53.  + 1----------<   do i = 1, iters
-   54.    1                  call matmul3(A,B,C)
-   55.    1---------->   end do
-   56.                   call cpu_time(t2)
-   57.                   call date_and_time(values=ut2)
-   58.                   methods(3)="Manual loops v1"
-   59.                   ctimes(3)=t2-t1
-   60.                   etimes(3)=elapsedtime(ut1,ut2)
-   61.                 
-   62.                   !Testing matmul4 (manual looping)
-   63.                   call cpu_time(t1)
-   64.                   call date_and_time(values=ut1)
-   65.  + 1----------<   do i = 1, iters
-   66.    1                  call matmul4(A,B,C)
-   67.    1---------->   end do
-   68.                   call cpu_time(t2)
-   69.                   call date_and_time(values=ut2)
-   70.                   methods(4)="Manual loops V2"
-   71.                   ctimes(4)=t2-t1
-   72.                   etimes(4)=elapsedtime(ut1,ut2)
-   73.                 
-   74.                   !Testing matmul5 (manual looping)
-   75.                   call cpu_time(t1)
-   76.                   call date_and_time(values=ut1)
-   77.  + 1----------<   do i = 1, iters
-   78.    1                  call matmul5(A,B,C)
-   79.    1---------->   end do
-   80.                   call cpu_time(t2)
-   81.                   call date_and_time(values=ut2)
-   82.                   methods(5)="Manual loops V3"
-   83.                   ctimes(5)=t2-t1
-   84.                   etimes(5)=elapsedtime(ut1,ut2)
-   85.                 
-   86.                   call printtimes(methods,ctimes,etimes,5)
-   87.                 
-   88.                   deallocate(A)
-   89.                   deallocate(B)
-   90.                   deallocate(C)
-   91.                 end subroutine
-   92.                 
-   93.                 subroutine test_matmul1(n,iters)
-   94.                   integer :: i
-   95.                   integer,dimension(8) :: ut1,ut2
-   96.                   real :: t1, t2, etime
-   97.                   real(dp), allocatable :: A(:, :), B(:, :)
-   98.                   real(dp), allocatable :: C(:, :)
-   99.                   integer, intent(in) :: n,iters
-  100.                   character(len=32), dimension(5) :: methods
-  101.                   real(dp), dimension(5) :: ctimes
-  102.                   real(dp), dimension(5) :: etimes
-  103.                 
-  104.                   write(*,*)
-  105.                   write(*,'(a16,i10)') "Matrix size:",n
-  106.                   write(*,'(a16,i10)') "Iterations:",iters
-  107.                 
-  108.                   allocate(A(n, n), B(n, n), C(n, n))
-  109.  + C---------<>   call random_number(A)
-  110.  + C---------<>   call random_number(B)
-  111.                 
-  112.                   !Testing matmul1 (dgemm)
-  113.                   call cpu_time(t1)
-  114.                   call date_and_time(values=ut1)
-  115.  + 1----------<   do i = 1, iters
-  116.    1                  call matmul1(A,B,C)
-  117.    1---------->   end do
-  118.                   call cpu_time(t2)
-  119.                   call date_and_time(values=ut2)
-  120.                   methods(1)="External dgemm"
-  121.                   ctimes(1)=t2-t1
-  122.                   etimes(1)=elapsedtime(ut1,ut2)
-  123.                   call printtimes(methods,ctimes,etimes,1)
-  124.                 
-  125.                   deallocate(A)
-  126.                   deallocate(B)
-  127.                   deallocate(C)
-  128.                 end subroutine
-  129.                 
-  130.                 subroutine test_matmul2(n,iters)
-  131.                   integer :: i
-  132.                   integer,dimension(8) :: ut1,ut2
-  133.                   real :: t1, t2, etime
-  134.                   real(dp), allocatable :: A(:, :), B(:, :)
-  135.                   real(dp), allocatable :: C(:, :)
-  136.                   integer, intent(in) :: n,iters
-  137.                   character(len=32), dimension(5) :: methods
-  138.                   real(dp), dimension(5) :: ctimes
-  139.                   real(dp), dimension(5) :: etimes
-  140.                 
-  141.                   write(*,*)
-  142.                   write(*,'(a16,i10)') "Matrix size:",n
-  143.                   write(*,'(a16,i10)') "Iterations:",iters
-  144.                 
-  145.                   allocate(A(n, n), B(n, n), C(n, n))
-  146.  + C---------<>   call random_number(A)
-  147.  + C---------<>   call random_number(B)
-  148.                 
-  149.                   !Testing matmul2 (intrinsic matmul)
-  150.                   call cpu_time(t1)
-  151.                   call date_and_time(values=ut1)
-  152.  + 1----------<   do i = 1, iters
-  153.    1                  call matmul2(A,B,C)
-  154.    1---------->   end do
-  155.                   call cpu_time(t2)
-  156.                   call date_and_time(values=ut2)
-  157.                   methods(1)="Intrinsic matmul"
-  158.                   ctimes(1)=t2-t1
-  159.                   etimes(1)=elapsedtime(ut1,ut2)
-  160.                   call printtimes(methods,ctimes,etimes,1)
-  161.                 
-  162.                   deallocate(A)
-  163.                   deallocate(B)
-  164.                   deallocate(C)
-  165.                 end subroutine
-  166.                 
-  167.                 subroutine test_matmul3(n,iters)
-  168.                   integer :: i
-  169.                   integer,dimension(8) :: ut1,ut2
-  170.                   real :: t1, t2, etime
-  171.                   real(dp), allocatable :: A(:, :), B(:, :)
-  172.                   real(dp), allocatable :: C(:, :)
-  173.                   integer, intent(in) :: n,iters
-  174.                   character(len=32), dimension(5) :: methods
-  175.                   real(dp), dimension(5) :: ctimes
-  176.                   real(dp), dimension(5) :: etimes
-  177.                 
-  178.                   write(*,*)
-  179.                   write(*,'(a16,i10)') "Matrix size:",n
-  180.                   write(*,'(a16,i10)') "Iterations:",iters
-  181.                 
-  182.                   allocate(A(n, n), B(n, n), C(n, n))
-  183.  + C---------<>   call random_number(A)
-  184.  + C---------<>   call random_number(B)
-  185.                 
-  186.                   !Testing matmul3 (manual looping)
-  187.                   call cpu_time(t1)
-  188.                   call date_and_time(values=ut1)
-  189.  + 1----------<   do i = 1, iters
-  190.    1                  call matmul3(A,B,C)
-  191.    1---------->   end do
-  192.                   call cpu_time(t2)
-  193.                   call date_and_time(values=ut2)
-  194.                   methods(1)="Manual loops V1"
-  195.                   ctimes(1)=t2-t1
-  196.                   etimes(1)=elapsedtime(ut1,ut2)
-  197.                   call printtimes(methods,ctimes,etimes,1)
-  198.                 
-  199.                   deallocate(A)
-  200.                   deallocate(B)
-  201.                   deallocate(C)
-  202.                 end subroutine
-  203.                 
-  204.                 subroutine test_matmul4(n,iters)
-  205.                   integer :: i
-  206.                   integer,dimension(8) :: ut1,ut2
-  207.                   real :: t1, t2, etime
-  208.                   real(dp), allocatable :: A(:, :), B(:, :)
-  209.                   real(dp), allocatable :: C(:, :)
-  210.                   integer, intent(in) :: n,iters
-  211.                   character(len=32), dimension(5) :: methods
-  212.                   real(dp), dimension(5) :: ctimes
-  213.                   real(dp), dimension(5) :: etimes
-  214.                 
-  215.                   write(*,*)
-  216.                   write(*,'(a16,i10)') "Matrix size:",n
-  217.                   write(*,'(a16,i10)') "Iterations:",iters
-  218.                 
-  219.                   allocate(A(n, n), B(n, n), C(n, n))
-  220.  + C---------<>   call random_number(A)
-  221.  + C---------<>   call random_number(B)
-  222.                 
-  223.                   !Testing matmul4 (manual looping)
-  224.                   call cpu_time(t1)
-  225.                   call date_and_time(values=ut1)
-  226.  + 1----------<   do i = 1, iters
-  227.    1                  call matmul4(A,B,C)
-  228.    1---------->   end do
-  229.                   call cpu_time(t2)
-  230.                   call date_and_time(values=ut2)
-  231.                   methods(1)="Manual loops V2"
-  232.                   ctimes(1)=t2-t1
-  233.                   etimes(1)=elapsedtime(ut1,ut2)
-  234.                   call printtimes(methods,ctimes,etimes,1)
+   15.                   character(len=32), dimension(5) :: info
+   16.                   real(dp), dimension(5) :: ctimes
+   17.                   real(dp), dimension(5) :: etimes
+   18.                 
+   19.                   write(*,*)
+   20.                   write(*,'(a16,i10)') "Matrix size:",n
+   21.                   write(*,'(a16,i10)') "Iterations:",iters
+   22.                 
+   23.                   allocate(A(n, n), B(n, n), C(n, n))
+   24.  + C---------<>   call random_number(A)
+   25.  + C---------<>   call random_number(B)
+   26.                 
+   27.                   !Testing matmul1 (dgemm)
+   28.                   call cpu_time(t1)
+   29.                   call date_and_time(values=ut1)
+   30.  + 1----------<   do i = 1, iters
+   31.    1                  call matmul1(A,B,C)
+   32.    1---------->   end do
+   33.                   call cpu_time(t2)
+   34.                   call date_and_time(values=ut2)
+   35.                   methods(1)="matmul1"
+   36.                   info(1)="External dgemm"
+   37.                   ctimes(1)=t2-t1
+   38.                   etimes(1)=elapsedtime(ut1,ut2)
+   39.                 
+   40.                   !Testing matmul2 (intrinsic matmul)
+   41.                   call cpu_time(t1)
+   42.                   call date_and_time(values=ut1)
+   43.  + 1----------<   do i = 1, iters
+   44.    1                  call matmul2(A,B,C)
+   45.    1---------->   end do
+   46.                   call cpu_time(t2)
+   47.                   call date_and_time(values=ut2)
+   48.                   methods(2)="matmul2"
+   49.                   info(2)="Fortran matmul"
+   50.                   ctimes(2)=t2-t1
+   51.                   etimes(2)=elapsedtime(ut1,ut2)
+   52.                 
+   53.                   !Testing matmul3 (manual looping)
+   54.                   call cpu_time(t1)
+   55.                   call date_and_time(values=ut1)
+   56.  + 1----------<   do i = 1, iters
+   57.    1                  call matmul3(A,B,C)
+   58.    1---------->   end do
+   59.                   call cpu_time(t2)
+   60.                   call date_and_time(values=ut2)
+   61.                   methods(3)="matmul3"
+   62.                   info(3)="Using loops V3"
+   63.                   ctimes(3)=t2-t1
+   64.                   etimes(3)=elapsedtime(ut1,ut2)
+   65.                 
+   66.                   !Testing matmul4 (manual looping)
+   67.                   call cpu_time(t1)
+   68.                   call date_and_time(values=ut1)
+   69.  + 1----------<   do i = 1, iters
+   70.    1                  call matmul4(A,B,C)
+   71.    1---------->   end do
+   72.                   call cpu_time(t2)
+   73.                   call date_and_time(values=ut2)
+   74.                   methods(4)="matmul4"
+   75.                   info(4)="Using loops V4"
+   76.                   ctimes(4)=t2-t1
+   77.                   etimes(4)=elapsedtime(ut1,ut2)
+   78.                 
+   79.                   !Testing matmul5 (manual looping)
+   80.                   call cpu_time(t1)
+   81.                   call date_and_time(values=ut1)
+   82.  + 1----------<   do i = 1, iters
+   83.    1                  call matmul5(A,B,C)
+   84.    1---------->   end do
+   85.                   call cpu_time(t2)
+   86.                   call date_and_time(values=ut2)
+   87.                   methods(5)="matmul5"
+   88.                   info(5)="Using loops V5"
+   89.                   ctimes(5)=t2-t1
+   90.                   etimes(5)=elapsedtime(ut1,ut2)
+   91.                 
+   92.                   call printtimes(methods,info,ctimes,etimes,5)
+   93.                 
+   94.                   deallocate(A)
+   95.                   deallocate(B)
+   96.                   deallocate(C)
+   97.                 end subroutine
+   98.                 
+   99.                 subroutine test_matmul1(n,iters)
+  100.                   integer :: i
+  101.                   integer,dimension(8) :: ut1,ut2
+  102.                   real :: t1, t2, etime
+  103.                   real(dp), allocatable :: A(:, :), B(:, :)
+  104.                   real(dp), allocatable :: C(:, :)
+  105.                   integer, intent(in) :: n,iters
+  106.                   character(len=32), dimension(5) :: methods
+  107.                   character(len=32), dimension(5) :: info
+  108.                   real(dp), dimension(5) :: ctimes
+  109.                   real(dp), dimension(5) :: etimes
+  110.                 
+  111.                   write(*,*)
+  112.                   write(*,'(a16,i10)') "Matrix size:",n
+  113.                   write(*,'(a16,i10)') "Iterations:",iters
+  114.                 
+  115.                   allocate(A(n, n), B(n, n), C(n, n))
+  116.  + C---------<>   call random_number(A)
+  117.  + C---------<>   call random_number(B)
+  118.                 
+  119.                   !Testing matmul1 (dgemm)
+  120.                   call cpu_time(t1)
+  121.                   call date_and_time(values=ut1)
+  122.  + 1----------<   do i = 1, iters
+  123.    1                  call matmul1(A,B,C)
+  124.    1---------->   end do
+  125.                   call cpu_time(t2)
+  126.                   call date_and_time(values=ut2)
+  127.                   methods(1)="matmul1"
+  128.                   info(1)="External dgemm"
+  129.                   ctimes(1)=t2-t1
+  130.                   etimes(1)=elapsedtime(ut1,ut2)
+  131.                   call printtimes(methods,info,ctimes,etimes,1)
+  132.                 
+  133.                   deallocate(A)
+  134.                   deallocate(B)
+  135.                   deallocate(C)
+  136.                 end subroutine
+  137.                 
+  138.                 subroutine test_matmul2(n,iters)
+  139.                   integer :: i
+  140.                   integer,dimension(8) :: ut1,ut2
+  141.                   real :: t1, t2, etime
+  142.                   real(dp), allocatable :: A(:, :), B(:, :)
+  143.                   real(dp), allocatable :: C(:, :)
+  144.                   integer, intent(in) :: n,iters
+  145.                   character(len=32), dimension(5) :: methods
+  146.                   character(len=32), dimension(5) :: info
+  147.                   real(dp), dimension(5) :: ctimes
+  148.                   real(dp), dimension(5) :: etimes
+  149.                 
+  150.                   write(*,*)
+  151.                   write(*,'(a16,i10)') "Matrix size:",n
+  152.                   write(*,'(a16,i10)') "Iterations:",iters
+  153.                 
+  154.                   allocate(A(n, n), B(n, n), C(n, n))
+  155.  + C---------<>   call random_number(A)
+  156.  + C---------<>   call random_number(B)
+  157.                 
+  158.                   !Testing matmul2 (intrinsic matmul)
+  159.                   call cpu_time(t1)
+  160.                   call date_and_time(values=ut1)
+  161.  + 1----------<   do i = 1, iters
+  162.    1                  call matmul2(A,B,C)
+  163.    1---------->   end do
+  164.                   call cpu_time(t2)
+  165.                   call date_and_time(values=ut2)
+  166.                   methods(1)="matmul2"
+  167.                   info(1)="Fortran matmul"
+  168.                   ctimes(1)=t2-t1
+  169.                   etimes(1)=elapsedtime(ut1,ut2)
+  170.                   call printtimes(methods,info,ctimes,etimes,1)
+  171.                 
+  172.                   deallocate(A)
+  173.                   deallocate(B)
+  174.                   deallocate(C)
+  175.                 end subroutine
+  176.                 
+  177.                 subroutine test_matmul3(n,iters)
+  178.                   integer :: i
+  179.                   integer,dimension(8) :: ut1,ut2
+  180.                   real :: t1, t2, etime
+  181.                   real(dp), allocatable :: A(:, :), B(:, :)
+  182.                   real(dp), allocatable :: C(:, :)
+  183.                   integer, intent(in) :: n,iters
+  184.                   character(len=32), dimension(5) :: methods
+  185.                   character(len=32), dimension(5) :: info
+  186.                   real(dp), dimension(5) :: ctimes
+  187.                   real(dp), dimension(5) :: etimes
+  188.                 
+  189.                   write(*,*)
+  190.                   write(*,'(a16,i10)') "Matrix size:",n
+  191.                   write(*,'(a16,i10)') "Iterations:",iters
+  192.                 
+  193.                   allocate(A(n, n), B(n, n), C(n, n))
+  194.  + C---------<>   call random_number(A)
+  195.  + C---------<>   call random_number(B)
+  196.                 
+  197.                   !Testing matmul3 (manual looping)
+  198.                   call cpu_time(t1)
+  199.                   call date_and_time(values=ut1)
+  200.  + 1----------<   do i = 1, iters
+  201.    1                  call matmul3(A,B,C)
+  202.    1---------->   end do
+  203.                   call cpu_time(t2)
+  204.                   call date_and_time(values=ut2)
+  205.                   methods(1)="matmul3"
+  206.                   info(1)="Using loops V3"
+  207.                   ctimes(1)=t2-t1
+  208.                   etimes(1)=elapsedtime(ut1,ut2)
+  209.                   call printtimes(methods,info,ctimes,etimes,1)
+  210.                 
+  211.                   deallocate(A)
+  212.                   deallocate(B)
+  213.                   deallocate(C)
+  214.                 end subroutine
+  215.                 
+  216.                 subroutine test_matmul4(n,iters)
+  217.                   integer :: i
+  218.                   integer,dimension(8) :: ut1,ut2
+  219.                   real :: t1, t2, etime
+  220.                   real(dp), allocatable :: A(:, :), B(:, :)
+  221.                   real(dp), allocatable :: C(:, :)
+  222.                   integer, intent(in) :: n,iters
+  223.                   character(len=32), dimension(5) :: methods
+  224.                   character(len=32), dimension(5) :: info
+  225.                   real(dp), dimension(5) :: ctimes
+  226.                   real(dp), dimension(5) :: etimes
+  227.                 
+  228.                   write(*,*)
+  229.                   write(*,'(a16,i10)') "Matrix size:",n
+  230.                   write(*,'(a16,i10)') "Iterations:",iters
+  231.                 
+  232.                   allocate(A(n, n), B(n, n), C(n, n))
+  233.  + C---------<>   call random_number(A)
+  234.  + C---------<>   call random_number(B)
   235.                 
-  236.                   deallocate(A)
-  237.                   deallocate(B)
-  238.                   deallocate(C)
-  239.                 end subroutine
-  240.                 
-  241.                 subroutine test_matmul5(n,iters)
-  242.                   integer :: i
-  243.                   integer,dimension(8) :: ut1,ut2
-  244.                   real :: t1, t2, etime
-  245.                   real(dp), allocatable :: A(:, :), B(:, :)
-  246.                   real(dp), allocatable :: C(:, :)
-  247.                   integer, intent(in) :: n,iters
-  248.                   character(len=32), dimension(5) :: methods
-  249.                   real(dp), dimension(5) :: ctimes
-  250.                   real(dp), dimension(5) :: etimes
-  251.                 
-  252.                   write(*,*)
-  253.                   write(*,'(a16,i10)') "Matrix size:",n
-  254.                   write(*,'(a16,i10)') "Iterations:",iters
-  255.                 
-  256.                   allocate(A(n, n), B(n, n), C(n, n))
-  257.  + C---------<>   call random_number(A)
-  258.  + C---------<>   call random_number(B)
-  259.                 
-  260.                   !Testing matmul5 (manual looping)
-  261.                   call cpu_time(t1)
-  262.                   call date_and_time(values=ut1)
-  263.  + 1----------<   do i = 1, iters
-  264.    1                  call matmul5(A,B,C)
-  265.    1---------->   end do
-  266.                   call cpu_time(t2)
-  267.                   call date_and_time(values=ut2)
-  268.                   methods(1)="Manual loops V3"
-  269.                   ctimes(1)=t2-t1
-  270.                   etimes(1)=elapsedtime(ut1,ut2)
-  271.                   call printtimes(methods,ctimes,etimes,1)
-  272.                 
-  273.                   deallocate(A)
-  274.                   deallocate(B)
-  275.                   deallocate(C)
-  276.                 end subroutine
-  277.                 
-  278.                 real(dp) function elapsedtime(starttime,stoptime)
-  279.                   integer, dimension(8), intent(in) :: starttime,stoptime
-  280.                   elapsedtime=(stoptime(5)*3600._dp+stoptime(6)*60._dp+real(stoptime(7),kind=dp)+stoptime(8)/1000._dp)- &
-  281.                        (starttime(5)*3600._dp+starttime(6)*60._dp+real(starttime(7),kind=dp)+starttime(8)/1000._dp)
-  282.                 end function
-  283.                 
-  284.                 subroutine printtimes(methods,ctimes,etimes,n_methods)
-  285.                   integer, intent(in) :: n_methods
-  286.                   character(len=*), dimension(n_methods), intent(in) :: methods
-  287.                   real(dp),dimension(n_methods), intent(in) :: ctimes
-  288.                   real(dp),dimension(n_methods), intent(in) :: etimes
-  289.                   integer :: i
-  290.                   write(*,'(a16)',advance='no')    "Method:"
-  291.  + 1----------<   do i=1,n_methods
-  292.    1                 write(*,'(a22)',advance='no')    trim(methods(i))
-  293.    1---------->   end do
-  294.                   write(*,*) ''
-  295.                   write(*,'(a16)',advance='no') "CPU time:"
-  296.  + 1----------<   do i=1,n_methods
-  297.    1                 write(*,'(f20.3,a2)',advance='no') ctimes(i), " s"
-  298.    1---------->   end do
-  299.                   write(*,*) ''
-  300.                   write(*,'(a16)',advance='no') "Elapsed time:"
-  301.  + 1----------<   do i=1,n_methods
-  302.    1                 write(*,'(f20.3,a2)',advance='no') etimes(i), " s"
-  303.    1---------->   end do
-  304.                   write(*,*) ''
-  305.                 end subroutine
-  306.                 
-  307.                 subroutine matmul1(A,B,C) !Using dgemm
-  308.                   integer :: n
-  309.                   real(dp), intent(out) :: C(:, :)
-  310.                   real(dp), intent(in) :: A(:, :), B(:, :)
-  311.                   external :: dgemm
-  312.                   n = size(A,1)
-  313.  +                call dgemm('N', 'N', n, n, n, 1.0_dp, A, n, B, n, 0.0_dp, C, n);
-  314.                 end subroutine
-  315.                 
-  316.                 subroutine matmul2(A,B,C) !Using matmul
-  317.                   real(dp), intent(out) :: C(:, :)
-  318.                   real(dp), intent(in) :: A(:, :), B(:, :)
-  319.  + r4--------<>   C = matmul(A, B)
-  320.                 end subroutine
-  321.                 
-  322.                 subroutine matmul3(A,B,C) !Manual loops V1 (Similar to dgemm logic)
-  323.                   real(dp), intent(out) :: C(:, :)
-  324.                   real(dp), intent(in) :: A(:, :), B(:, :)
-  325.                   integer :: i,j,k,l,n
-  326.                   real(dp) :: tmp
-  327.                   n = size(A,1)
+  236.                   !Testing matmul4 (manual looping)
+  237.                   call cpu_time(t1)
+  238.                   call date_and_time(values=ut1)
+  239.  + 1----------<   do i = 1, iters
+  240.    1                  call matmul4(A,B,C)
+  241.    1---------->   end do
+  242.                   call cpu_time(t2)
+  243.                   call date_and_time(values=ut2)
+  244.                   methods(1)="matmul4"
+  245.                   info(1)="Using loops V4"
+  246.                   ctimes(1)=t2-t1
+  247.                   etimes(1)=elapsedtime(ut1,ut2)
+  248.                   call printtimes(methods,info,ctimes,etimes,1)
+  249.                 
+  250.                   deallocate(A)
+  251.                   deallocate(B)
+  252.                   deallocate(C)
+  253.                 end subroutine
+  254.                 
+  255.                 subroutine test_matmul5(n,iters)
+  256.                   integer :: i
+  257.                   integer,dimension(8) :: ut1,ut2
+  258.                   real :: t1, t2, etime
+  259.                   real(dp), allocatable :: A(:, :), B(:, :)
+  260.                   real(dp), allocatable :: C(:, :)
+  261.                   integer, intent(in) :: n,iters
+  262.                   character(len=32), dimension(5) :: methods
+  263.                   character(len=32), dimension(5) :: info
+  264.                   real(dp), dimension(5) :: ctimes
+  265.                   real(dp), dimension(5) :: etimes
+  266.                 
+  267.                   write(*,*)
+  268.                   write(*,'(a16,i10)') "Matrix size:",n
+  269.                   write(*,'(a16,i10)') "Iterations:",iters
+  270.                 
+  271.                   allocate(A(n, n), B(n, n), C(n, n))
+  272.  + C---------<>   call random_number(A)
+  273.  + C---------<>   call random_number(B)
+  274.                 
+  275.                   !Testing matmul5 (manual looping)
+  276.                   call cpu_time(t1)
+  277.                   call date_and_time(values=ut1)
+  278.  + 1----------<   do i = 1, iters
+  279.    1                  call matmul5(A,B,C)
+  280.    1---------->   end do
+  281.                   call cpu_time(t2)
+  282.                   call date_and_time(values=ut2)
+  283.                   methods(1)="matmul5"
+  284.                   info(1)="Using loops V5"
+  285.                   ctimes(1)=t2-t1
+  286.                   etimes(1)=elapsedtime(ut1,ut2)
+  287.                   call printtimes(methods,info,ctimes,etimes,1)
+  288.                 
+  289.                   deallocate(A)
+  290.                   deallocate(B)
+  291.                   deallocate(C)
+  292.                 end subroutine
+  293.                 
+  294.                 real(dp) function elapsedtime(starttime,stoptime)
+  295.                   integer, dimension(8), intent(in) :: starttime,stoptime
+  296.                   elapsedtime=(stoptime(5)*3600._dp+stoptime(6)*60._dp+real(stoptime(7),kind=dp)+stoptime(8)/1000._dp)- &
+  297.                        (starttime(5)*3600._dp+starttime(6)*60._dp+real(starttime(7),kind=dp)+starttime(8)/1000._dp)
+  298.                 end function
+  299.                 
+  300.                 subroutine printtimes(methods,info,ctimes,etimes,n_methods)
+  301.                   integer, intent(in) :: n_methods
+  302.                   character(len=*), dimension(n_methods), intent(in) :: methods
+  303.                   character(len=*), dimension(n_methods), intent(in) :: info
+  304.                   real(dp),dimension(n_methods), intent(in) :: ctimes
+  305.                   real(dp),dimension(n_methods), intent(in) :: etimes
+  306.                   integer :: i
+  307.                   write(*,'(a16)',advance='no')    "Method:"
+  308.  + 1----------<   do i=1,n_methods
+  309.    1                 write(*,'(a22)',advance='no')    trim(methods(i))
+  310.    1---------->   end do
+  311.                   write(*,*) ''
+  312.                   write(*,'(a16)',advance='no')    "Info:"
+  313.  + 1----------<   do i=1,n_methods
+  314.    1                 write(*,'(a22)',advance='no')    trim(info(i))
+  315.    1---------->   end do
+  316.                   write(*,*) ''
+  317.                   write(*,'(a16)',advance='no') "CPU time:"
+  318.  + 1----------<   do i=1,n_methods
+  319.    1                 write(*,'(f20.3,a2)',advance='no') ctimes(i), " s"
+  320.    1---------->   end do
+  321.                   write(*,*) ''
+  322.                   write(*,'(a16)',advance='no') "Elapsed time:"
+  323.  + 1----------<   do i=1,n_methods
+  324.    1                 write(*,'(f20.3,a2)',advance='no') etimes(i), " s"
+  325.    1---------->   end do
+  326.                   write(*,*) ''
+  327.                 end subroutine
   328.                 
-  329.  + 1----------<   do j=1,n
-  330.  + 1 r8-------<     do l=1,n
-  331.    1 r8               C(l,j)=0.0_dp
-  332.    1 r8------->     end do
-  333.    1            
-  334.  + 1 2--------<     do k=1,n
-  335.    1 2                tmp=B(k,j)
-  336.  + 1 2 r8-----<       do i=1,n
-  337.    1 2 r8               C(i,j)=C(i,j)+tmp*A(i,k)
-  338.    1 2 r8----->       end do
-  339.    1 2-------->     end do
-  340.    1---------->   end do
-  341.                 end subroutine
-  342.                 
-  343.                 subroutine matmul4(A,B,C) !Manual loops V2 (Not using tmp outside the i loop)
-  344.                   real(dp), intent(out) :: C(:, :)
-  345.                   real(dp), intent(in) :: A(:, :), B(:, :)
-  346.                   integer :: i,j,k,l,n
-  347.                   n = size(A,1)
-  348.                 
-  349.  + 1----------<   do j=1,n
-  350.  + 1 r8-------<     do l=1,n
-  351.    1 r8               C(l,j)=0.0_dp
-  352.    1 r8------->     end do
-  353.    1            
-  354.  + 1 r4-------<     do k=1,n
-  355.  + 1 r4 r8----<       do i=1,n
-  356.    1 r4 r8              C(i,j)=C(i,j)+B(k,j)*A(i,k)
-  357.    1 r4 r8---->       end do
-  358.    1 r4------->     end do
-  359.    1---------->   end do
-  360.                 end subroutine
-  361.                 
-  362.                 subroutine matmul5(A,B,C) !Manual loops V3 (Not using initialization loop for C)
-  363.                   real(dp), intent(out) :: C(:, :)
-  364.                   real(dp), intent(in) :: A(:, :), B(:, :)
-  365.                   integer :: i,j,k,n
-  366.                   n = size(A,1)
-  367.                 
-  368.  + 1----------<   do j=1,n
-  369.  + 1 ir8------<     do i=1,n
-  370.    1 ir8              C(i,j)=0.0_dp
-  371.  + 1 ir8 ir4--<       do k=1,n
-  372.    1 ir8 ir4             C(i,j)=C(i,j)+B(k,j)*A(i,k)
-  373.    1 ir8 ir4-->       end do
-  374.    1 ir8------>     end do
-  375.    1---------->   end do
-  376.                 end subroutine
-  377.                 
-  378.                 end module
-
-ftn-6066 ftn: SCALAR TIME_ALL, File = matrix.f90, Line = 23 
-   A loop nest at line 23 collapsed to a single loop.
-
-ftn-6332 ftn: VECTOR TIME_ALL, File = matrix.f90, Line = 23 
-  A loop starting at line 23 was not vectorized because it does not map well onto the target architecture.
+  329.                 subroutine matmul1(A,B,C) !Using dgemm
+  330.                   integer :: n
+  331.                   real(dp), intent(out) :: C(:, :)
+  332.                   real(dp), intent(in) :: A(:, :), B(:, :)
+  333.                   external :: dgemm
+  334.                   n = size(A,1)
+  335.  +                call dgemm('N', 'N', n, n, n, 1.0_dp, A, n, B, n, 0.0_dp, C, n);
+  336.                 end subroutine
+  337.                 
+  338.                 subroutine matmul2(A,B,C) !Using matmul
+  339.                   real(dp), intent(out) :: C(:, :)
+  340.                   real(dp), intent(in) :: A(:, :), B(:, :)
+  341.  + r4--------<>   C = matmul(A, B)
+  342.                 end subroutine
+  343.                 
+  344.                 subroutine matmul3(A,B,C) !Manual loops V3 (Similar to dgemm logic)
+  345.                   real(dp), intent(out) :: C(:, :)
+  346.                   real(dp), intent(in) :: A(:, :), B(:, :)
+  347.                   integer :: i,j,k,l,n
+  348.                   real(dp) :: tmp
+  349.                   n = size(A,1)
+  350.                 
+  351.  + 1----------<   do j=1,n
+  352.  + 1 r8-------<     do l=1,n
+  353.    1 r8               C(l,j)=0.0_dp
+  354.    1 r8------->     end do
+  355.    1            
+  356.  + 1 2--------<     do k=1,n
+  357.    1 2                tmp=B(k,j)
+  358.  + 1 2 r8-----<       do i=1,n
+  359.    1 2 r8               C(i,j)=C(i,j)+tmp*A(i,k)
+  360.    1 2 r8----->       end do
+  361.    1 2-------->     end do
+  362.    1---------->   end do
+  363.                 end subroutine
+  364.                 
+  365.                 subroutine matmul4(A,B,C) !Manual loops V4 (Not using tmp outside the i loop)
+  366.                   real(dp), intent(out) :: C(:, :)
+  367.                   real(dp), intent(in) :: A(:, :), B(:, :)
+  368.                   integer :: i,j,k,l,n
+  369.                   n = size(A,1)
+  370.                 
+  371.  + 1----------<   do j=1,n
+  372.  + 1 r8-------<     do l=1,n
+  373.    1 r8               C(l,j)=0.0_dp
+  374.    1 r8------->     end do
+  375.    1            
+  376.  + 1 r4-------<     do k=1,n
+  377.  + 1 r4 r8----<       do i=1,n
+  378.    1 r4 r8              C(i,j)=C(i,j)+B(k,j)*A(i,k)
+  379.    1 r4 r8---->       end do
+  380.    1 r4------->     end do
+  381.    1---------->   end do
+  382.                 end subroutine
+  383.                 
+  384.                 subroutine matmul5(A,B,C) !Manual loops V5 (Not using initialization loop for C)
+  385.                   real(dp), intent(out) :: C(:, :)
+  386.                   real(dp), intent(in) :: A(:, :), B(:, :)
+  387.                   integer :: i,j,k,n
+  388.                   n = size(A,1)
+  389.                 
+  390.  + 1----------<   do j=1,n
+  391.  + 1 ir8------<     do i=1,n
+  392.    1 ir8              C(i,j)=0.0_dp
+  393.  + 1 ir8 ir4--<       do k=1,n
+  394.    1 ir8 ir4             C(i,j)=C(i,j)+B(k,j)*A(i,k)
+  395.    1 ir8 ir4-->       end do
+  396.    1 ir8------>     end do
+  397.    1---------->   end do
+  398.                 end subroutine
+  399.                 
+  400.                 end module
 
 ftn-6066 ftn: SCALAR TIME_ALL, File = matrix.f90, Line = 24 
    A loop nest at line 24 collapsed to a single loop.
@@ -482,170 +475,179 @@ ftn-6066 ftn: SCALAR TIME_ALL, File = matrix.f90, Line = 24
 ftn-6332 ftn: VECTOR TIME_ALL, File = matrix.f90, Line = 24 
   A loop starting at line 24 was not vectorized because it does not map well onto the target architecture.
 
-ftn-6288 ftn: VECTOR TIME_ALL, File = matrix.f90, Line = 29 
-  A loop starting at line 29 was not vectorized because it contains a call to subroutine "matmul1" on line 30.
+ftn-6066 ftn: SCALAR TIME_ALL, File = matrix.f90, Line = 25 
+   A loop nest at line 25 collapsed to a single loop.
 
-ftn-6288 ftn: VECTOR TIME_ALL, File = matrix.f90, Line = 41 
-  A loop starting at line 41 was not vectorized because it contains a call to subroutine "matmul2" on line 42.
+ftn-6332 ftn: VECTOR TIME_ALL, File = matrix.f90, Line = 25 
+  A loop starting at line 25 was not vectorized because it does not map well onto the target architecture.
 
-ftn-6288 ftn: VECTOR TIME_ALL, File = matrix.f90, Line = 53 
-  A loop starting at line 53 was not vectorized because it contains a call to subroutine "matmul3" on line 54.
+ftn-6288 ftn: VECTOR TIME_ALL, File = matrix.f90, Line = 30 
+  A loop starting at line 30 was not vectorized because it contains a call to subroutine "matmul1" on line 31.
 
-ftn-6288 ftn: VECTOR TIME_ALL, File = matrix.f90, Line = 65 
-  A loop starting at line 65 was not vectorized because it contains a call to subroutine "matmul4" on line 66.
+ftn-6288 ftn: VECTOR TIME_ALL, File = matrix.f90, Line = 43 
+  A loop starting at line 43 was not vectorized because it contains a call to subroutine "matmul2" on line 44.
 
-ftn-6288 ftn: VECTOR TIME_ALL, File = matrix.f90, Line = 77 
-  A loop starting at line 77 was not vectorized because it contains a call to subroutine "matmul5" on line 78.
+ftn-6288 ftn: VECTOR TIME_ALL, File = matrix.f90, Line = 56 
+  A loop starting at line 56 was not vectorized because it contains a call to subroutine "matmul3" on line 57.
 
-ftn-6066 ftn: SCALAR TEST_MATMUL1, File = matrix.f90, Line = 109 
-   A loop nest at line 109 collapsed to a single loop.
+ftn-6288 ftn: VECTOR TIME_ALL, File = matrix.f90, Line = 69 
+  A loop starting at line 69 was not vectorized because it contains a call to subroutine "matmul4" on line 70.
 
-ftn-6332 ftn: VECTOR TEST_MATMUL1, File = matrix.f90, Line = 109 
-  A loop starting at line 109 was not vectorized because it does not map well onto the target architecture.
+ftn-6288 ftn: VECTOR TIME_ALL, File = matrix.f90, Line = 82 
+  A loop starting at line 82 was not vectorized because it contains a call to subroutine "matmul5" on line 83.
 
-ftn-6066 ftn: SCALAR TEST_MATMUL1, File = matrix.f90, Line = 110 
-   A loop nest at line 110 collapsed to a single loop.
+ftn-6066 ftn: SCALAR TEST_MATMUL1, File = matrix.f90, Line = 116 
+   A loop nest at line 116 collapsed to a single loop.
 
-ftn-6332 ftn: VECTOR TEST_MATMUL1, File = matrix.f90, Line = 110 
-  A loop starting at line 110 was not vectorized because it does not map well onto the target architecture.
+ftn-6332 ftn: VECTOR TEST_MATMUL1, File = matrix.f90, Line = 116 
+  A loop starting at line 116 was not vectorized because it does not map well onto the target architecture.
 
-ftn-6288 ftn: VECTOR TEST_MATMUL1, File = matrix.f90, Line = 115 
-  A loop starting at line 115 was not vectorized because it contains a call to subroutine "matmul1" on line 116.
+ftn-6066 ftn: SCALAR TEST_MATMUL1, File = matrix.f90, Line = 117 
+   A loop nest at line 117 collapsed to a single loop.
 
-ftn-6066 ftn: SCALAR TEST_MATMUL2, File = matrix.f90, Line = 146 
-   A loop nest at line 146 collapsed to a single loop.
+ftn-6332 ftn: VECTOR TEST_MATMUL1, File = matrix.f90, Line = 117 
+  A loop starting at line 117 was not vectorized because it does not map well onto the target architecture.
 
-ftn-6332 ftn: VECTOR TEST_MATMUL2, File = matrix.f90, Line = 146 
-  A loop starting at line 146 was not vectorized because it does not map well onto the target architecture.
+ftn-6288 ftn: VECTOR TEST_MATMUL1, File = matrix.f90, Line = 122 
+  A loop starting at line 122 was not vectorized because it contains a call to subroutine "matmul1" on line 123.
 
-ftn-6066 ftn: SCALAR TEST_MATMUL2, File = matrix.f90, Line = 147 
-   A loop nest at line 147 collapsed to a single loop.
+ftn-6066 ftn: SCALAR TEST_MATMUL2, File = matrix.f90, Line = 155 
+   A loop nest at line 155 collapsed to a single loop.
 
-ftn-6332 ftn: VECTOR TEST_MATMUL2, File = matrix.f90, Line = 147 
-  A loop starting at line 147 was not vectorized because it does not map well onto the target architecture.
+ftn-6332 ftn: VECTOR TEST_MATMUL2, File = matrix.f90, Line = 155 
+  A loop starting at line 155 was not vectorized because it does not map well onto the target architecture.
 
-ftn-6288 ftn: VECTOR TEST_MATMUL2, File = matrix.f90, Line = 152 
-  A loop starting at line 152 was not vectorized because it contains a call to subroutine "matmul2" on line 153.
+ftn-6066 ftn: SCALAR TEST_MATMUL2, File = matrix.f90, Line = 156 
+   A loop nest at line 156 collapsed to a single loop.
 
-ftn-6066 ftn: SCALAR TEST_MATMUL3, File = matrix.f90, Line = 183 
-   A loop nest at line 183 collapsed to a single loop.
+ftn-6332 ftn: VECTOR TEST_MATMUL2, File = matrix.f90, Line = 156 
+  A loop starting at line 156 was not vectorized because it does not map well onto the target architecture.
 
-ftn-6332 ftn: VECTOR TEST_MATMUL3, File = matrix.f90, Line = 183 
-  A loop starting at line 183 was not vectorized because it does not map well onto the target architecture.
+ftn-6288 ftn: VECTOR TEST_MATMUL2, File = matrix.f90, Line = 161 
+  A loop starting at line 161 was not vectorized because it contains a call to subroutine "matmul2" on line 162.
 
-ftn-6066 ftn: SCALAR TEST_MATMUL3, File = matrix.f90, Line = 184 
-   A loop nest at line 184 collapsed to a single loop.
+ftn-6066 ftn: SCALAR TEST_MATMUL3, File = matrix.f90, Line = 194 
+   A loop nest at line 194 collapsed to a single loop.
 
-ftn-6332 ftn: VECTOR TEST_MATMUL3, File = matrix.f90, Line = 184 
-  A loop starting at line 184 was not vectorized because it does not map well onto the target architecture.
+ftn-6332 ftn: VECTOR TEST_MATMUL3, File = matrix.f90, Line = 194 
+  A loop starting at line 194 was not vectorized because it does not map well onto the target architecture.
 
-ftn-6288 ftn: VECTOR TEST_MATMUL3, File = matrix.f90, Line = 189 
-  A loop starting at line 189 was not vectorized because it contains a call to subroutine "matmul3" on line 190.
+ftn-6066 ftn: SCALAR TEST_MATMUL3, File = matrix.f90, Line = 195 
+   A loop nest at line 195 collapsed to a single loop.
 
-ftn-6066 ftn: SCALAR TEST_MATMUL4, File = matrix.f90, Line = 220 
-   A loop nest at line 220 collapsed to a single loop.
+ftn-6332 ftn: VECTOR TEST_MATMUL3, File = matrix.f90, Line = 195 
+  A loop starting at line 195 was not vectorized because it does not map well onto the target architecture.
 
-ftn-6332 ftn: VECTOR TEST_MATMUL4, File = matrix.f90, Line = 220 
-  A loop starting at line 220 was not vectorized because it does not map well onto the target architecture.
+ftn-6288 ftn: VECTOR TEST_MATMUL3, File = matrix.f90, Line = 200 
+  A loop starting at line 200 was not vectorized because it contains a call to subroutine "matmul3" on line 201.
 
-ftn-6066 ftn: SCALAR TEST_MATMUL4, File = matrix.f90, Line = 221 
-   A loop nest at line 221 collapsed to a single loop.
+ftn-6066 ftn: SCALAR TEST_MATMUL4, File = matrix.f90, Line = 233 
+   A loop nest at line 233 collapsed to a single loop.
 
-ftn-6332 ftn: VECTOR TEST_MATMUL4, File = matrix.f90, Line = 221 
-  A loop starting at line 221 was not vectorized because it does not map well onto the target architecture.
+ftn-6332 ftn: VECTOR TEST_MATMUL4, File = matrix.f90, Line = 233 
+  A loop starting at line 233 was not vectorized because it does not map well onto the target architecture.
 
-ftn-6288 ftn: VECTOR TEST_MATMUL4, File = matrix.f90, Line = 226 
-  A loop starting at line 226 was not vectorized because it contains a call to subroutine "matmul4" on line 227.
+ftn-6066 ftn: SCALAR TEST_MATMUL4, File = matrix.f90, Line = 234 
+   A loop nest at line 234 collapsed to a single loop.
 
-ftn-6066 ftn: SCALAR TEST_MATMUL5, File = matrix.f90, Line = 257 
-   A loop nest at line 257 collapsed to a single loop.
+ftn-6332 ftn: VECTOR TEST_MATMUL4, File = matrix.f90, Line = 234 
+  A loop starting at line 234 was not vectorized because it does not map well onto the target architecture.
 
-ftn-6332 ftn: VECTOR TEST_MATMUL5, File = matrix.f90, Line = 257 
-  A loop starting at line 257 was not vectorized because it does not map well onto the target architecture.
+ftn-6288 ftn: VECTOR TEST_MATMUL4, File = matrix.f90, Line = 239 
+  A loop starting at line 239 was not vectorized because it contains a call to subroutine "matmul4" on line 240.
 
-ftn-6066 ftn: SCALAR TEST_MATMUL5, File = matrix.f90, Line = 258 
-   A loop nest at line 258 collapsed to a single loop.
+ftn-6066 ftn: SCALAR TEST_MATMUL5, File = matrix.f90, Line = 272 
+   A loop nest at line 272 collapsed to a single loop.
 
-ftn-6332 ftn: VECTOR TEST_MATMUL5, File = matrix.f90, Line = 258 
-  A loop starting at line 258 was not vectorized because it does not map well onto the target architecture.
+ftn-6332 ftn: VECTOR TEST_MATMUL5, File = matrix.f90, Line = 272 
+  A loop starting at line 272 was not vectorized because it does not map well onto the target architecture.
 
-ftn-6288 ftn: VECTOR TEST_MATMUL5, File = matrix.f90, Line = 263 
-  A loop starting at line 263 was not vectorized because it contains a call to subroutine "matmul5" on line 264.
+ftn-6066 ftn: SCALAR TEST_MATMUL5, File = matrix.f90, Line = 273 
+   A loop nest at line 273 collapsed to a single loop.
 
-ftn-6286 ftn: VECTOR PRINTTIMES, File = matrix.f90, Line = 291 
-  A loop starting at line 291 was not vectorized because it contains input/output operations at line 292.
+ftn-6332 ftn: VECTOR TEST_MATMUL5, File = matrix.f90, Line = 273 
+  A loop starting at line 273 was not vectorized because it does not map well onto the target architecture.
 
-ftn-6286 ftn: VECTOR PRINTTIMES, File = matrix.f90, Line = 296 
-  A loop starting at line 296 was not vectorized because it contains input/output operations at line 297.
+ftn-6288 ftn: VECTOR TEST_MATMUL5, File = matrix.f90, Line = 278 
+  A loop starting at line 278 was not vectorized because it contains a call to subroutine "matmul5" on line 279.
 
-ftn-6286 ftn: VECTOR PRINTTIMES, File = matrix.f90, Line = 301 
-  A loop starting at line 301 was not vectorized because it contains input/output operations at line 302.
+ftn-6286 ftn: VECTOR PRINTTIMES, File = matrix.f90, Line = 308 
+  A loop starting at line 308 was not vectorized because it contains input/output operations at line 309.
 
-ftn-3021 ftn: IPA MATMUL1, File = matrix.f90, Line = 313, Column = 8 
-  "dgemm" (called from "matmul1") was not inlined because the compiler was unable to locate the routine.
+ftn-6286 ftn: VECTOR PRINTTIMES, File = matrix.f90, Line = 313 
+  A loop starting at line 313 was not vectorized because it contains input/output operations at line 314.
 
-ftn-6332 ftn: VECTOR MATMUL2, File = matrix.f90, Line = 319 
-  A loop starting at line 319 was not vectorized because it does not map well onto the target architecture.
+ftn-6286 ftn: VECTOR PRINTTIMES, File = matrix.f90, Line = 318 
+  A loop starting at line 318 was not vectorized because it contains input/output operations at line 319.
 
-ftn-6005 ftn: SCALAR MATMUL2, File = matrix.f90, Line = 319 
-  A loop starting at line 319 was unrolled 4 times.
+ftn-6286 ftn: VECTOR PRINTTIMES, File = matrix.f90, Line = 323 
+  A loop starting at line 323 was not vectorized because it contains input/output operations at line 324.
 
-ftn-6289 ftn: VECTOR MATMUL3, File = matrix.f90, Line = 329 
-  A loop starting at line 329 was not vectorized because a recurrence was found on "c" between lines 331 and 337.
+ftn-3021 ftn: IPA MATMUL1, File = matrix.f90, Line = 335 
+  "dgemm" was not inlined because the compiler was unable to locate the routine.
 
-ftn-6332 ftn: VECTOR MATMUL3, File = matrix.f90, Line = 330 
-  A loop starting at line 330 was not vectorized because it does not map well onto the target architecture.
+ftn-6332 ftn: VECTOR MATMUL2, File = matrix.f90, Line = 341 
+  A loop starting at line 341 was not vectorized because it does not map well onto the target architecture.
 
-ftn-6005 ftn: SCALAR MATMUL3, File = matrix.f90, Line = 330 
-  A loop starting at line 330 was unrolled 8 times.
+ftn-6005 ftn: SCALAR MATMUL2, File = matrix.f90, Line = 341 
+  A loop starting at line 341 was unrolled 4 times.
 
-ftn-6254 ftn: VECTOR MATMUL3, File = matrix.f90, Line = 334 
-  A loop starting at line 334 was not vectorized because a recurrence was found on "c" at line 337.
+ftn-6289 ftn: VECTOR MATMUL3, File = matrix.f90, Line = 351 
+  A loop starting at line 351 was not vectorized because a recurrence was found on "c" between lines 353 and 359.
 
-ftn-6332 ftn: VECTOR MATMUL3, File = matrix.f90, Line = 336 
-  A loop starting at line 336 was not vectorized because it does not map well onto the target architecture.
+ftn-6332 ftn: VECTOR MATMUL3, File = matrix.f90, Line = 352 
+  A loop starting at line 352 was not vectorized because it does not map well onto the target architecture.
 
-ftn-6005 ftn: SCALAR MATMUL3, File = matrix.f90, Line = 336 
-  A loop starting at line 336 was unrolled 8 times.
+ftn-6005 ftn: SCALAR MATMUL3, File = matrix.f90, Line = 352 
+  A loop starting at line 352 was unrolled 8 times.
 
-ftn-6289 ftn: VECTOR MATMUL4, File = matrix.f90, Line = 349 
-  A loop starting at line 349 was not vectorized because a recurrence was found on "c" between lines 351 and 356.
+ftn-6254 ftn: VECTOR MATMUL3, File = matrix.f90, Line = 356 
+  A loop starting at line 356 was not vectorized because a recurrence was found on "c" at line 359.
 
-ftn-6332 ftn: VECTOR MATMUL4, File = matrix.f90, Line = 350 
-  A loop starting at line 350 was not vectorized because it does not map well onto the target architecture.
+ftn-6332 ftn: VECTOR MATMUL3, File = matrix.f90, Line = 358 
+  A loop starting at line 358 was not vectorized because it does not map well onto the target architecture.
 
-ftn-6005 ftn: SCALAR MATMUL4, File = matrix.f90, Line = 350 
-  A loop starting at line 350 was unrolled 8 times.
+ftn-6005 ftn: SCALAR MATMUL3, File = matrix.f90, Line = 358 
+  A loop starting at line 358 was unrolled 8 times.
 
-ftn-6254 ftn: VECTOR MATMUL4, File = matrix.f90, Line = 354 
-  A loop starting at line 354 was not vectorized because a recurrence was found on "c" at line 356.
+ftn-6289 ftn: VECTOR MATMUL4, File = matrix.f90, Line = 371 
+  A loop starting at line 371 was not vectorized because a recurrence was found on "c" between lines 373 and 378.
 
-ftn-6005 ftn: SCALAR MATMUL4, File = matrix.f90, Line = 354 
-  A loop starting at line 354 was unrolled 4 times.
+ftn-6332 ftn: VECTOR MATMUL4, File = matrix.f90, Line = 372 
+  A loop starting at line 372 was not vectorized because it does not map well onto the target architecture.
 
-ftn-6332 ftn: VECTOR MATMUL4, File = matrix.f90, Line = 355 
-  A loop starting at line 355 was not vectorized because it does not map well onto the target architecture.
+ftn-6005 ftn: SCALAR MATMUL4, File = matrix.f90, Line = 372 
+  A loop starting at line 372 was unrolled 8 times.
 
-ftn-6005 ftn: SCALAR MATMUL4, File = matrix.f90, Line = 355 
-  A loop starting at line 355 was unrolled 8 times.
+ftn-6254 ftn: VECTOR MATMUL4, File = matrix.f90, Line = 376 
+  A loop starting at line 376 was not vectorized because a recurrence was found on "c" at line 378.
 
-ftn-6254 ftn: VECTOR MATMUL5, File = matrix.f90, Line = 368 
-  A loop starting at line 368 was not vectorized because a recurrence was found on "c" at line 372.
+ftn-6005 ftn: SCALAR MATMUL4, File = matrix.f90, Line = 376 
+  A loop starting at line 376 was unrolled 4 times.
 
-ftn-6007 ftn: SCALAR MATMUL5, File = matrix.f90, Line = 369 
-  A loop starting at line 369 was interchanged with the loop starting at line 371.
+ftn-6332 ftn: VECTOR MATMUL4, File = matrix.f90, Line = 377 
+  A loop starting at line 377 was not vectorized because it does not map well onto the target architecture.
 
-ftn-6332 ftn: VECTOR MATMUL5, File = matrix.f90, Line = 369 
-  A loop starting at line 369 was not vectorized because it does not map well onto the target architecture.
+ftn-6005 ftn: SCALAR MATMUL4, File = matrix.f90, Line = 377 
+  A loop starting at line 377 was unrolled 8 times.
 
-ftn-6005 ftn: SCALAR MATMUL5, File = matrix.f90, Line = 369 
-  A loop starting at line 369 was unrolled 8 times.
+ftn-6254 ftn: VECTOR MATMUL5, File = matrix.f90, Line = 390 
+  A loop starting at line 390 was not vectorized because a recurrence was found on "c" at line 394.
 
-ftn-6254 ftn: VECTOR MATMUL5, File = matrix.f90, Line = 371 
-  A loop starting at line 371 was not vectorized because a recurrence was found on "c" at line 372.
+ftn-6007 ftn: SCALAR MATMUL5, File = matrix.f90, Line = 391 
+  A loop starting at line 391 was interchanged with the loop starting at line 393.
 
-ftn-6005 ftn: SCALAR MATMUL5, File = matrix.f90, Line = 371 
-  A loop starting at line 371 was unrolled 4 times.
+ftn-6332 ftn: VECTOR MATMUL5, File = matrix.f90, Line = 391 
+  A loop starting at line 391 was not vectorized because it does not map well onto the target architecture.
+
+ftn-6005 ftn: SCALAR MATMUL5, File = matrix.f90, Line = 391 
+  A loop starting at line 391 was unrolled 8 times.
+
+ftn-6254 ftn: VECTOR MATMUL5, File = matrix.f90, Line = 393 
+  A loop starting at line 393 was not vectorized because a recurrence was found on "c" at line 394.
+
+ftn-6005 ftn: SCALAR MATMUL5, File = matrix.f90, Line = 393 
+  A loop starting at line 393 was unrolled 4 times.
 
 
 
@@ -653,37 +655,47 @@ ftn-6005 ftn: SCALAR MATMUL5, File = matrix.f90, Line = 371
                           S o u r c e   L i s t i n g
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-  379.                 
-  380.                 program matrix
-  381.                 
-  382.                   use timeit
-  383.                   implicit none
-  384.                   integer :: matrix_size,n_iter
-  385.                 
-  386.                 !  integer, parameter :: dp = kind(1.d0)
-  387.                 
-  388.                 matrix_size=1000
-  389.                 n_iter=1
-  390.                 call time_all(matrix_size,n_iter)
-  391.                 matrix_size=20
-  392.                 n_iter=1000000
-  393.                 call time_all(matrix_size,n_iter)
-  394.                 matrix_size=3
-  395.                 n_iter=10000000
-  396.                 call time_all(matrix_size,n_iter)
-  397.                 
-  398.                 !matrix_size=1000
-  399.                 !n_iter=1
-  400.                 !call test_matmul1(matrix_size,n_iter)
-  401.                 !call test_matmul2(matrix_size,n_iter)
-  402.                 !call test_matmul3(matrix_size,n_iter)
-  403.                 !call test_matmul4(matrix_size,n_iter)
-  404.                 !call test_matmul5(matrix_size,n_iter)
-  405.                 
-  406.                 !####################################################################
-  407.                 !End of executable statements.
-  408.                 !####################################################################
-  409.                 end program matrix
+  401.                 
+  402.                 program matrix
+  403.                 
+  404.                   use timeit
+  405.                   implicit none
+  406.                   integer :: matrix_size,n_iter
+  407.                 
+  408.                 !  integer, parameter :: dp = kind(1.d0)
+  409.                 
+  410.                 matrix_size=1000
+  411.                 n_iter=1
+  412.  +              call time_all(matrix_size,n_iter)
+  413.                 matrix_size=20
+  414.                 n_iter=1000000
+  415.  +              call time_all(matrix_size,n_iter)
+  416.                 matrix_size=3
+  417.                 n_iter=10000000
+  418.  +              call time_all(matrix_size,n_iter)
+  419.                 
+  420.                 !matrix_size=1000
+  421.                 !n_iter=1
+  422.                 !call test_matmul1(matrix_size,n_iter)
+  423.                 !call test_matmul2(matrix_size,n_iter)
+  424.                 !call test_matmul3(matrix_size,n_iter)
+  425.                 !call test_matmul4(matrix_size,n_iter)
+  426.                 !call test_matmul5(matrix_size,n_iter)
+  427.                 
+  428.                 !####################################################################
+  429.                 !End of executable statements.
+  430.                 !####################################################################
+  431.                 end program matrix
+
+ftn-3165 ftn: IPA MATRIX, File = matrix.f90, Line = 412 
+  "time_all"(/software/projects/pawsey0001/espinosa/pawseyTraining/Optimising-Serial-Code/compiler_reports/matrix.f90:7) was not inlined because of deferred implementation - ALLOCATE encountered in callee.
+
+ftn-3165 ftn: IPA MATRIX, File = matrix.f90, Line = 415 
+  "time_all"(/software/projects/pawsey0001/espinosa/pawseyTraining/Optimising-Serial-Code/compiler_reports/matrix.f90:7) was not inlined because of deferred implementation - ALLOCATE encountered in callee.
+
+ftn-3165 ftn: IPA MATRIX, File = matrix.f90, Line = 418 
+  "time_all"(/software/projects/pawsey0001/espinosa/pawseyTraining/Optimising-Serial-Code/compiler_reports/matrix.f90:7) was not inlined because of deferred implementation - ALLOCATE encountered in callee.
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

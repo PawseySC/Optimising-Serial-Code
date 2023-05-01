@@ -4,41 +4,62 @@
 
 Compilation
 -----------
-File     : /software/projects/pawsey0001/espinosa/pawseyTraining/Optimising-Serial-Code/game_of_life/game_of_life.f90
-Compiled : 05/01/23  15:26:44
-Compiler : Version 14.0.3
-Ftnlx    : Version 14.0.3 
+File     : /group/pawsey0001/espinosa/pawseyTraining/Optimising-Serial-Code/game_of_life/exampleOutput/game_of_life.f90
+Compiled : 03/09/21  06:37:05
+Compiler : Version 8.6.x.x
+Ftnlx    : Version 8503 (libcif 85008)
 Target   : x86-64
-Command  : ftn_driver.exe -hcpu=x86-milan -hnetwork=ofi -hdynamic
-           -D__CRAY_X86_MILAN -D__CRAYXT_COMPUTE_LINUX_TARGET
-           -I/opt/cray/pe/perftools/22.09.0/include -DCRAYPAT -hpat_trace
-           -L/opt/cray/pe/perftools/22.09.0/lib64 -O3 -hkeepfiles -hlist=m
+Command  : ftn_driver.exe -hcpu=haswell -hstatic -D__CRAYXC -D__CRAY_HASWELL
+           -D__CRAYXT_COMPUTE_LINUX_TARGET -hnetwork=aries
+           -I/opt/cray/pe/perftools/7.0.0/include -DCRAYPAT -homp_trace
+           -hpat_trace -L/opt/cray/pe/perftools/7.0.0/lib64 -O3 -hkeepfiles -rm
            -ogame_of_life game_of_life.f90
-           -I/opt/cray/pe/cce/14.0.3/cce-clang/x86_64/lib/clang/14.0.6/include
-           -I/opt/cray/pe/cce/14.0.3/cce/x86_64/include/craylibs -I/usr/include
-           -L/opt/cray/pe/gcc/10.3.0/snos/lib64
-           -I/opt/cray/pe/libsci/22.08.1.1/CRAY/9.0/x86_64/include
-           -I/opt/cray/pe/mpich/8.1.19/ofi/cray/10.0/include
-           -I/opt/cray/pe/dsmml/0.2.2/dsmml//include
-           -I/opt/cray/xpmem/2.4.4-2.3_13.8__gff0e1d9.shasta/include
-           -L/opt/cray/pe/libsci/22.08.1.1/CRAY/9.0/x86_64/lib
-           -L/opt/cray/pe/mpich/8.1.19/ofi/cray/10.0/lib
-           -L/opt/cray/pe/dsmml/0.2.2/dsmml//lib
-           -L/opt/cray/pe/cce/14.0.3/cce/x86_64/lib/pkgconfig/../
-           -L/opt/gcc/10.3.0/snos/lib64 -L/opt/cray/pe/gcc/10.3.0/snos/lib64
-           -L/opt/cray/pe/cce/14.0.3/cce/x86_64/lib/pkgconfig/../
-           -L/opt/cray/xpmem/2.4.4-2.3_13.8__gff0e1d9.shasta/lib64 -ldl -lxpmem
-           -lquadmath -lmodules -lfi -lcraymath -lf -lu -lcsup -I/usr/include
-           -lstdc++ -lpthread
-           -L/opt/cray/pe/cce/14.0.3/cce-clang/x86_64/lib/clang/14.0.6/lib/linux
-           -lclang_rt.builtins-x86_64
+           -I/opt/cray/pe/cce/8.6.5/cce/x86_64/include/craylibs -I/usr/include
+           -L/opt/gcc/6.1.0/snos/lib64 -L/usr/lib64 -L/lib64 -I/usr/include
+           -I/opt/cray/pe/mpt/7.7.0/gni/mpich-cray/8.6/include
+           -I/opt/cray/pe/libsci/17.12.1/CRAY/8.6/x86_64/include
+           -I/opt/cray/rca/2.2.18-6.0.7.1_5.61__g2aa4f39.ari/include
+           -I/opt/cray/alps/6.6.43-6.0.7.1_5.61__ga796da32.ari/include
+           -I/opt/cray/xpmem/2.2.15-6.0.7.1_5.20__g7549d06.ari/include
+           -I/opt/cray/gni-headers/5.0.12.0-6.0.7.1_3.20__g3b1768f.ari/include
+           -I/opt/cray/dmapp/7.1.1-6.0.7.1_6.16__g45d1b37.ari/include
+           -I/opt/cray/pe/pmi/5.0.13/include
+           -I/opt/cray/ugni/6.0.14.0-6.0.7.1_3.22__gea11d3d.ari/include
+           -I/opt/cray/udreg/2.3.2-6.0.7.1_5.22__g5196236.ari/include
+           -I/opt/cray/wlm_detect/1.3.3-6.0.7.1_5.10__g7109084.ari/include
+           -I/opt/cray/krca/2.2.4-6.0.7.1_5.56__g8505b97.ari/include
+           -I/opt/cray-hss-devel/8.0.0/include -L/opt/cray/dmapp/default/lib64
+           -L/opt/cray/pe/mpt/7.7.0/gni/mpich-cray/8.6/lib
+           -L/opt/cray/dmapp/default/lib64
+           -L/opt/cray/pe/mpt/7.7.0/gni/mpich-cray/8.6/lib
+           -L/opt/cray/pe/libsci/17.12.1/CRAY/8.6/x86_64/lib
+           -L/opt/cray/rca/2.2.18-6.0.7.1_5.61__g2aa4f39.ari/lib64
+           -L/opt/cray/alps/6.6.43-6.0.7.1_5.61__ga796da32.ari/lib64
+           -L/opt/cray/xpmem/2.2.15-6.0.7.1_5.20__g7549d06.ari/lib64
+           -L/opt/cray/dmapp/7.1.1-6.0.7.1_6.16__g45d1b37.ari/lib64
+           -L/opt/cray/pe/pmi/5.0.13/lib64
+           -L/opt/cray/ugni/6.0.14.0-6.0.7.1_3.22__gea11d3d.ari/lib64
+           -L/opt/cray/udreg/2.3.2-6.0.7.1_5.22__g5196236.ari/lib64
+           -L/opt/cray/pe/atp/2.1.1/libApp
+           -L/opt/cray/pe/cce/8.6.5/cce/x86_64/lib/pkgconfig/../
+           -L/opt/cray/wlm_detect/1.3.3-6.0.7.1_5.10__g7109084.ari/lib64
+           -lpthread -lmpichf90_cray -lrt -lpthread -lugni -lpmi
+           -lsci_cray_mpi_mp -lm -lf -lsci_cray_mp -lmpich_cray -lrt -lpthread
+           -lugni -lpmi -lsci_cray_mp -lcraymp -lm -lpthread -lf -lhugetlbfs
+           -lpgas-dmapp -lfi -lu -lrt -ldmapp -lugni -ludreg -lpthread -lm
+           -lcray-c++-rts -lstdc++ -lxpmem -ldmapp -lpthread -lpmi -lpthread
+           -lalpslli -lpthread -lwlm_detect -lugni -lpthread -lalpsutil
+           -lpthread -lrca -ludreg -lquadmath -lm -lomp -lcraymp -lpthread -lrt
+           -ldl -lcray-c++-rts -lstdc++ -lm -lmodules -lm -lfi -lm -lquadmath
+           -lcraymath -lm -lgfortran -lquadmath -lf -lm -lpthread -lu -lrt -ldl
+           -lcray-c++-rts -lstdc++ -lm -lcsup -lstdc++ -lpthread
 Program
   Units  : LIFE
 
 ftnlx report
 ------------
-Source   : /software/projects/pawsey0001/espinosa/pawseyTraining/Optimising-Serial-Code/game_of_life/game_of_life.f90
-Date     : 05/01/2023  15:26:46
+Source   : /group/pawsey0001/espinosa/pawseyTraining/Optimising-Serial-Code/game_of_life/exampleOutput/game_of_life.f90
+Date     : 03/09/2021  06:37:12
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -165,8 +186,8 @@ ftn-6250 ftn: VECTOR LIFE, File = game_of_life.f90, Line = 22
 ftn-6332 ftn: VECTOR LIFE, File = game_of_life.f90, Line = 23 
   A loop starting at line 23 was not vectorized because it does not map well onto the target architecture.
 
-ftn-6315 ftn: VECTOR LIFE, File = game_of_life.f90, Line = 31 
-  A loop starting at line 31 was not vectorized because the target array (new) would require rank expansion.
+ftn-6262 ftn: VECTOR LIFE, File = game_of_life.f90, Line = 31 
+  A loop starting at line 31 was not vectorized because it contains a call to a subroutine or function on line 75.
 
 ftn-6332 ftn: VECTOR LIFE, File = game_of_life.f90, Line = 42 
   A loop starting at line 42 was not vectorized because it does not map well onto the target architecture.

@@ -7,7 +7,7 @@ FFLAGS := -$(OPTFLAG)
 
 game_of_life.cray: game_of_life
 game_of_life.cray: EXEEXT=cray
-game_of_life.cray: REPFLAGS=-h keepfiles -rm
+game_of_life.cray: REPFLAGS=-h keepfiles -hlist=m
 #game_of_life.cray: REPFLAGS=
 game_of_life.cray: REPEXT=lst
 

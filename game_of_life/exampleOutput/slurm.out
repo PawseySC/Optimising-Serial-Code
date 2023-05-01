@@ -1,0 +1,5 @@
+CrayPat/X:  Version 22.09.0 Revision 15e027213  08/04/22 21:24:30
+pat[WARNING][0]: override the environment variable 'PAT_RT_PERFCTR' embedded by pat_build with '1'
+ Number of live cells =  1749
+Experiment data directory written:
+game_of_life.O3.cray+pat+207614-8646438s

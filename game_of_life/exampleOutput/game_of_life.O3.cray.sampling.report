@@ -1,4 +1,4 @@
-CrayPat/X:  Version 7.0.0 Revision 5c29ce2  12/11/17 15:26:24
+CrayPat/X:  Version 22.09.0 Revision 15e027213  08/04/22 21:24:30
 
 Number of PEs (MPI ranks):    1
                            
@@ -6,96 +6,50 @@ Numbers of PEs per Node:      1
                            
 Numbers of Threads per PE:    1
                            
-Number of Cores per Socket:  12
+Number of Cores per Socket:  64
 
-Execution start time:  Tue Mar  9 06:38:27 2021
+Execution start time:  Mon May  1 15:28:42 2023
 
-System name and speed:  nid00938  2.601 GHz (nominal)
+System name and speed:  nid002817  2.096 GHz (nominal)
 
-Intel Haswell CPU  Family:  6  Model: 63  Stepping:  2
+AMD   Milan                CPU  Family: 25  Model:  1  Stepping:  1
+
+Core Performance Boost:  1 PE has CPB capability
 
 
 Current path to data file:
-  /group/pawsey0001/espinosa/pawseyTraining/Optimising-Serial-Code/game_of_life/exampleOutput/game_of_life.O3.cray+pat+11166-938s   (RTS)
+  /software/projects/pawsey0001/espinosa/pawseyTraining/Optimising-Serial-Code/game_of_life/game_of_life.O3.cray+pat+207614-8646438s   (RTS)
 
 
 Notes for table 1:
 
-  Table option:
-    -O samp_profile
-  Options implied by table option:
-    -d sa%@0.95,sa,imb_sa,imb_sa% -b gr,fu
-
-  Options for related tables:
-    -O samp_profile+src        -O profile_max         
-
-  The Total value for Samp is the sum of the Group values.
-  The Group value for Samp is the sum of the Function values.
-    (To specify different aggregations, see: pat_help report options s1)
-
-  This table shows only lines with Samp% > 0.95.
-    (To set thresholds to zero, specify:  -T)
-
-  Imbalance percentages are relative to a set of threads or PEs.
-  Other percentages at each level are of the Total for the program.
-    (For percentages relative to next level up, specify:
-      -s percent=r[elative])
-
-  To make the profile easier to interpret, some samples are attributed
-  to a caller that is either a user defined function, or a library
-  function called directly by a user defined function.  To disable this
-  adjustment, and show functions actually sampled, use the -P option.
-  
-  Trace option suggestions have been generated into a separate file
-  from the data in the next table.  You can examine the file, edit it
-  if desired, and use it to reinstrument the program like this:
-  
-            pat_build -O game_of_life.O3.cray+pat+11166-938s/build-options.apa
+  This table shows functions that have significant exclusive sample
+    hits, averaged across ranks.
+  For further explanation, see the "General table notes" below, or 
+    use:  pat_report -v -O samp_profile ...
 
 Table 1:  Profile by Function
 
   Samp% |  Samp | Imb. |  Imb. | Group
         |       | Samp | Samp% |  Function
        
- 100.0% | 659.0 |   -- |    -- | Total
-|------------------------------------------------
-|  79.2% | 522.0 |   -- |    -- | USER
-||-----------------------------------------------
-||  79.2% | 522.0 |   -- |    -- | life_
-||===============================================
-|  20.8% | 137.0 |   -- |    -- | ETC
-||-----------------------------------------------
-||  20.8% | 137.0 |   -- |    -- | __cray_scopy_HSW
-|================================================
+ 100.0% | 293.0 |   -- |    -- | Total
+|--------------------------------------------------
+|  79.9% | 234.0 |   -- |    -- | USER
+||-------------------------------------------------
+||  79.9% | 234.0 |   -- |    -- | life_
+||=================================================
+|  20.1% |  59.0 |   -- |    -- | ETC
+||-------------------------------------------------
+||  20.1% |  59.0 |   -- |    -- | __cray_memcpy_ROME
+|==================================================
 
 Notes for table 2:
 
-  Table option:
-    -O samp_profile+src
-  Options implied by table option:
-    -d sa%@0.95,sa,imb_sa,imb_sa% -b gr,fu,so,li
-
-  Options for related tables:
-    -O samp_profile            -O profile_max         
-
-  The Total value for Samp is the sum of the Group values.
-  The Group value for Samp is the sum of the Function values.
-  The Function value for Samp is the sum of the Source values.
-  The Source value for Samp is the sum of the Line values.
-    (To specify different aggregations, see: pat_help report options s1)
-
-  This table shows only lines with Samp% > 0.95.
-    (To set thresholds to zero, specify:  -T)
-
-  Imbalance percentages are relative to a set of threads or PEs.
-  Other percentages at each level are of the Total for the program.
-    (For percentages relative to next level up, specify:
-      -s percent=r[elative])
-
-  To make the profile easier to interpret, some samples are attributed
-  to a caller that is either a user defined function, or a library
-  function called directly by a user defined function.  To disable this
-  adjustment, and show functions actually sampled, use the -P option.
+  This table shows functions, and line numbers within functions, that
+    have significant exclusive sample hits, averaged across ranks.
+  For further explanation, see the "General table notes" below, or 
+    use:  pat_report -v -O samp_profile+src ...
 
 Table 2:  Profile by Group, Function, and Line
 
@@ -104,39 +58,30 @@ Table 2:  Profile by Group, Function, and Line
         |       |      |       |   Source
         |       |      |       |    Line
        
- 100.0% | 659.0 |   -- |    -- | Total
+ 100.0% | 293.0 |   -- |    -- | Total
 |-----------------------------------------------------------------------------
-|  79.2% | 522.0 |   -- |    -- | USER
+|  79.9% | 234.0 |   -- |    -- | USER
 ||----------------------------------------------------------------------------
-||  79.2% | 522.0 |   -- |    -- | life_
-3|        |       |      |       |  Optimising-Serial-Code/game_of_life/exampleOutput/game_of_life.f90
+||  79.9% | 234.0 |   -- |    -- | life_
+3|        |       |      |       |  pawseyTraining/Optimising-Serial-Code/game_of_life/game_of_life.f90
 ||||--------------------------------------------------------------------------
-4|||   1.4% |   9.0 |   -- |    -- | line.47
-4|||   6.4% |  42.0 |   -- |    -- | line.51
-4|||  33.5% | 221.0 |   -- |    -- | line.57
-4|||  18.1% | 119.0 |   -- |    -- | line.61
-4|||  19.1% | 126.0 |   -- |    -- | line.65
+4|||   3.8% |  11.0 |   -- |    -- | line.51
+4|||  14.0% |  41.0 |   -- |    -- | line.57
+4|||   4.1% |  12.0 |   -- |    -- | line.61
+4|||  57.0% | 167.0 |   -- |    -- | line.65
 ||||==========================================================================
 ||============================================================================
-|  20.8% | 137.0 |   -- |    -- | ETC
+|  20.1% |  59.0 |   -- |    -- | ETC
 ||----------------------------------------------------------------------------
-||  20.8% | 137.0 |   -- |    -- | __cray_scopy_HSW
+||  20.1% |  59.0 |   -- |    -- | __cray_memcpy_ROME
 |=============================================================================
 
 Notes for table 3:
 
-  Table option:
-    -O hwpc
-  Options implied by table option:
-    -d tt,P -b to -s show_data=rows
-
-  
-  Collection of each of the following performance counters was
-  attempted, but all of the values recorded in the data file were zero,
-  so the counter and all derived counters that depend on it were filtered
-  from this table:
-    DTLB_LOAD_MISSES:MISS_CAUSES_A_WALK
-    DTLB_STORE_MISSES:MISS_CAUSES_A_WALK
+  This table shows HW performance counter data for the whole program,
+    averaged across ranks or threads, as applicable.
+  For further explanation, see the "General table notes" below, or 
+    use:  pat_report -v -O hwpc ...
 
 Table 3:  Program HW Performance Counter Data
 
@@ -146,94 +91,133 @@ Total
 ==============================================================================
   Total
 ------------------------------------------------------------------------------
-  Thread Time                                      0.687279 secs
-  CPU_CLK_THREAD_UNHALTED:THREAD_P            2,306,834,878 
-  CPU_CLK_THREAD_UNHALTED:REF_XCLK               65,808,186 
-  L1D:REPLACEMENT                               160,232,400 
-  L2_RQSTS:ALL_DEMAND_DATA_RD                    81,836,431 
-  L2_RQSTS:DEMAND_DATA_RD_HIT                    17,523,764 
-  MEM_UOPS_RETIRED:ALL_LOADS                  1,283,172,739 
-  CPU_CLK                        3.51GHz                    
-  D1 cache hit,miss ratios      87.5% hits            12.5% misses
-  D1 cache utilization (misses)  8.01 refs/miss        1.00 avg hits
-  D2 cache hit,miss ratio       59.9% hits            40.1% misses
-  D1+D2 cache hit,miss ratio    95.0% hits             5.0% misses
-  D1+D2 cache utilization       19.95 refs/miss        2.49 avg hits
-  D2 to D1 bandwidth            7.097GiB/sec  5,237,531,584 bytes
+  Thread Time                        0.308400 secs
+  PAPI_BR_TKN   0.352G/sec    108,642,357.000 branch
+  PAPI_TOT_INS  8.714G/sec  2,687,532,272.000 instr
+  PAPI_BR_INS   0.942G/sec    290,544,824.000 branch
+  PAPI_TOT_CYC              1,029,547,053.000 cycles
+  Instr per cycle                        2.61 inst/cycle
+  MIPS       9,147.99M/sec                    
 ==============================================================================
 
 Notes for table 4:
 
-  Table option:
-    -O program_energy
-  Options implied by table option:
-    -d PM_ENERGY_NODE,Pn,PM_ENERGY_ACC,Pa,pt -b to -s
-    aggr_ni_PM_ENERGY_ACC=sum -s aggr_ni_PM_ENERGY_NODE=sum
+  This table show the average time and number of bytes written to each
+    output file, taking the average over the number of ranks that
+    wrote to the file.  It also shows the number of write operations,
+    and average rates.
+  For further explanation, see the "General table notes" below, or 
+    use:  pat_report -v -O write_stats ...
 
+Table 4:  File Output Stats by Filename
 
-Table 4:  Program energy and power usage (from Cray PM)
+      Avg |      Avg |  Write Rate | Number |    Avg | Bytes/ | File Name=!x/^/(proc|sys)/
+    Write |    Write | MiBytes/sec |     of | Writes |   Call |  PE=HIDE
+ Time per |  MiBytes |             | Writer |    per |        | 
+   Writer |      per |             |  Ranks | Writer |        | 
+     Rank |   Writer |             |        |   Rank |        | 
+          |     Rank |             |        |        |        | 
+|-----------------------------------------------------------------------------
+| 0.000001 | 0.000028 |   22.089900 |      1 |    1.0 |  29.00 | stdout
+|=============================================================================
+
+Notes for table 5:
+
+  This table shows energy and power usage for the nodes with the
+    maximum, mean, and minimum usage, as well as the sum of usage over
+    all nodes.
+    Energy and power for accelerators is also shown, if applicable.
+  For further explanation, see the "General table notes" below, or 
+    use:  pat_report -v -O program_energy ...
+
+Table 5:  Program energy and power usage (from Cray PM)
 
    Node |     Node |  Process | Total
  Energy |    Power |     Time | 
     (J) |      (W) |          | 
-       
-     73 |  102.484 | 0.712303 | Total
-
-Notes for table 5:
-
-  Table option:
-    -O mem_bw
-  Options implied by table option:
-    -d
-    Mem_Traffic,Mem_Traffic_Local,Mem_Traffic_Remote,tt,Mem_Traffic_rate -b nn -s aggr_nn=avg -s aggr_pe=sum -s aggr_pe_tB=avg -s aggr_pe_tE=avg -s aggr_pe_uB=avg -s aggr_pe_uE=avg -s mem_bw=0.05 -s sort_by_nn=yes
-
-  The Total value for Thread Time is the avg of the Numanode values.
-    (To specify different aggregations, see: pat_help report options s1)
-
-
-Table 5:  Memory Bandwidth by Numanode
-
-   Thread | Numanode
-     Time | 
-         
- 0.687279 | Avg of Numanode values
-|---------------------------------
-| 0.687279 | numanode.0
-|=================================
+-------------------------------------
+     90 |  278.815 | 0.322795 | Total
+=====================================
 
 Notes for table 6:
 
-  Table option:
-    -O program_time
-  Options implied by table option:
-    -d pt,hm -b to
+  This table shows values shown for HiMem calculated from information
+    in the /proc/self/numa_maps files captured near the end of the
+    program. It is the total size of all pages, including huge pages,
+    that were actually mapped into physical memory from both private
+    and shared memory segments.
+  For further explanation, see the "General table notes" below, or 
+    use:  pat_report -v -O himem ...
 
-  The value shown for Process HiMem is calculated from information in
-  the /proc/self/numa_maps files captured near the end of the program. 
-  It is the total size of all pages, including huge pages, that were
-  actually mapped into physical memory from both private and shared
-  memory segments.
+Table 6:  Memory High Water Mark by Numa Node
 
+Numanode
 
-Table 6:  Wall Clock Time, Memory High Water Mark
+  
+===========================================================================
+  numanode.0
+---------------------------------------------------------------------------
+  Process HiMem (MiBytes)         38.8 
+  HiMem Numa Node 0 (MiBytes)     29.5 MiBytes
+  HiMem Numa Node 1 (MiBytes)      0.8 MiBytes
+  HiMem Numa Node 2 (MiBytes)      1.0 MiBytes
+  HiMem Numa Node 3 (MiBytes)      0.9 MiBytes
+  HiMem Numa Node 4 (MiBytes)      1.1 MiBytes
+  HiMem Numa Node 5 (MiBytes)      1.1 MiBytes
+  HiMem Numa Node 6 (MiBytes)      3.3 MiBytes
+  HiMem Numa Node 7 (MiBytes)      1.1 MiBytes
+===========================================================================
 
-  Process |  Process | Total
-     Time |    HiMem | 
-          | (MBytes) | 
-         
- 0.712303 |     18.0 | Total
+Notes for table 7:
+
+  This table shows total wall clock time for the ranks with the
+    maximum, mean, and minimum time, as well as the average across
+    ranks.
+    It also shows maximum memory usage from /proc/self/numa_maps for
+    those ranks, and on average.  The usage is total size of all
+    pages, including huge pages, that were actually mapped into
+    physical memory from both private and shared memory segments.
+  For further explanation, see the "General table notes" below, or 
+    use:  pat_report -v -O program_time ...
+
+Table 7:  Wall Clock Time, Memory High Water Mark
+
+  Process |   Process | Total
+     Time |     HiMem | 
+          | (MiBytes) | 
+-----------------------------
+ 0.322795 |      38.8 | Total
+=============================
 
 ========================  Additional details  ========================
 
+
+
+General table notes:
+
+    The default notes for a table are based on the default definition of
+    the table, and do not account for the effects of command-line options
+    that may modify the content of the table.
+    
+    Detailed notes, produced by the pat_report -v option, do account for
+    all command-line options, and also show how data is aggregated, and
+    if the table content is limited by thresholds, rank selections, etc.
+    
+    An imbalance metric in a line is based on values in main threads
+    across multiple ranks, or on values across all threads, as applicable.
+    
+    An imbalance percent in a line is relative to the maximum value
+    for that line across ranks or threads, as applicable.
+    
 Experiment:  samp_cs_time
 
 Sampling interval:  1000 microsecs
 
 Original path to data file:
-  /group/pawsey0001/espinosa/pawseyTraining/Optimising-Serial-Code/game_of_life/exampleOutput/game_of_life.O3.cray+pat+11166-938s/xf-files   (RTS)
+  /software/projects/pawsey0001/espinosa/pawseyTraining/Optimising-Serial-Code/game_of_life/game_of_life.O3.cray+pat+207614-8646438s/xf-files   (RTS)
 
 Original program:
-  /group/pawsey0001/espinosa/pawseyTraining/Optimising-Serial-Code/game_of_life/exampleOutput/game_of_life.O3.cray
+  /software/projects/pawsey0001/espinosa/pawseyTraining/Optimising-Serial-Code/game_of_life/game_of_life.O3.cray
 
 Instrumented with:  pat_build game_of_life.O3.cray
 
@@ -246,9 +230,10 @@ Instrumented with:  pat_build game_of_life.O3.cray
     -g mpi
     -g shmem
     -g syscall
+    -g io
 
 Instrumented program:
-  /group/pawsey0001/espinosa/pawseyTraining/Optimising-Serial-Code/game_of_life/exampleOutput/game_of_life.O3.cray+pat
+  /software/projects/pawsey0001/espinosa/pawseyTraining/Optimising-Serial-Code/game_of_life/game_of_life.O3.cray+pat
 
 Program invocation:  game_of_life.O3.cray+pat
 
@@ -261,39 +246,38 @@ Memory hugepagesize:  Not Available
 Programming environment:  CRAY
 
 Runtime environment variables:
-  ATP_HOME=/opt/cray/pe/atp/2.1.1
-  ATP_IGNORE_SIGTERM=1
-  ATP_MRNET_COMM_PATH=/opt/cray/pe/atp/2.1.1/libexec/atp_mrnet_commnode_wrapper
-  ATP_POST_LINK_OPTS=-Wl,-L/opt/cray/pe/atp/2.1.1/libApp/ 
-  CRAYPE_VERSION=2.5.13
-  CRAY_BINUTILS_VERSION=/opt/cray/pe/cce/8.6.5
-  CRAY_CC_VERSION=8.6.5
-  CRAY_FTN_VERSION=8.6.5
-  CRAY_LIBSCI_VERSION=17.12.1
-  LIBSCI_VERSION=17.12.1
-  MODULE_VERSION=3.2.10.6
-  MODULE_VERSION_STACK=3.2.10.6
-  MPICH_ABORT_ON_ERROR=1
-  MPICH_DIR=/opt/cray/pe/mpt/7.7.0/gni/mpich-cray/8.6
-  PATH=/opt/cray/pe/mpt/7.7.0/gni/bin:/opt/cray/pe/perftools/7.0.0/bin:/opt/cray/pe/papi/5.5.1.4/bin:/opt/cray/rca/2.2.18-6.0.7.1_5.61__g2aa4f39.ari/bin:/opt/cray/pe/craype/2.5.13/bin:/opt/cray/pe/cce/8.6.5/binutils/x86_64/x86_64-pc-linux-gnu/bin:/opt/cray/pe/cce/8.6.5/binutils/cross/x86_64-aarch64/aarch64-unknowun-linux-gnu/../bin:/opt/cray/pe/cce/8.6.5/utils/x86_64/bin:/opt/cray/pe/modules/3.2.10.6/bin:/pawsey/cle60up07/tools/binary/pawseytools/1.28/bin:/opt/slurm/20.02.5/bin:/home/espinosa/bin:/usr/local/bin:/usr/bin:/bin:/usr/bin/X11:/usr/games:/usr/lib/mit/bin:/usr/lib/mit/sbin:/sbin:/usr/sbin:/opt/cray/pe/bin
-  PAT_BUILD_PAPI_BASEDIR=/opt/cray/pe/papi/5.5.1.4
-  PAT_REPORT_PRUNE_NAME=_cray$mt_execute_,_cray$mt_start_,__cray_hwpc_,f_cray_hwpc_,cstart,__pat_,pat_region_,PAT_,OMP.slave_loop,slave_entry,_new_slave_entry,THREAD_POOL_join,__libc_start_main,_start,__start,start_thread,__wrap_,UPC_ADIO_,_upc_,upc_,__caf_,__pgas_,syscall,__device_stub
+  CRAYPAT_COMPILER_OPTIONS=1
+  CRAYPAT_LD_LIBRARY_PATH=/opt/cray/pe/gcc-libs:/opt/cray/gcc-libs:/opt/cray/pe/perftools/22.09.0/lib64
+  CRAYPAT_OPTS_EXECUTABLE=libexec64/opts
+  CRAYPAT_ROOT=/opt/cray/pe/perftools/22.09.0
+  CRAYPE_VERSION=2.7.17
+  CRAY_DSMML_VERSION=0.2.2
+  CRAY_LIBSCI_VERSION=22.08.1.1
+  CRAY_MPICH_VERSION=8.1.19
+  CRAY_PERFTOOLS_VERSION=22.09.0
+  GCC_VERSION=12.1.0
+  GNU_VERSION=12.1.0
+  LIBSCI_VERSION=22.08.1.1
+  LMOD_FAMILY_COMPILER_VERSION=12.1.0
+  LMOD_FAMILY_CRAYPE_CPU_VERSION=false
+  LMOD_FAMILY_CRAYPE_NETWORK_VERSION=false
+  LMOD_FAMILY_CRAYPE_VERSION=2.7.17
+  LMOD_FAMILY_MPI_VERSION=8.1.19
+  LMOD_FAMILY_PERFTOOLS_VERSION=false
+  LMOD_FAMILY_PRGENV_VERSION=8.3.3
+  LMOD_VERSION=8.3.1
+  MPICH_DIR=/opt/cray/pe/mpich/8.1.19/ofi/gnu/9.1
+  PAT_BUILD_PAPI_LIBDIR=/opt/cray/pe/papi/6.0.0.16/lib64
   PAT_RT_EXPERIMENT=samp_cs_time
   PAT_RT_PERFCTR=1
+  PAT_RT_PERFCTR_DISABLE_COMPONENTS=nvml,cuda
   PAT_RT_SAMPLING_INTERVAL=1000
   PAT_RT_SAMPLING_MODE=3
-  PERFTOOLS_VERSION=7.0.0
-  PMI_CONTROL_PORT=23729
-  PMI_CRAY_NO_SMP_ORDER=0
-  PMI_GNI_COOKIE=1909325824:1909391360
-  PMI_GNI_DEV_ID=0:0
-  PMI_GNI_LOC_ADDR=1194:1194
-  PMI_GNI_PTAG=204:205
-  PMI_NO_FORK=1
+  PERFTOOLS_VERSION=22.09.0
+  PMI_CONTROL_PORT=27688
 
 Report time environment variables:
-    CRAYPAT_ROOT=/opt/cray/pe/perftools/7.0.0
-    PAT_REPORT_PRUNE_NAME=_cray$mt_execute_,_cray$mt_start_,__cray_hwpc_,f_cray_hwpc_,cstart,__pat_,pat_region_,PAT_,OMP.slave_loop,slave_entry,_new_slave_entry,THREAD_POOL_join,__libc_start_main,_start,__start,start_thread,__wrap_,UPC_ADIO_,_upc_,upc_,__caf_,__pgas_,syscall,__device_stub
+    CRAYPAT_ROOT=/opt/cray/pe/perftools/22.09.0
 
 Number of MPI control variables collected:  0
 
@@ -302,20 +286,11 @@ Number of MPI control variables collected:  0
 Report command line options:  <none>
 
 Operating system:
-  Linux 4.4.103-6.38_4.0.154-cray_ari_c #1 SMP Thu Nov 12 22:17:34 UTC 2020 (0e37142)
+  Linux 5.3.18-150300.59.87_11.0.78-cray_shasta_c #1 SMP Thu Oct 20 22:11:23 UTC 2022 (c16132b)
 
 Hardware performance counter events:
-   CPU_CLK_THREAD_UNHALTED:THREAD_P      Count core clock cycles whenever the clock signal on the specificcore is running (not halted):Cycles when thread is not halted
-   CPU_CLK_THREAD_UNHALTED:REF_XCLK      Count core clock cycles whenever the clock signal on the specificcore is running (not halted):Count Xclk pulses (100Mhz) when the core is unhalted
-   DTLB_LOAD_MISSES:MISS_CAUSES_A_WALK   Data TLB load misses:Misses in all DTLB levels that cause page walks
-   DTLB_STORE_MISSES:MISS_CAUSES_A_WALK  Data TLB store misses:Misses in all DTLB levels that cause page walks
-   L1D:REPLACEMENT                       L1D cache:L1D Data line replacements
-   L2_RQSTS:ALL_DEMAND_DATA_RD           L2 requests:Any data read request to L2 cache
-   L2_RQSTS:DEMAND_DATA_RD_HIT           L2 requests:Demand Data Read requests that hit L2 cache
-   MEM_UOPS_RETIRED:ALL_LOADS            Memory uops retired (Precise Event):All load uops retired
-
-  This set of HWPC events requires multiplexing, which reduces
-  the accuracy of the data collected. If the best possible
-  accuracy is needed, you should rerun to collect data for
-  smaller sets of events, that do not require multiplexing.
+   PAPI_BR_TKN   Conditional branch instructions taken
+   PAPI_TOT_INS  Instructions completed
+   PAPI_BR_INS   Branch instructions
+   PAPI_TOT_CYC  Total cycles
 

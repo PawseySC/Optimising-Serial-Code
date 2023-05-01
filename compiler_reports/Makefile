@@ -1,4 +1,3 @@
-
 FC := ftn
 CC := cc
 
@@ -7,12 +6,18 @@ CC := cc
 
 matrix.cray: matrix
 matrix.cray: EXEEXT=cray
-matrix.cray: REPFLAGS=-rm
+matrix.cray: REPFLAGS=-hlist=m
 #matrix.cray: REPFLAGS=
 matrix.cray: REPEXT=lst
 
 matrix.intel: matrix
 matrix.intel: EXEEXT=intel
+matrix.intel: REPFLAGS=-qopt-report=3 -mkl=sequential
+#matrix.intel: REPFLAGS=
+matrix.intel: REPEXT=optrpt
+
+matrix.intel: matrix
+matrix.intel: EXEEXT=gnu
 matrix.intel: REPFLAGS=-qopt-report=3 -mkl=sequential
 #matrix.intel: REPFLAGS=
 matrix.intel: REPEXT=optrpt

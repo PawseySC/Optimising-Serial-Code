@@ -1,0 +1,16 @@
+*.o
+*.swp
+*.mod
+slurm-*.out
+matrix.O0
+matrix.O1
+matrix.O2
+matrix.O3
+matrix.O0.cray
+matrix.O1.cray
+matrix.O2.cray
+matrix.O3.cray
+matrix.O0.intel
+matrix.O1.intel
+matrix.O2.intel
+matrix.O3.intel
