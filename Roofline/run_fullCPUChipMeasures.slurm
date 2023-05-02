@@ -25,21 +25,28 @@ export OMP_PROC_BIND=SPREAD
 #Measuring peak performance (note "optimal" size of matrix changes)
 echo -e "\n\n========================================"
 echo        "========================================"
-export OMP_NUM_THREADS=1
+export OMP_NUM_THREADS=8
 echo "Measuring Peak Performance THREADS=$OMP_NUM_THREADS"
-echo "Using: srun -l -u -n 1 -c $OMP_NUM_THREADS dgemm 1600 | sort -n"
-srun -l -u -n 1 -c $OMP_NUM_THREADS dgemm 1600 | sort -n
+echo "Using: srun -l -u -n 1 -c $OMP_NUM_THREADS dgemm 3200 | sort -n"
+srun -l -u -n 1 -c $OMP_NUM_THREADS dgemm 3200 | sort -n
 #==
 echo -e "\n\n========================================"
 echo        "========================================"
-export OMP_NUM_THREADS=1
+export OMP_NUM_THREADS=8
 echo "Measuring Peak Performance full chip THREADS=$OMP_NUM_THREADS"
-echo "Using: srun -l -u -n 64 -c $OMP_NUM_THREADS dgemm 1600 |sort -n"
-srun -l -u -n 64 -c $OMP_NUM_THREADS dgemm 1600 | sort -n
+echo "Using: srun -l -u -n 8 -c $OMP_NUM_THREADS dgemm 3200 |sort -n"
+srun -l -u -n 8 -c $OMP_NUM_THREADS dgemm 3200 | sort -n
+#==
+echo -e "\n\n========================================"
+echo        "========================================"
+export OMP_NUM_THREADS=64
+echo "Measuring Peak Performance full chip THREADS=$OMP_NUM_THREADS"
+echo "Using: srun -l -u -n 1 -c $OMP_NUM_THREADS dgemm 3840 |sort -n"
+srun -l -u -n 1 -c $OMP_NUM_THREADS dgemm 3840 | sort -n
 
 #-------------------------
 #Measuring peak memory bandwith
-export OMP_NUM_THREADS=1
+export OMP_NUM_THREADS=8
 echo -e "\n\n========================================"
 echo        "========================================"
 echo "Measuring Peak Mem Bandwidth THREADS=$OMP_NUM_THREADS"
