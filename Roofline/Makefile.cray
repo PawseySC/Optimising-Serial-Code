@@ -1,0 +1,19 @@
+CC = cc
+CFLAGS = -O3 -DSTREAM_ARRAY_SIZE=80000000 -DNTIMES=20 
+CFLAGS += -fopenmp 
+#CFLAGS += -lopenblas
+#CFLAGS += -lblas
+
+FF = g77
+FFLAGS = -O3
+
+all: stream dgemm
+
+stream: stream.c
+	$(CC) $(CFLAGS) stream.c -o stream
+
+dgemm: dgemm.c
+	$(CC) $(CFLAGS) dgemm.c -o dgemm 
+
+clean:
+	rm -f stream dgemm

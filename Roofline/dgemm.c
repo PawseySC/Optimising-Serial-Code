@@ -74,6 +74,8 @@ int main (int argc, char *argv[])
 	int size_B = N*ldb;
 	int size_C = N*ldc;
 
+        double gflopsTotal;
+
 	double *A  = (double*) malloc(sizeof(double)*size_A);
 	if (A == 0) printf("Could not allocate A.\n");
 
@@ -126,8 +128,9 @@ int main (int argc, char *argv[])
 
 	otime += mysecond();
 	otime /= NTIMES;
-
-	printf("N = %d, Gflops %f\n", N, 2.*M*N*K/otime/1e9);
+        gflopsTotal=2.*M*N*K/otime/1e9;
+	printf("N = %d, Gflop/s %f, Gflop/s per thread %f\n ", N, gflopsTotal, gflopsTotal/maxthreads);
+	//printf("N = %d, Gflops %f\n", N, 2.*M*N*K/otime/1e9);
 
 	//printf(" Gflops = %f\n", 2.*M*N*K/1e9/otime);      	
 

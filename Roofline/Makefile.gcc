@@ -1,9 +1,10 @@
 CC = gcc
 CFLAGS = -O3 -DSTREAM_ARRAY_SIZE=80000000 -DNTIMES=20 
 #CFLAGS += -march=sandybridge 
-CFLAGS += -march=broadwell 
+#CFLAGS += -march=broadwell 
 #CFLAGS += -march=haswell 
 #CFLAGS += -march=skylake-avx512 
+CFLAGS += -march=znver3
 CFLAGS += -fopenmp 
 #CFLAGS += -lopenblas
 CFLAGS += -lblas

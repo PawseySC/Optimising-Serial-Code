@@ -22,3 +22,5 @@ matrix.O0+pat
 matrix.O1+pat
 matrix.O2+pat
 matrix.O3+pat
+dgemm
+stream
