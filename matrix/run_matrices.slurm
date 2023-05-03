@@ -5,6 +5,7 @@
 ##SBATCH --account=courses01
 #SBATCH --job-name=matrices
 #SBATCH --time=00:10:00
+#SBATCH --mem=1840Mb
 
 echo -e "/n/n-----------------------"
 echo matrices.O0

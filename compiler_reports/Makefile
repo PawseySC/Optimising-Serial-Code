@@ -16,12 +16,6 @@ matrix.intel: REPFLAGS=-qopt-report=3 -mkl=sequential
 #matrix.intel: REPFLAGS=
 matrix.intel: REPEXT=optrpt
 
-matrix.intel: matrix
-matrix.intel: EXEEXT=gnu
-matrix.intel: REPFLAGS=-qopt-report=3 -mkl=sequential
-#matrix.intel: REPFLAGS=
-matrix.intel: REPEXT=optrpt
-
 MATRICES = matrix.O0 matrix.O1 matrix.O2 matrix.O3
 
 matrix: $(MATRICES)

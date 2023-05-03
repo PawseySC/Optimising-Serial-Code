@@ -64,6 +64,24 @@ echo        "========================================"
 echo "Measuring Peak Mem Bandwidth THREADS=$OMP_NUM_THREADS"
 echo "WithOUT srun using: ./stream"
 ./stream
+export OMP_NUM_THREADS=64
+echo -e "\n\n========================================"
+echo        "========================================"
+echo "Measuring Peak Mem Bandwidth THREADS=$OMP_NUM_THREADS"
+echo "With srun using: srun -c $SLURM_CPUS_PER_TASK ./stream"
+srun -c $SLURM_CPUS_PER_TASK ./stream
+#==
+echo -e "\n\n========================================"
+echo        "========================================"
+echo "Measuring Peak Mem Bandwidth THREADS=$OMP_NUM_THREADS"
+echo "With srun using: srun -c $OMP_NUM_THREADS ./stream"
+srun -c $OMP_NUM_THREADS ./stream
+#==
+echo -e "\n\n========================================"
+echo        "========================================"
+echo "Measuring Peak Mem Bandwidth THREADS=$OMP_NUM_THREADS"
+echo "WithOUT srun using: ./stream"
+./stream
 
 #-------------------------
 #Final steps

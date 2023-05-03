@@ -1,0 +1,664 @@
+
+Lmod is automatically replacing "gcc/12.1.0" with "cce/14.0.3".
+
+
+Lmod is automatically replacing "PrgEnv-gnu/8.3.3" with "PrgEnv-cray/8.3.3".
+
+
+Due to MODULEPATH changes, the following have been reloaded:
+  1) cray-mpich/8.1.19
+
+
+
+========================================
+========================================
+Measuring Peak Performance THREADS=1
+Using: srun -l -u -n 1 -c 1 dgemm 1600 | sort -n
+0:  
+0: Dynamic threads enabled?      = 1
+0: In parallel?                  = 0
+0: Max threads                   = 1
+0: N = 1600, Gflop/s 52.867199, Gflop/s per thread 52.867199
+0: Nested parallelism supported? = 0
+0: Number of processors          = 256
+0: Number of threads             = 1
+
+
+========================================
+========================================
+Measuring Peak Performance full chip THREADS=1
+Using: srun -l -u -n 64 -c 1 dgemm 1600 |sort -n
+ 0:  
+ 0: Dynamic threads enabled?      = 1
+ 0: In parallel?                  = 0
+ 0: Max threads                   = 1
+ 0: N = 1600, Gflop/s 32.781271, Gflop/s per thread 32.781271
+ 0: Nested parallelism supported? = 0
+ 0: Number of processors          = 256
+ 0: Number of threads             = 1
+ 1:  
+ 1: Dynamic threads enabled?      = 1
+ 1: In parallel?                  = 0
+ 1: Max threads                   = 1
+ 1: N = 1600, Gflop/s 32.760202, Gflop/s per thread 32.760202
+ 1: Nested parallelism supported? = 0
+ 1: Number of processors          = 256
+ 1: Number of threads             = 1
+ 2:  
+ 2: Dynamic threads enabled?      = 1
+ 2: In parallel?                  = 0
+ 2: Max threads                   = 1
+ 2: N = 1600, Gflop/s 33.182778, Gflop/s per thread 33.182778
+ 2: Nested parallelism supported? = 0
+ 2: Number of processors          = 256
+ 2: Number of threads             = 1
+ 3:  
+ 3: Dynamic threads enabled?      = 1
+ 3: In parallel?                  = 0
+ 3: Max threads                   = 1
+ 3: N = 1600, Gflop/s 33.040324, Gflop/s per thread 33.040324
+ 3: Nested parallelism supported? = 0
+ 3: Number of processors          = 256
+ 3: Number of threads             = 1
+ 4:  
+ 4: Dynamic threads enabled?      = 1
+ 4: In parallel?                  = 0
+ 4: Max threads                   = 1
+ 4: N = 1600, Gflop/s 32.883507, Gflop/s per thread 32.883507
+ 4: Nested parallelism supported? = 0
+ 4: Number of processors          = 256
+ 4: Number of threads             = 1
+ 5:  
+ 5: Dynamic threads enabled?      = 1
+ 5: In parallel?                  = 0
+ 5: Max threads                   = 1
+ 5: N = 1600, Gflop/s 32.966179, Gflop/s per thread 32.966179
+ 5: Nested parallelism supported? = 0
+ 5: Number of processors          = 256
+ 5: Number of threads             = 1
+ 6:  
+ 6: Dynamic threads enabled?      = 1
+ 6: In parallel?                  = 0
+ 6: Max threads                   = 1
+ 6: N = 1600, Gflop/s 32.832036, Gflop/s per thread 32.832036
+ 6: Nested parallelism supported? = 0
+ 6: Number of processors          = 256
+ 6: Number of threads             = 1
+ 7:  
+ 7: Dynamic threads enabled?      = 1
+ 7: In parallel?                  = 0
+ 7: Max threads                   = 1
+ 7: N = 1600, Gflop/s 33.060507, Gflop/s per thread 33.060507
+ 7: Nested parallelism supported? = 0
+ 7: Number of processors          = 256
+ 7: Number of threads             = 1
+ 8:  
+ 8: Dynamic threads enabled?      = 1
+ 8: In parallel?                  = 0
+ 8: Max threads                   = 1
+ 8: N = 1600, Gflop/s 32.616950, Gflop/s per thread 32.616950
+ 8: Nested parallelism supported? = 0
+ 8: Number of processors          = 256
+ 8: Number of threads             = 1
+ 9:  
+ 9: Dynamic threads enabled?      = 1
+ 9: In parallel?                  = 0
+ 9: Max threads                   = 1
+ 9: N = 1600, Gflop/s 32.881910, Gflop/s per thread 32.881910
+ 9: Nested parallelism supported? = 0
+ 9: Number of processors          = 256
+ 9: Number of threads             = 1
+10:  
+10: Dynamic threads enabled?      = 1
+10: In parallel?                  = 0
+10: Max threads                   = 1
+10: N = 1600, Gflop/s 33.005568, Gflop/s per thread 33.005568
+10: Nested parallelism supported? = 0
+10: Number of processors          = 256
+10: Number of threads             = 1
+11:  
+11: Dynamic threads enabled?      = 1
+11: In parallel?                  = 0
+11: Max threads                   = 1
+11: N = 1600, Gflop/s 32.520467, Gflop/s per thread 32.520467
+11: Nested parallelism supported? = 0
+11: Number of processors          = 256
+11: Number of threads             = 1
+12:  
+12: Dynamic threads enabled?      = 1
+12: In parallel?                  = 0
+12: Max threads                   = 1
+12: N = 1600, Gflop/s 33.068534, Gflop/s per thread 33.068534
+12: Nested parallelism supported? = 0
+12: Number of processors          = 256
+12: Number of threads             = 1
+13:  
+13: Dynamic threads enabled?      = 1
+13: In parallel?                  = 0
+13: Max threads                   = 1
+13: N = 1600, Gflop/s 32.843304, Gflop/s per thread 32.843304
+13: Nested parallelism supported? = 0
+13: Number of processors          = 256
+13: Number of threads             = 1
+14:  
+14: Dynamic threads enabled?      = 1
+14: In parallel?                  = 0
+14: Max threads                   = 1
+14: N = 1600, Gflop/s 32.440371, Gflop/s per thread 32.440371
+14: Nested parallelism supported? = 0
+14: Number of processors          = 256
+14: Number of threads             = 1
+15:  
+15: Dynamic threads enabled?      = 1
+15: In parallel?                  = 0
+15: Max threads                   = 1
+15: N = 1600, Gflop/s 32.746773, Gflop/s per thread 32.746773
+15: Nested parallelism supported? = 0
+15: Number of processors          = 256
+15: Number of threads             = 1
+16:  
+16: Dynamic threads enabled?      = 1
+16: In parallel?                  = 0
+16: Max threads                   = 1
+16: N = 1600, Gflop/s 32.680534, Gflop/s per thread 32.680534
+16: Nested parallelism supported? = 0
+16: Number of processors          = 256
+16: Number of threads             = 1
+17:  
+17: Dynamic threads enabled?      = 1
+17: In parallel?                  = 0
+17: Max threads                   = 1
+17: N = 1600, Gflop/s 32.160684, Gflop/s per thread 32.160684
+17: Nested parallelism supported? = 0
+17: Number of processors          = 256
+17: Number of threads             = 1
+18:  
+18: Dynamic threads enabled?      = 1
+18: In parallel?                  = 0
+18: Max threads                   = 1
+18: N = 1600, Gflop/s 33.031859, Gflop/s per thread 33.031859
+18: Nested parallelism supported? = 0
+18: Number of processors          = 256
+18: Number of threads             = 1
+19:  
+19: Dynamic threads enabled?      = 1
+19: In parallel?                  = 0
+19: Max threads                   = 1
+19: N = 1600, Gflop/s 33.013808, Gflop/s per thread 33.013808
+19: Nested parallelism supported? = 0
+19: Number of processors          = 256
+19: Number of threads             = 1
+20:  
+20: Dynamic threads enabled?      = 1
+20: In parallel?                  = 0
+20: Max threads                   = 1
+20: N = 1600, Gflop/s 32.656375, Gflop/s per thread 32.656375
+20: Nested parallelism supported? = 0
+20: Number of processors          = 256
+20: Number of threads             = 1
+21:  
+21: Dynamic threads enabled?      = 1
+21: In parallel?                  = 0
+21: Max threads                   = 1
+21: N = 1600, Gflop/s 32.161026, Gflop/s per thread 32.161026
+21: Nested parallelism supported? = 0
+21: Number of processors          = 256
+21: Number of threads             = 1
+22:  
+22: Dynamic threads enabled?      = 1
+22: In parallel?                  = 0
+22: Max threads                   = 1
+22: N = 1600, Gflop/s 32.886252, Gflop/s per thread 32.886252
+22: Nested parallelism supported? = 0
+22: Number of processors          = 256
+22: Number of threads             = 1
+23:  
+23: Dynamic threads enabled?      = 1
+23: In parallel?                  = 0
+23: Max threads                   = 1
+23: N = 1600, Gflop/s 32.648475, Gflop/s per thread 32.648475
+23: Nested parallelism supported? = 0
+23: Number of processors          = 256
+23: Number of threads             = 1
+24:  
+24: Dynamic threads enabled?      = 1
+24: In parallel?                  = 0
+24: Max threads                   = 1
+24: N = 1600, Gflop/s 32.634493, Gflop/s per thread 32.634493
+24: Nested parallelism supported? = 0
+24: Number of processors          = 256
+24: Number of threads             = 1
+25:  
+25: Dynamic threads enabled?      = 1
+25: In parallel?                  = 0
+25: Max threads                   = 1
+25: N = 1600, Gflop/s 31.970858, Gflop/s per thread 31.970858
+25: Nested parallelism supported? = 0
+25: Number of processors          = 256
+25: Number of threads             = 1
+26:  
+26: Dynamic threads enabled?      = 1
+26: In parallel?                  = 0
+26: Max threads                   = 1
+26: N = 1600, Gflop/s 32.318113, Gflop/s per thread 32.318113
+26: Nested parallelism supported? = 0
+26: Number of processors          = 256
+26: Number of threads             = 1
+27:  
+27: Dynamic threads enabled?      = 1
+27: In parallel?                  = 0
+27: Max threads                   = 1
+27: N = 1600, Gflop/s 32.080646, Gflop/s per thread 32.080646
+27: Nested parallelism supported? = 0
+27: Number of processors          = 256
+27: Number of threads             = 1
+28:  
+28: Dynamic threads enabled?      = 1
+28: In parallel?                  = 0
+28: Max threads                   = 1
+28: N = 1600, Gflop/s 32.105106, Gflop/s per thread 32.105106
+28: Nested parallelism supported? = 0
+28: Number of processors          = 256
+28: Number of threads             = 1
+29:  
+29: Dynamic threads enabled?      = 1
+29: In parallel?                  = 0
+29: Max threads                   = 1
+29: N = 1600, Gflop/s 32.117844, Gflop/s per thread 32.117844
+29: Nested parallelism supported? = 0
+29: Number of processors          = 256
+29: Number of threads             = 1
+30:  
+30: Dynamic threads enabled?      = 1
+30: In parallel?                  = 0
+30: Max threads                   = 1
+30: N = 1600, Gflop/s 31.992583, Gflop/s per thread 31.992583
+30: Nested parallelism supported? = 0
+30: Number of processors          = 256
+30: Number of threads             = 1
+31:  
+31: Dynamic threads enabled?      = 1
+31: In parallel?                  = 0
+31: Max threads                   = 1
+31: N = 1600, Gflop/s 32.118449, Gflop/s per thread 32.118449
+31: Nested parallelism supported? = 0
+31: Number of processors          = 256
+31: Number of threads             = 1
+32:  
+32: Dynamic threads enabled?      = 1
+32: In parallel?                  = 0
+32: Max threads                   = 1
+32: N = 1600, Gflop/s 32.475660, Gflop/s per thread 32.475660
+32: Nested parallelism supported? = 0
+32: Number of processors          = 256
+32: Number of threads             = 1
+33:  
+33: Dynamic threads enabled?      = 1
+33: In parallel?                  = 0
+33: Max threads                   = 1
+33: N = 1600, Gflop/s 32.912248, Gflop/s per thread 32.912248
+33: Nested parallelism supported? = 0
+33: Number of processors          = 256
+33: Number of threads             = 1
+34:  
+34: Dynamic threads enabled?      = 1
+34: In parallel?                  = 0
+34: Max threads                   = 1
+34: N = 1600, Gflop/s 33.016376, Gflop/s per thread 33.016376
+34: Nested parallelism supported? = 0
+34: Number of processors          = 256
+34: Number of threads             = 1
+35:  
+35: Dynamic threads enabled?      = 1
+35: In parallel?                  = 0
+35: Max threads                   = 1
+35: N = 1600, Gflop/s 32.824032, Gflop/s per thread 32.824032
+35: Nested parallelism supported? = 0
+35: Number of processors          = 256
+35: Number of threads             = 1
+36:  
+36: Dynamic threads enabled?      = 1
+36: In parallel?                  = 0
+36: Max threads                   = 1
+36: N = 1600, Gflop/s 32.597832, Gflop/s per thread 32.597832
+36: Nested parallelism supported? = 0
+36: Number of processors          = 256
+36: Number of threads             = 1
+37:  
+37: Dynamic threads enabled?      = 1
+37: In parallel?                  = 0
+37: Max threads                   = 1
+37: N = 1600, Gflop/s 33.055617, Gflop/s per thread 33.055617
+37: Nested parallelism supported? = 0
+37: Number of processors          = 256
+37: Number of threads             = 1
+38:  
+38: Dynamic threads enabled?      = 1
+38: In parallel?                  = 0
+38: Max threads                   = 1
+38: N = 1600, Gflop/s 32.741526, Gflop/s per thread 32.741526
+38: Nested parallelism supported? = 0
+38: Number of processors          = 256
+38: Number of threads             = 1
+39:  
+39: Dynamic threads enabled?      = 1
+39: In parallel?                  = 0
+39: Max threads                   = 1
+39: N = 1600, Gflop/s 32.909775, Gflop/s per thread 32.909775
+39: Nested parallelism supported? = 0
+39: Number of processors          = 256
+39: Number of threads             = 1
+40:  
+40: Dynamic threads enabled?      = 1
+40: In parallel?                  = 0
+40: Max threads                   = 1
+40: N = 1600, Gflop/s 32.082606, Gflop/s per thread 32.082606
+40: Nested parallelism supported? = 0
+40: Number of processors          = 256
+40: Number of threads             = 1
+41:  
+41: Dynamic threads enabled?      = 1
+41: In parallel?                  = 0
+41: Max threads                   = 1
+41: N = 1600, Gflop/s 32.408820, Gflop/s per thread 32.408820
+41: Nested parallelism supported? = 0
+41: Number of processors          = 256
+41: Number of threads             = 1
+42:  
+42: Dynamic threads enabled?      = 1
+42: In parallel?                  = 0
+42: Max threads                   = 1
+42: N = 1600, Gflop/s 32.204606, Gflop/s per thread 32.204606
+42: Nested parallelism supported? = 0
+42: Number of processors          = 256
+42: Number of threads             = 1
+43:  
+43: Dynamic threads enabled?      = 1
+43: In parallel?                  = 0
+43: Max threads                   = 1
+43: N = 1600, Gflop/s 32.103233, Gflop/s per thread 32.103233
+43: Nested parallelism supported? = 0
+43: Number of processors          = 256
+43: Number of threads             = 1
+44:  
+44: Dynamic threads enabled?      = 1
+44: In parallel?                  = 0
+44: Max threads                   = 1
+44: N = 1600, Gflop/s 32.222993, Gflop/s per thread 32.222993
+44: Nested parallelism supported? = 0
+44: Number of processors          = 256
+44: Number of threads             = 1
+45:  
+45: Dynamic threads enabled?      = 1
+45: In parallel?                  = 0
+45: Max threads                   = 1
+45: N = 1600, Gflop/s 31.969535, Gflop/s per thread 31.969535
+45: Nested parallelism supported? = 0
+45: Number of processors          = 256
+45: Number of threads             = 1
+46:  
+46: Dynamic threads enabled?      = 1
+46: In parallel?                  = 0
+46: Max threads                   = 1
+46: N = 1600, Gflop/s 31.994913, Gflop/s per thread 31.994913
+46: Nested parallelism supported? = 0
+46: Number of processors          = 256
+46: Number of threads             = 1
+47:  
+47: Dynamic threads enabled?      = 1
+47: In parallel?                  = 0
+47: Max threads                   = 1
+47: N = 1600, Gflop/s 32.176158, Gflop/s per thread 32.176158
+47: Nested parallelism supported? = 0
+47: Number of processors          = 256
+47: Number of threads             = 1
+48:  
+48: Dynamic threads enabled?      = 1
+48: In parallel?                  = 0
+48: Max threads                   = 1
+48: N = 1600, Gflop/s 32.949732, Gflop/s per thread 32.949732
+48: Nested parallelism supported? = 0
+48: Number of processors          = 256
+48: Number of threads             = 1
+49:  
+49: Dynamic threads enabled?      = 1
+49: In parallel?                  = 0
+49: Max threads                   = 1
+49: N = 1600, Gflop/s 33.195592, Gflop/s per thread 33.195592
+49: Nested parallelism supported? = 0
+49: Number of processors          = 256
+49: Number of threads             = 1
+50:  
+50: Dynamic threads enabled?      = 1
+50: In parallel?                  = 0
+50: Max threads                   = 1
+50: N = 1600, Gflop/s 32.499470, Gflop/s per thread 32.499470
+50: Nested parallelism supported? = 0
+50: Number of processors          = 256
+50: Number of threads             = 1
+51:  
+51: Dynamic threads enabled?      = 1
+51: In parallel?                  = 0
+51: Max threads                   = 1
+51: N = 1600, Gflop/s 33.047357, Gflop/s per thread 33.047357
+51: Nested parallelism supported? = 0
+51: Number of processors          = 256
+51: Number of threads             = 1
+52:  
+52: Dynamic threads enabled?      = 1
+52: In parallel?                  = 0
+52: Max threads                   = 1
+52: N = 1600, Gflop/s 32.909286, Gflop/s per thread 32.909286
+52: Nested parallelism supported? = 0
+52: Number of processors          = 256
+52: Number of threads             = 1
+53:  
+53: Dynamic threads enabled?      = 1
+53: In parallel?                  = 0
+53: Max threads                   = 1
+53: N = 1600, Gflop/s 32.689526, Gflop/s per thread 32.689526
+53: Nested parallelism supported? = 0
+53: Number of processors          = 256
+53: Number of threads             = 1
+54:  
+54: Dynamic threads enabled?      = 1
+54: In parallel?                  = 0
+54: Max threads                   = 1
+54: N = 1600, Gflop/s 32.637644, Gflop/s per thread 32.637644
+54: Nested parallelism supported? = 0
+54: Number of processors          = 256
+54: Number of threads             = 1
+55:  
+55: Dynamic threads enabled?      = 1
+55: In parallel?                  = 0
+55: Max threads                   = 1
+55: N = 1600, Gflop/s 32.436627, Gflop/s per thread 32.436627
+55: Nested parallelism supported? = 0
+55: Number of processors          = 256
+55: Number of threads             = 1
+56:  
+56: Dynamic threads enabled?      = 1
+56: In parallel?                  = 0
+56: Max threads                   = 1
+56: N = 1600, Gflop/s 32.982386, Gflop/s per thread 32.982386
+56: Nested parallelism supported? = 0
+56: Number of processors          = 256
+56: Number of threads             = 1
+57:  
+57: Dynamic threads enabled?      = 1
+57: In parallel?                  = 0
+57: Max threads                   = 1
+57: N = 1600, Gflop/s 32.356088, Gflop/s per thread 32.356088
+57: Nested parallelism supported? = 0
+57: Number of processors          = 256
+57: Number of threads             = 1
+58:  
+58: Dynamic threads enabled?      = 1
+58: In parallel?                  = 0
+58: Max threads                   = 1
+58: N = 1600, Gflop/s 32.506033, Gflop/s per thread 32.506033
+58: Nested parallelism supported? = 0
+58: Number of processors          = 256
+58: Number of threads             = 1
+59:  
+59: Dynamic threads enabled?      = 1
+59: In parallel?                  = 0
+59: Max threads                   = 1
+59: N = 1600, Gflop/s 32.274777, Gflop/s per thread 32.274777
+59: Nested parallelism supported? = 0
+59: Number of processors          = 256
+59: Number of threads             = 1
+60:  
+60: Dynamic threads enabled?      = 1
+60: In parallel?                  = 0
+60: Max threads                   = 1
+60: N = 1600, Gflop/s 32.750236, Gflop/s per thread 32.750236
+60: Nested parallelism supported? = 0
+60: Number of processors          = 256
+60: Number of threads             = 1
+61:  
+61: Dynamic threads enabled?      = 1
+61: In parallel?                  = 0
+61: Max threads                   = 1
+61: N = 1600, Gflop/s 32.666343, Gflop/s per thread 32.666343
+61: Nested parallelism supported? = 0
+61: Number of processors          = 256
+61: Number of threads             = 1
+62:  
+62: Dynamic threads enabled?      = 1
+62: In parallel?                  = 0
+62: Max threads                   = 1
+62: N = 1600, Gflop/s 32.755781, Gflop/s per thread 32.755781
+62: Nested parallelism supported? = 0
+62: Number of processors          = 256
+62: Number of threads             = 1
+63:  
+63: Dynamic threads enabled?      = 1
+63: In parallel?                  = 0
+63: Max threads                   = 1
+63: N = 1600, Gflop/s 32.710168, Gflop/s per thread 32.710168
+63: Nested parallelism supported? = 0
+63: Number of processors          = 256
+63: Number of threads             = 1
+
+
+========================================
+========================================
+Measuring Peak Mem Bandwidth THREADS=1
+With srun using: srun -c 64 ./stream
+-------------------------------------------------------------
+STREAM version $Revision: 5.10 $
+-------------------------------------------------------------
+This system uses 8 bytes per array element.
+-------------------------------------------------------------
+Array size = 80000000 (elements), Offset = 0 (elements)
+Memory per array = 610.4 MiB (= 0.6 GiB).
+Total memory required = 1831.1 MiB (= 1.8 GiB).
+Each kernel will be executed 20 times.
+ The *best* time for each kernel (excluding the first iteration)
+ will be used to compute the reported bandwidth.
+-------------------------------------------------------------
+Number of Threads requested = 1
+Number of Threads counted = 1
+-------------------------------------------------------------
+Your clock granularity/precision appears to be 1 microseconds.
+Each test below will take on the order of 34658 microseconds.
+   (= 34658 clock ticks)
+Increase the size of the arrays if this shows that
+you are not getting at least 20 clock ticks per test.
+-------------------------------------------------------------
+WARNING -- The above is only a rough guideline.
+For best results, please be sure you know the
+precision of your system timer.
+-------------------------------------------------------------
+Function    Best Rate MB/s  Avg time     Min time     Max time
+Copy:           41561.2     0.030923     0.030798     0.031124
+Scale:          26858.0     0.048031     0.047658     0.048712
+Add:            28718.4     0.067200     0.066856     0.067955
+Triad:          28519.2     0.067678     0.067323     0.068578
+-------------------------------------------------------------
+Solution Validates: avg error less than 1.000000e-13 on all three arrays
+-------------------------------------------------------------
+
+
+========================================
+========================================
+Measuring Peak Mem Bandwidth THREADS=1
+With srun using: srun -c 1 ./stream
+-------------------------------------------------------------
+STREAM version $Revision: 5.10 $
+-------------------------------------------------------------
+This system uses 8 bytes per array element.
+-------------------------------------------------------------
+Array size = 80000000 (elements), Offset = 0 (elements)
+Memory per array = 610.4 MiB (= 0.6 GiB).
+Total memory required = 1831.1 MiB (= 1.8 GiB).
+Each kernel will be executed 20 times.
+ The *best* time for each kernel (excluding the first iteration)
+ will be used to compute the reported bandwidth.
+-------------------------------------------------------------
+Number of Threads requested = 1
+Number of Threads counted = 1
+-------------------------------------------------------------
+Your clock granularity/precision appears to be 1 microseconds.
+Each test below will take on the order of 33421 microseconds.
+   (= 33421 clock ticks)
+Increase the size of the arrays if this shows that
+you are not getting at least 20 clock ticks per test.
+-------------------------------------------------------------
+WARNING -- The above is only a rough guideline.
+For best results, please be sure you know the
+precision of your system timer.
+-------------------------------------------------------------
+Function    Best Rate MB/s  Avg time     Min time     Max time
+Copy:           41753.8     0.030826     0.030656     0.031154
+Scale:          26840.6     0.048066     0.047689     0.048710
+Add:            28743.4     0.067206     0.066798     0.068145
+Triad:          28485.4     0.067564     0.067403     0.068615
+-------------------------------------------------------------
+Solution Validates: avg error less than 1.000000e-13 on all three arrays
+-------------------------------------------------------------
+
+
+========================================
+========================================
+Measuring Peak Mem Bandwidth THREADS=1
+WithOUT srun using: ./stream
+-------------------------------------------------------------
+STREAM version $Revision: 5.10 $
+-------------------------------------------------------------
+This system uses 8 bytes per array element.
+-------------------------------------------------------------
+Array size = 80000000 (elements), Offset = 0 (elements)
+Memory per array = 610.4 MiB (= 0.6 GiB).
+Total memory required = 1831.1 MiB (= 1.8 GiB).
+Each kernel will be executed 20 times.
+ The *best* time for each kernel (excluding the first iteration)
+ will be used to compute the reported bandwidth.
+-------------------------------------------------------------
+Number of Threads requested = 1
+Number of Threads counted = 1
+-------------------------------------------------------------
+Your clock granularity/precision appears to be 1 microseconds.
+Each test below will take on the order of 33029 microseconds.
+   (= 33029 clock ticks)
+Increase the size of the arrays if this shows that
+you are not getting at least 20 clock ticks per test.
+-------------------------------------------------------------
+WARNING -- The above is only a rough guideline.
+For best results, please be sure you know the
+precision of your system timer.
+-------------------------------------------------------------
+Function    Best Rate MB/s  Avg time     Min time     Max time
+Copy:           41730.5     0.030858     0.030673     0.031084
+Scale:          26824.2     0.048039     0.047718     0.048244
+Add:            28726.7     0.067203     0.066837     0.068397
+Triad:          28505.2     0.067637     0.067356     0.068584
+-------------------------------------------------------------
+Solution Validates: avg error less than 1.000000e-13 on all three arrays
+-------------------------------------------------------------
+
+
+========================================
+========================================
+Done
